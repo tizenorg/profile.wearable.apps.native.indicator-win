@@ -1,0 +1,393 @@
+/*
+ * Copyright (c) 2015 Samsung Electronics Co., Ltd All Rights Reserved
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+
+group {
+	name : "windicator/dnd_btn/bt";
+	images {
+		image : "Controls/b_moment_more_opt_ic_bg.png" COMP;
+		image : "Controls/donotdisturb.png" COMP;
+		image : "Controls/vzw_donotdisturb.png" COMP;
+		image : "b_moment_more_opt_bar.png" COMP;
+	}
+	parts {
+		part {
+			name : "bg";
+			type : SPACER;
+			scale :1;
+			description {
+				state : "default";
+				min : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				max : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+			}
+		}
+		part {
+			name : "img.disturb.bg";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				max : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				fixed : 1 1;
+				align : 0.0 0.0;
+				image.normal: "Controls/b_moment_more_opt_ic_bg.png";
+				color_class : "AO0122";
+				rel1 { relative : 0.0 0.0; to : "bg"; }
+				rel2 { relative : 0.0 0.0; to : "bg"; }
+			}/*
+			description {
+				state: "off" 0.0;
+				inherit: "default";
+				color_class : "AO01221";
+			}*/
+			description {
+				state : "selected" 0.0;
+				inherit : "default" 0.0;
+				color_class : "AO0122P";
+			}
+		}
+		part {
+			name : "img.disturb.icon";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				max : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				fixed : 1 1;
+				align : 0.0 0.0;
+				image.normal: "Controls/donotdisturb.png";
+				color_class : "AO012";
+				rel1 { relative : 0.0 0.0; to : "bg"; }
+				rel2 { relative : 0.0 0.0; to : "bg"; }
+			}
+			description {
+				state: "vzw" 0.0;
+				inherit: "default";
+				image.normal: "Controls/vzw_donotdisturb.png";
+			}
+		}
+		part {
+			name : "img.disturb.bar";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : 26 22;
+				max : 26 22;
+				fixed : 1 1;
+				align : 0.0 0.0;
+				image.normal: "b_moment_more_opt_bar.png";
+				color_class : "AO0211";
+				rel1 { relative : 0.0 0.0; to : "bg"; offset : 19 42;}
+				rel2 { relative : 0.0 0.0; to : "bg"; }
+			}
+			description {
+				state: "off" 0.0;
+				inherit: "default";
+				color_class : "AO0212";
+			}
+		}
+#if 0
+		part {
+			name : "padding.top";
+			type : SPACER;
+			scale : 1;
+			description {
+				state : "default";
+				min : 360 92;
+				max : 360 92;
+				fixed: 1 1;
+				align : 0.0 0.0;
+			//	color :200 0 0 200;
+				rel1 { relative : 0.0 0.0; to : "bg";}
+				rel2 { relative : 0.0 0.0; to : "bg";}
+			}
+		}
+		part {
+			name : "txt.dnd.on.off";
+			type : TEXT;
+			clip_to : "clipper_dnd";
+			scale : 1;
+//			repeat_events : 1;
+			description{
+				state : "default" 0.0;
+				min : DND_TEXT_WIDTH DND_TEXT_HEIGHT;
+				visible : 1;
+				fixed : 1 1;
+				align : 0.5 0.0;
+				rel1 { relative : 0.5 1.0; to : "padding.top"; }
+				rel2 { relative : 0.5 1.0; to : "padding.top"; }
+				text {
+					min : 1 1;
+					align: 0.5 0.5;
+					text_class : "AT0112";
+					text : "On";
+				}
+			}
+		}
+		part {
+			name : "padding.center.1";
+			type : SPACER;
+			scale : 1;
+			description {
+				state : "default";
+				min : 360 6;
+				max : 360 6;
+				fixed: 1 1;
+			//	color :0 0 200 200;
+				align : 0.5 0.0;
+				rel1 { relative : 0.5 1.0; to : "txt.dnd.on.off";}
+				rel2 { relative : 0.5 1.0; to : "txt.dnd.on.off";}
+			}
+		}
+		part {
+			name : "img.disturb.bg";
+			type : IMAGE;
+			clip_to : "clipper_dnd";
+			scale : 1;
+			repeat_events : 1;
+			description {
+				state : "default" 0.0;
+				min : DND_BTN_WIDTH DND_BTN_HEIGHT;
+				max : DND_BTN_WIDTH DND_BTN_HEIGHT;
+				fixed : 1 1;
+				image.normal: "mb_center_bg.png";
+				color_class : "AO027";
+				align : 0.5 0.0;
+				rel1 { relative : 0.5 1.0; to : "padding.center.1";}
+				rel2 { relative : 0.5 1.0; to : "padding.center.1";}
+			}
+			description {
+				state: "off" 0.0;
+				inherit: "default";
+				color_class : "AO0271";
+			}
+		}
+		part {
+			name : "sw.dnd.btn";
+			type : SWALLOW;
+			scale : 1;
+			repeat_events : 1;
+			description {
+				state : "default" 0.0;
+				min : 80 80;
+				max : 80 80;
+				fixed : 1 1;
+				align : 0.5 0.5;
+				rel1.to: "img.disturb.bg";
+				rel2.to: "img.disturb.bg";
+			}
+		}
+		part {
+			name : "img.disturb.icon";
+			type : IMAGE;
+			clip_to : "clipper_dnd";
+			scale : 1;
+			repeat_events : 1;
+			description {
+				state : "default" 0.0;
+				min : DND_BTN_HEIGHT DND_BTN_HEIGHT;
+				max : DND_BTN_HEIGHT DND_BTN_HEIGHT;
+				fixed : 1 1;
+//				visible : 0;
+				image.normal: "momment_bar_btn_icon_disturb.png";
+				color_class : "AO025";
+				align : 0.5 0.0;
+				rel1 { relative : 0.5 1.0; to : "padding.center.1";}
+				rel2 { relative : 0.5 1.0; to : "padding.center.1";}
+			}
+			description {
+				state: "fade_in" 0.0;
+				inherit: "default";
+				visible : 1;
+			}
+			description {
+				state: "off" 0.0;
+				inherit: "default";
+				color_class : "AO0251";
+			}
+		}
+		
+		part {
+			name : "padding.center.2";
+			type : SPACER;
+			scale : 1;
+			description {
+				state : "default";
+				min : 360 PADDING_CENTER_2;
+				max : 360 PADDING_CENTER_2;
+				fixed: 1 1;
+			//	color :0 0 200 200;
+				align : 0.5 0.0;
+				rel1 { relative : 0.5 1.0; to : "img.disturb.icon";}
+				rel2 { relative : 0.5 1.0; to : "img.disturb.icon";}
+			}
+		}
+		part {
+			name : "txt.disturb";
+			type : TEXT;
+			clip_to : "clipper_dnd";
+			scale : 1;
+			description{
+				state : "default" 0.0;
+				min : DND_TEXT_WIDTH DND_TEXT_HEIGHT;
+				fixed : 1 1;
+				align : 0.5 0.0;
+				color_class : "AT0113";
+				rel1{ relative: 0.5 1.0; to : "padding.center.2";}
+				rel2{ relative: 0.5 1.0;to : "padding.center.2";}
+				text {
+					min : 1 1;
+					align: 0.5 0.5;
+					text : "Do not disturb";
+					ellipsis : 0;
+					text_class : "AT0113";
+				}
+			}
+		}
+		part {
+			name: "clipper_dnd";
+			type: RECT;
+			scale: 1;
+			mouse_events: 0;
+			description {
+				state: "default" 0.0;
+				color: 255 255 255 0;
+				rel1.to: "bg";
+				rel2.to: "bg";
+			}
+			description {
+				state: "fade_in" 0.0;
+				inherit: "default";
+				color: 255 255 255 255;
+			}
+		}
+		part {
+			name : "dnd.touch.area";
+		//	type : RECT;
+			type : IMAGE;
+			precise_is_inside: 1;
+			repeat_events: 1;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+		//		min : 232 232;
+		//		max : 232 232;
+		//		fixed : 1 1;
+				color : 0 100 100 0;
+		//		align : 0.5 0.5;
+				image.normal: "moment_bar_focus_bt_touch_1.png";
+//				color_class : "AO0217";
+				rel1.to: "bg";
+				rel2.to: "bg";
+			}
+		}
+#endif
+	}
+
+	programs {
+		// Hide
+/*		program {
+			name: "dnd_hide";
+			signal: "dnd_hide";
+			source: "clipper_dnd";
+			action: STATE_SET "default" 0.0;
+			target: "clipper_dnd";
+			after: "dnd_fade_out_end";
+		}
+		// Fade Out effect
+		program {
+			name: "dnd_fade_out";
+			signal: "dnd_fade_out";
+			source: "clipper_dnd";
+			action: STATE_SET "default" 0.0;
+			target: "clipper_dnd";
+			transition: ACCEL_FAC 0.1 0.33;
+			after : "dnd_fade_out_end";
+		}
+		program {
+			name : "dnd_fade_out_end";
+			action : SIGNAL_EMIT "dnd_fade_out_end" "signal";
+		}
+
+		// Fade In effect
+		program {
+			name: "dnd_fade_in";
+			signal: "dnd_fade_in";
+			source: "clipper_dnd";
+			action: STATE_SET "default" 0.0;
+			target: "clipper_dnd";
+			transition: ACCEL_FAC 0.1 0.33;
+			after: "dnd_fade_in_start";
+		}
+		program {
+			name: "dnd_fade_in_start";
+			signal: "dnd_fade_in";
+			source: "clipper_dnd";
+			action: STATE_SET "fade_in" 0.0;
+			target: "clipper_dnd";
+			transition: ACCEL_FAC 0.1 0.33;
+		}*/
+
+		/* VZW */
+		program {
+			name: "dnd.vzw";
+			signal: "dnd.vzw";
+			source: "img.disturb.icon";
+			action: STATE_SET "vzw" 0.0;
+			target: "img.disturb.icon";
+		}
+
+		// Enable
+		program {
+			name: "dnd.enable";
+			signal: "dnd.enable";
+			source: "dnd.bg.icon";
+			action: STATE_SET "default" 0.0;
+		//	target: "img.disturb.bg";
+		//	target: "img.disturb.icon";
+			target: "img.disturb.bar";
+		}
+		// Disable
+		program {
+			name: "dnd.disable";
+			signal: "dnd.disable";
+			source: "dnd.bg.icon";
+			action: STATE_SET "off" 0.0;
+		//	target: "img.disturb.bg";
+		//	target: "img.disturb.icon";
+			target: "img.disturb.bar";
+		}
+
+		/* Press effect */
+		program {
+			name: "dnd.pressed";
+			signal: "dnd.pressed";
+			source: "img.disturb.bg";
+			action: STATE_SET "selected" 0.0;
+			target: "img.disturb.bg";
+		}
+		program {
+			name: "dnd.released";
+			signal: "dnd.released";
+			source: "img.disturb.bg";
+			action: STATE_SET "default" 0.0;
+			target: "img.disturb.bg";
+		}
+	}
+}

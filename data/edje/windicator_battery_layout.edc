@@ -1,0 +1,122 @@
+/*
+ * Copyright (c) 2015 Samsung Electronics Co., Ltd All Rights Reserved
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+#if 0
+styles {
+	style {
+		name: "style_txt_battery";
+		base: "font=Tizen:style=Regular font_size=32 align=center color=#ffffffff color_class=AT01111 wrap=mixed text_class=AT01111";
+		tag: "br" "\n";
+		tag: "hilight" "+ color=#ffff";
+		tag: "b" "+ color=#ffff";
+		tag: "tab" "\t";
+	}
+}
+
+group {
+	name : "windicator/battery/layout/bt";
+	parts {
+		part {
+			name : "bg";
+			type : SPACER;
+			scale :1;
+			description {
+				state : "default";
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+			}
+		}
+		part {
+			name : "padding.top";
+			type : SPACER;
+			scale : 1;
+			description {
+				state : "default";
+				min : 360 140;
+				max : 360 140;
+				fixed: 1 1;
+				align : 0.0 0.0;
+			//	color :200 0 0 200;
+				rel1 { relative : 0.0 0.0; to : "bg";}
+				rel2 { relative : 0.0 0.0; to : "bg";}
+			}
+		}
+		part {
+			name : "txt.battery";
+			type : TEXTBLOCK;
+			scale : 1;
+			description{
+				state : "default" 0.0;
+				visible : 1;
+				min : 360 42;
+				max : 360 42;
+				fixed : 1 1;
+				align : 0.5 0.0;
+				rel1 { relative : 0.5 1.0; to : "padding.top"; }
+				rel2 { relative : 0.5 1.0; to : "padding.top"; }
+				text {
+					style : "style_txt_battery";
+					align : 0.5 0.5;
+					min : 1 1;
+					text : "50%";
+				}
+			}
+		}
+		part {
+			name : "txt.battery.title";
+			type : TEXT;
+			scale : 1;
+			description{
+				state : "default" 0.0;
+				fixed : 1 1;
+				min : 360 32;
+				max : 360 32;
+				align : 0.5 0.0;
+				color_class : "AT01112";
+				rel1{ relative: 0.5 1.0; to : "txt.battery";}
+				rel2{ relative: 0.5 1.0;to : "txt.battery";}
+				text {
+					min : 1 1;
+					align: 0.5 0.5;
+					text : "Battery";
+					ellipsis : 0;
+					text_class : "AT01112";
+				}
+			}
+		}	
+	}
+
+	programs {
+	  /*
+		program {
+			name : "image.disturb.enable";
+			signal : "image.disturb.enable";
+			source : "txt.dnd.on.off";
+			action : STATE_SET "default" 0.0;
+			target : "txt.dnd.on.off";
+		}
+		program {
+			name : "image.disturb.disable";
+			signal : "image.disturb.disable";
+			source : "txt.dnd.on.off";
+			action : STATE_SET "disable" 0.0;
+			target : "txt.dnd.on.off";
+		}
+		*/
+	}
+
+}
+#endif

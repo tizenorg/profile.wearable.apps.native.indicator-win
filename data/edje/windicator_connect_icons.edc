@@ -1,0 +1,335 @@
+/*
+ * Copyright (c) 2015 Samsung Electronics Co., Ltd All Rights Reserved
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+
+#if RSSI_ANT_BAR == 5
+#define RSSI_IMAGE_DIR "/5level"
+
+#elif RSSI_ANT_BAR == 6
+#define RSSI_IMAGE_DIR "/6level"
+
+#else
+#define RSSI_IMAGE_DIR "/4level"
+#endif
+
+//#define RSSI_Sprint "/RSSI_Sprint"
+
+#define DESCRIPTION_CONNECTION(name)\
+	description {\
+		state : "state_"name;\
+		inherit : "default" 0.0;\
+		visible: 1;\
+		image.normal : "Connection/"name".png";\
+	}\
+
+#define DESCRIPTION_ORANGE_3G_PLUS_CONNECTION(num)\
+	description {\
+		state : "state_"num;\
+		inherit : "default" 0.0;\
+		visible: 1;\
+		image.normal : "Indicator_business/Network_data_in_out/Network_booster/Data_type/ORG/stat_sys_data_3gplus.png";\
+	}\
+
+#define DESCRIPTION_ATT_4G_CONNECTION(num)\
+	description {\
+		state : "state_"num;\
+		inherit : "default" 0.0;\
+		visible: 1;\
+		image.normal : "Indicator_business/Network_data_in_out/ATT/"num".png";\
+	}\
+
+#define PROGRAM_CONNECTION_TYPE(num)\
+	program {\
+		name : "type_"num;\
+		signal : "type_"num;\
+		source : "img.connection_type";\
+		action : STATE_SET "state_"num 0.0;\
+		target : "img.connection_type";\
+	}\
+
+#define PROGRAM_CONNECTION_INOUT(num)\
+	program {\
+		name : "packet_"num;\
+		signal : "packet_"num;\
+		source : "img.connection_packet";\
+		action : STATE_SET "state_"num 0.0;\
+		target : "img.connection_packet";\
+	}\
+
+
+
+#define PROGRAM_ATT_4G_IN_CONNECTION(num, num_after)\
+	program {\
+		name : "data_in_att_"num;\
+		signal : "data_in_att_"num;\
+		source : "img.connection_packet";\
+		action : STATE_SET "state_data_in_att_"num 0.0;\
+		target : "img.connection_packet";\
+		after : "data_in_att_"num_after;\
+		transition : LINEAR 1.0;\
+	}\
+
+#define PROGRAM_ATT_4G_OUT_CONNECTION(num, num_after)\
+	program {\
+		name : "data_out_att_"num;\
+		signal : "data_out_att_"num;\
+		source : "img.connection_packet";\
+		action : STATE_SET "state_data_out_att_"num 0.0;\
+		target : "img.connection_packet";\
+		after : "data_out_att_"num_after;\
+		transition : LINEAR 1.0;\
+	}\
+
+#define PROGRAM_ATT_4G_INOUT_IN_CONNECTION(num, num_after)\
+	program {\
+		name : "data_inout_in_att_"num;\
+		signal : "data_inout_in_att_"num;\
+		source : "img.connection_packet";\
+		action : STATE_SET "state_data_in_att_"num 0.0;\
+		target : "img.connection_packet";\
+		after : "data_inout_in_att_"num_after;\
+		transition : LINEAR 1.0;\
+	}\
+
+#define PROGRAM_ATT_4G_INOUT_OUT_CONNECTION(num, num_after)\
+	program {\
+		name : "data_inout_out_att_"num;\
+		signal : "data_inout_out_att_"num;\
+		source : "img.connection_packet";\
+		action : STATE_SET "state_data_out_att_"num 0.0;\
+		target : "img.connection_packet";\
+		after : "data_inout_out_att_"num_after;\
+		transition : LINEAR 1.0;\
+	}
+
+group {
+	name : "windicator/connection_icon";
+
+	images {
+		image: "Connection/edge_connected.png" COMP;
+		image: "Connection/gprs_connected.png" COMP;
+		image: "Connection/1x_connected.png" COMP;
+//#ifdef NETWORK_TMB
+		image: "Connection/2g_connected.png" COMP;
+//#endif
+		image: "Connection/hsdpa_connected.png" COMP;
+		image: "Connection/hspa_connected.png" COMP;
+		image: "Connection/lte_connected.png" COMP;
+		image: "Indicator_business/Network_data_in_out/ATT/data_connected_4g_att.png" COMP;
+		image: "Indicator_business/Network_data_in_out/ATT/data_in_att_1.png" COMP;
+		image: "Indicator_business/Network_data_in_out/ATT/data_in_att_2.png" COMP;
+		image: "Indicator_business/Network_data_in_out/ATT/data_in_att_3.png" COMP;
+		image: "Indicator_business/Network_data_in_out/ATT/data_out_att_1.png" COMP;
+		image: "Indicator_business/Network_data_in_out/ATT/data_out_att_2.png" COMP;
+		image: "Indicator_business/Network_data_in_out/ATT/data_out_att_3.png" COMP;
+		image: "Indicator_business/Network_data_in_out/Network_booster/Data_type/ORG/stat_sys_data_3gplus.png" COMP;
+
+		/* Verizon */
+		image: "Connection/1X_connected_dim.png" COMP;
+		image: "Connection/3G_connected_dim.png" COMP;
+		image: "Connection/1X_connected_dim_3g_on.png" COMP;
+		image: "Connection/3G_connected_dim_3g_on.png" COMP;
+
+		image: "Connection/umts_connected.png" COMP;
+		image: "Connection/no_sim.png" COMP;
+		image: "Connection/no_sim_ctc.png" COMP;
+//		image: "Connection/no_signal.png" COMP;
+
+		image: "Connection/wifi_connected_00.png" COMP;
+		image: "Connection/wifi_connected_01.png" COMP;
+		image: "Connection/wifi_connected_02.png" COMP;
+		image: "Connection/wifi_connected_03.png" COMP;
+		image: "Connection/wifi_connected_04.png" COMP;
+
+		image: "Connection/no_inout_connected.png" COMP;
+		image: "Connection/in_connected.png" COMP;
+		image: "Connection/out_connected.png" COMP;
+		image: "Connection/inout_connected.png" COMP;
+
+//		image : "No_signal.png" COMP;
+	}
+
+	parts {
+		part {
+			name : "img.connection_type";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				visible : 1;
+				min: DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
+				max: DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
+				fixed: 1 1;
+				//visible: 0;
+				visible: 1;
+				//image.normal : "Connection/edge_connected.png";
+				image.normal : "Connection/no_sim.png";
+				color_class : "AO016";
+			}
+			description {
+				state : "hide" 0.0;
+				inherit: "default" 0.0;
+				visible : 0;
+			}
+			DESCRIPTION_CONNECTION("edge_connected");
+			DESCRIPTION_CONNECTION("gprs_connected");
+			DESCRIPTION_CONNECTION("1x_connected");
+//#ifdef NETWORK_TMB
+			DESCRIPTION_CONNECTION("2g_connected");
+//#endif
+			DESCRIPTION_CONNECTION("hsdpa_connected");
+			DESCRIPTION_CONNECTION("hspa_connected");
+			DESCRIPTION_CONNECTION("lte_connected");
+//#ifdef NETWORK_ATT
+			DESCRIPTION_ATT_4G_CONNECTION("data_connected_4g_att");
+//#endif
+			DESCRIPTION_CONNECTION("umts_connected");
+			DESCRIPTION_ORANGE_3G_PLUS_CONNECTION("3g_plus_connected");
+
+			DESCRIPTION_CONNECTION("wifi_connected_00");
+			DESCRIPTION_CONNECTION("wifi_connected_01");
+			DESCRIPTION_CONNECTION("wifi_connected_02");
+			DESCRIPTION_CONNECTION("wifi_connected_03");
+			DESCRIPTION_CONNECTION("wifi_connected_04");
+
+			DESCRIPTION_CONNECTION("1X_connected_dim");
+			DESCRIPTION_CONNECTION("3G_connected_dim");
+			DESCRIPTION_CONNECTION("1X_connected_dim_3g_on");
+			DESCRIPTION_CONNECTION("3G_connected_dim_3g_on");
+
+			DESCRIPTION_CONNECTION("no_sim");
+			DESCRIPTION_CONNECTION("no_sim_ctc");
+//			DESCRIPTION_CONNECTION("no_signal");
+		}
+		part {
+			name : "img.connection_packet";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				visible : 1;
+				min: DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
+				max: DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
+				fixed: 1 1;
+				visible: 0;
+				image.normal : "Connection/no_inout_connected.png";
+				color_class : "AO016";
+			}
+			description {
+				state : "hide" 0.0;
+				inherit: "default" 0.0;
+				visible : 0;
+			}
+			DESCRIPTION_CONNECTION("no_inout_connected");
+			DESCRIPTION_CONNECTION("in_connected");
+			DESCRIPTION_CONNECTION("out_connected");
+			DESCRIPTION_CONNECTION("inout_connected");
+
+//#if NETWORK_ATT
+			DESCRIPTION_ATT_4G_CONNECTION("data_in_att_1");
+			DESCRIPTION_ATT_4G_CONNECTION("data_in_att_2");
+			DESCRIPTION_ATT_4G_CONNECTION("data_in_att_3");
+			DESCRIPTION_ATT_4G_CONNECTION("data_out_att_1");
+			DESCRIPTION_ATT_4G_CONNECTION("data_out_att_2");
+			DESCRIPTION_ATT_4G_CONNECTION("data_out_att_3");
+//#endif
+		}
+	}
+
+	programs {
+		PROGRAM_CONNECTION_TYPE("edge_connected");
+		PROGRAM_CONNECTION_TYPE("gprs_connected");
+		PROGRAM_CONNECTION_TYPE("1x_connected");
+//#ifdef NETWORK_TMB
+		PROGRAM_CONNECTION_TYPE("2g_connected");
+//#endif
+		PROGRAM_CONNECTION_TYPE("hsdpa_connected");
+		PROGRAM_CONNECTION_TYPE("hspa_connected");
+		PROGRAM_CONNECTION_TYPE("lte_connected");
+		PROGRAM_CONNECTION_TYPE("lte_att_connected");
+		PROGRAM_CONNECTION_TYPE("umts_connected");
+		PROGRAM_CONNECTION_TYPE("3g_plus_connected");
+
+		PROGRAM_CONNECTION_TYPE("wifi_connected_00");
+		PROGRAM_CONNECTION_TYPE("wifi_connected_01");
+		PROGRAM_CONNECTION_TYPE("wifi_connected_02");
+		PROGRAM_CONNECTION_TYPE("wifi_connected_03");
+		PROGRAM_CONNECTION_TYPE("wifi_connected_04");
+
+		PROGRAM_CONNECTION_TYPE("1X_connected_dim");
+		PROGRAM_CONNECTION_TYPE("3G_connected_dim");
+		PROGRAM_CONNECTION_TYPE("1X_connected_dim_3g_on");
+		PROGRAM_CONNECTION_TYPE("3G_connected_dim_3g_on");
+
+		PROGRAM_CONNECTION_TYPE("flight_mode");
+		PROGRAM_CONNECTION_TYPE("no_sim");
+		PROGRAM_CONNECTION_TYPE("no_sim_ctc");
+//		PROGRAM_CONNECTION_TYPE("no_signal");
+
+		PROGRAM_CONNECTION_INOUT("no_inout_connected");
+		PROGRAM_CONNECTION_INOUT("in_connected");
+		PROGRAM_CONNECTION_INOUT("out_connected");
+		PROGRAM_CONNECTION_INOUT("inout_connected");
+//#ifdef NETWORK_ATT
+		PROGRAM_CONNECTION_TYPE("data_connected_4g_att");
+		PROGRAM_ATT_4G_IN_CONNECTION(1, 2);
+		PROGRAM_ATT_4G_IN_CONNECTION(2, 3);
+		PROGRAM_ATT_4G_IN_CONNECTION(3, 1);
+
+		PROGRAM_ATT_4G_OUT_CONNECTION(1, 2);
+		PROGRAM_ATT_4G_OUT_CONNECTION(2, 3);
+		PROGRAM_ATT_4G_OUT_CONNECTION(3, 1);
+
+		PROGRAM_ATT_4G_INOUT_IN_CONNECTION(1, 2);
+		PROGRAM_ATT_4G_INOUT_IN_CONNECTION(2, 3);
+		program {
+			name : "data_inout_in_att_3";
+			signal : "data_inout_in_att_3";
+			source : "img.connection_packet";
+			action : STATE_SET "state_data_in_att_3" 0.0;
+			target : "img.connection_packet";
+			after : "data_inout_out_att_1";
+			transition : LINEAR 1.0;
+		}
+		PROGRAM_ATT_4G_INOUT_OUT_CONNECTION(1, 2);
+		PROGRAM_ATT_4G_INOUT_OUT_CONNECTION(2, 3);
+		program {
+			name : "data_inout_out_att_3";
+			signal : "data_inout_out_att_3";
+			source : "img.connection_packet";
+			action : STATE_SET "state_data_out_att_3" 0.0;
+			target : "img.connection_packet";
+			after : "data_inout_in_att_1";
+			transition : LINEAR 1.0;
+		}
+//#endif
+		program {
+			name : "hide,connection_icon";
+			signal : "hide,connection_icon";
+			source : "img.connection_type";
+			action : STATE_SET "hide" 0.0;
+			target : "img.connection_type";
+			target : "img.connection_packet";
+		}
+		program {
+			name : "hide,packet_icon";
+			signal : "hide,packet_icon";
+			source : "img.connection_packet";
+			action : STATE_SET "hide" 0.0;
+			target : "img.connection_packet";
+		}
+	}
+}

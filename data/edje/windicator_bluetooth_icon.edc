@@ -1,0 +1,128 @@
+/*
+ * Copyright (c) 2015 Samsung Electronics Co., Ltd All Rights Reserved
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+
+group {
+	name : "windicator/dynamic/bluetooth_icon";
+
+	images {
+		image : "indicator/indi_bluetooth_connected.png" COMP;
+		image : "indicator/indi_bluetooth_off.png" COMP;
+		image : "indicator/indi_bluetooth_on.png" COMP;
+	}
+	parts {
+		part {
+			name : "img.bluetooth";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
+				max : DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
+				color_class : "AO016";
+				image.normal: "indicator/indi_bluetooth_on.png";
+			} description {
+				state : "connected" 0.0;
+				inherit : "default" 0.0;
+				image.normal: "indicator/indi_bluetooth_connected.png";
+			} description {
+				state : "hpf_connected" 0.0;
+				inherit : "default" 0.0;
+				image.normal : "indicator/indi_bluetooth_connected.png";
+			}
+		}
+	}
+
+	programs {
+		program {
+			name : "showConnectedBTicon";
+			signal : "showConnectedBTicon";
+			source : "img.bluetooth";
+			action : STATE_SET "connected" 0.0;
+			target : "img.bluetooth";
+		}
+		program {
+			name : "showUnconnectedBTicon";
+			signal : "showUnconnectedBTicon";
+			source : "img.bluetooth";
+			action : STATE_SET "default" 0.0;
+			target : "img.bluetooth";
+		}
+		program {
+			name : "showHPFConnectedBTicon";
+			signal : "showHPFConnectedBTicon";
+			source : "img.bluetooth";
+			action : STATE_SET "hpf_connected" 0.0;
+			target : "img.bluetooth";
+		}
+	}
+}
+
+group {
+	name : "windicator/dynamic/bluetooth_icon/moment_view";
+
+	images {
+		image : "indicator/indi_bluetooth_connected.png" COMP;
+		image : "indicator/indi_bluetooth_off.png" COMP;
+		image : "indicator/indi_bluetooth_on.png" COMP;
+	}
+	parts {
+		part {
+			name : "img.bluetooth";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : 34 38;
+				max : 34 38;
+				color_class : "AO016";
+				image.normal: "indicator/indi_bluetooth_on.png";
+			} description {
+				state : "connected" 0.0;
+				inherit : "default" 0.0;
+				image.normal: "indicator/indi_bluetooth_connected.png";
+			} description {
+				state : "hpf_connected" 0.0;
+				inherit : "default" 0.0;
+				image.normal : "indicator/indi_bluetooth_connected.png";
+			}
+		}
+	}
+
+	programs {
+		program {
+			name : "showConnectedBTicon";
+			signal : "showConnectedBTicon";
+			source : "img.bluetooth";
+			action : STATE_SET "connected" 0.0;
+			target : "img.bluetooth";
+		}
+		program {
+			name : "showUnconnectedBTicon";
+			signal : "showUnconnectedBTicon";
+			source : "img.bluetooth";
+			action : STATE_SET "default" 0.0;
+			target : "img.bluetooth";
+		}
+		program {
+			name : "showHPFConnectedBTicon";
+			signal : "showHPFConnectedBTicon";
+			source : "img.bluetooth";
+			action : STATE_SET "hpf_connected" 0.0;
+			target : "img.bluetooth";
+		}
+	}
+}

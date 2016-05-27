@@ -1,0 +1,728 @@
+/*
+ * Copyright (c) 2015 Samsung Electronics Co., Ltd All Rights Reserved
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+
+ #define DESCRIPTION_BATTERY_LEVEL_BG(name)\
+	description {\
+		state : "state_"name;\
+		inherit : "default" 0.0;\
+		visible: 1;\
+		image.normal : "Charging/Charging_21/battery_charging_"name".png";\
+	}\
+
+#define PROGRAM_BATTERY_LEVEL(num)\
+	program {\
+		name : "bg_level_"num;\
+		signal : "bg_level_"num;\
+		source : "image.bg";\
+		action : STATE_SET "state_"num 0.0;\
+		target : "image.bg";\
+	}\
+
+ #define DESCRIPTION_BATTERY_NUMBER(name)\
+	description {\
+		state : "state_"name;\
+		inherit : "default" 0.0;\
+		visible: 1;\
+		image.normal : "Charging/battery_charging_number_"name".png";\
+	}\
+
+#define PROGRAM_BATTERY_NUMBER1(num)\
+	program {\
+		name : "number1_"num;\
+		signal : "number1_"num;\
+		source : "image.number.1";\
+		action : STATE_SET "state_"num 0.0;\
+		target : "image.number.1";\
+	}\
+
+#define PROGRAM_BATTERY_NUMBER2(num)\
+	program {\
+		name : "number2_"num;\
+		signal : "number2_"num;\
+		source : "image.number.2";\
+		action : STATE_SET "state_"num 0.0;\
+		target : "image.number.2";\
+	}\
+
+group {
+	name : "windicator/moment_view/full";
+	images {
+		//image : "b_moment_bar_detail_bg.png" COMP;
+		//image : "b_moment_bar_detail_bg_cover.png" COMP;
+	}
+	parts {
+		part {
+			name : "bg";
+			type : RECT;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				fixed : 1 1;
+//				color_class : "AO015";
+				color : 0 0 0 0;
+			}
+		}
+		part {
+			name : "img.bg";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				fixed : 1 1;
+				//image.normal: "b_moment_bar_detail_bg.png";
+				color_class : "AO013";
+				rel1 { relative : 0.0 -0.73; to : "bg";}
+				rel2 { relative : 1.0 1.0-0.73; to : "bg";}
+			}
+		}
+		part {
+			name : "img.bg.cover";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				fixed : 1 1;
+				//image.normal: "b_moment_bar_detail_bg_cover.png";
+				color_class : "AO0131";
+				rel1 { relative : 0.0 -0.72; to : "bg"; }
+				rel2 { relative : 1.0 1.0-0.72; to : "bg"; }
+			}
+		}
+#if 0
+		part {
+			name : "bg";
+			type : RECT;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				fixed : 1 1;
+//				color_class : "AO015";
+				color : 0 0 0 0;
+			}
+		}
+		part {
+			name : "image.momentview.middle";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				fixed : 1 1;
+				align : 0.0 0.0;
+				visible : 1;
+//				image.normal: "view_over_middle.png";
+				color_class : "AO029L2";
+				rel1 { relative : 0.0 0.0; to : "bg"; }
+				rel2 { relative : 0.0 0.0; to : "bg"; }
+			}
+		}
+		part {
+			name : "image.momentview.top";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				fixed : 1 1;
+				align : 0.0 0.0;
+				visible : 1;
+//				image.normal: "view_over_top.png";
+				color_class : "AO029L1";
+				rel1 { relative : 0.0 0.0; to : "bg"; }
+				rel2 { relative : 0.0 0.0; to : "bg"; }
+			}
+		}
+#endif
+		part {
+			name : "sw.dynamic";
+			type : SWALLOW;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				align : 0.0 0.0;
+				fixed : 1 1;
+				rel1 { relative : 0.0 0.0; to : "bg";}
+				rel2 { relative : 0.0 0.0; to : "bg";}
+			}
+		}
+	}
+}
+
+#if 0
+group {
+	name : "windicator/moment_view/battery";
+	images {
+		image : "power_on_charging_icon.png" COMP;
+	}
+	parts {
+		part {
+			name : "bg";
+			type : RECT;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				fixed : 1 1;
+				color : 0 0 0 0;
+			}
+		}
+		part {
+			name : "image.momentview.battery";
+			type : SWALLOW;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				fixed : 1 1;
+				align : 0.0 0.0;
+				visible : 1;
+				rel1 { relative : 0.0 0.0; to : "bg"; }
+				rel2 { relative : 0.0 0.0; to : "bg"; }
+			}
+		}
+		part {
+			name : "image.momentview.charging";
+//			type : IMAGE;
+			type : SWALLOW;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : 22 33;
+				max : 22 33;
+				fixed : 1 1;
+				align : 0.5 0.0;
+				visible : 1;
+//				image.normal: "power_on_charging_icon.png";
+				rel1 { relative : 0.5 126/360; to : "bg"; }
+				rel2 { relative : 0.5 126/360; to : "bg"; }
+			}
+			description {
+				state : "hide" 0.0;
+				inherit : "default" 0.0;
+				visible : 0;
+			}
+		}
+		part {
+			name : "txt.momentview.battery";
+//			type : TEXTBLOCK;
+			type : SWALLOW;
+			scale : 1;
+			description{
+				state : "default" 0.0;
+				visible : 1;
+				min : 360 70;
+				max : 360 70;
+				fixed : 1 1;
+				rel1 { relative : 0.5 0.5; to : "bg"; offset: 0 12;}
+				rel2 { relative : 0.5 0.5; to : "bg"; offset: 0 12;}
+/*				text {
+					style : "style_battery";
+					min : 1 1;
+					align : 0.5 0.5;
+					text : "0%";
+				}*/
+			}
+		}
+	}
+}
+#endif
+group {
+	name : "windicator/moment_view/battery";
+	images {
+		image : "Charging/battery_charging_number_0.png" COMP;
+		image : "Charging/battery_charging_number_1.png" COMP;
+		image : "Charging/battery_charging_number_2.png" COMP;
+		image : "Charging/battery_charging_number_3.png" COMP;
+		image : "Charging/battery_charging_number_4.png" COMP;
+		image : "Charging/battery_charging_number_5.png" COMP;
+		image : "Charging/battery_charging_number_6.png" COMP;
+		image : "Charging/battery_charging_number_7.png" COMP;
+		image : "Charging/battery_charging_number_8.png" COMP;
+		image : "Charging/battery_charging_number_9.png" COMP;
+		image : "Charging/battery_charging_number_percent.png" COMP;
+		image : "Charging/battery_wireless_charging_icon.png" COMP;
+		image : "Charging/Charging_21/battery_charging_0.png" COMP;
+		image : "Charging/Charging_21/battery_charging_5.png" COMP;
+		image : "Charging/Charging_21/battery_charging_10.png" COMP;
+		image : "Charging/Charging_21/battery_charging_15.png" COMP;
+		image : "Charging/Charging_21/battery_charging_20.png" COMP;
+		image : "Charging/Charging_21/battery_charging_25.png" COMP;
+		image : "Charging/Charging_21/battery_charging_30.png" COMP;
+		image : "Charging/Charging_21/battery_charging_35.png" COMP;
+		image : "Charging/Charging_21/battery_charging_40.png" COMP;
+		image : "Charging/Charging_21/battery_charging_45.png" COMP;
+		image : "Charging/Charging_21/battery_charging_50.png" COMP;
+		image : "Charging/Charging_21/battery_charging_55.png" COMP;
+		image : "Charging/Charging_21/battery_charging_60.png" COMP;
+		image : "Charging/Charging_21/battery_charging_65.png" COMP;
+		image : "Charging/Charging_21/battery_charging_70.png" COMP;
+		image : "Charging/Charging_21/battery_charging_75.png" COMP;
+		image : "Charging/Charging_21/battery_charging_80.png" COMP;
+		image : "Charging/Charging_21/battery_charging_85.png" COMP;
+		image : "Charging/Charging_21/battery_charging_90.png" COMP;
+		image : "Charging/Charging_21/battery_charging_95.png" COMP;
+		image : "Charging/Charging_21/battery_charging_100.png" COMP;
+	}
+	parts {
+		part {
+			name : "bg";
+			type : RECT;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				fixed : 1 1;
+				color : 0 0 0 0;
+			}
+		}
+		part {
+			name : "image.bg";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				visible : 1;
+				image.normal: "Charging/Charging_21/battery_charging_0.png";
+				rel1 { relative : 0.0 0.0; to : "bg"; }
+				rel2 { relative : 1.0 1.0; to : "bg"; }
+			}
+			DESCRIPTION_BATTERY_LEVEL_BG(0);
+			DESCRIPTION_BATTERY_LEVEL_BG(5);
+			DESCRIPTION_BATTERY_LEVEL_BG(10);
+			DESCRIPTION_BATTERY_LEVEL_BG(15);
+			DESCRIPTION_BATTERY_LEVEL_BG(20);
+			DESCRIPTION_BATTERY_LEVEL_BG(25);
+			DESCRIPTION_BATTERY_LEVEL_BG(30);
+			DESCRIPTION_BATTERY_LEVEL_BG(35);
+			DESCRIPTION_BATTERY_LEVEL_BG(40);
+			DESCRIPTION_BATTERY_LEVEL_BG(45);
+			DESCRIPTION_BATTERY_LEVEL_BG(50);
+			DESCRIPTION_BATTERY_LEVEL_BG(55);
+			DESCRIPTION_BATTERY_LEVEL_BG(60);
+			DESCRIPTION_BATTERY_LEVEL_BG(65);
+			DESCRIPTION_BATTERY_LEVEL_BG(70);
+			DESCRIPTION_BATTERY_LEVEL_BG(75);
+			DESCRIPTION_BATTERY_LEVEL_BG(80);
+			DESCRIPTION_BATTERY_LEVEL_BG(85);
+			DESCRIPTION_BATTERY_LEVEL_BG(90);
+			DESCRIPTION_BATTERY_LEVEL_BG(95);
+			DESCRIPTION_BATTERY_LEVEL_BG(100);
+		}
+		part {
+			name : "image.bg.charging";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : 60 60;
+				max : 60 60;
+				fixed : 1 1;
+				visible : 1;
+				image.normal: "Charging/battery_wireless_charging_icon.png";
+//				rel1.relative : 0.5 (54)/360;
+//				rel2.relative : 0.5 (54)/360;
+				align : 0.5 0.0;
+				rel1 { relative : 0.5 0.0; to : "bg"; offset: 0 54; }
+				rel2 { relative : 0.5 0.0; to : "bg"; offset: 0 54; }
+			}
+			description {
+				state : "hide" 0.0;
+				inherit : "default" 0.0;
+				visible : 0;
+			}
+		}
+		part {
+			name : "image.number.swallow";
+			type : SWALLOW;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : 44 65;
+				max : 44 65;
+				fixed : 1 1;
+				visible : 1;
+				rel1.relative : 0.5 0.1;
+				rel2.relative : 0.5 0.5;
+			}
+			description {
+				state : "1number" 0.0;
+				inherit : "default" 0.0;
+				min : 44 65;
+				max : 44 65;
+				visible : 1;
+			}
+			description {
+				state : "2number" 0.0;
+				inherit : "default" 0.0;
+				min : 88 65;
+				max : 88 65;
+				visible : 1;
+			}
+			description {
+				state : "3number" 0.0;
+				inherit : "default" 0.0;
+				min : 88+44 65;
+				max : 88+44 65;
+				visible : 1;
+			}
+		}
+		part {
+			name : "test";
+			type : RECT;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				color : 255 0 0 125;
+				visible : 0;
+				rel1 { relative : 0.0 0.0; to : "image.number.swallow";}
+				rel2 { relative : 1.0 1.0; to : "image.number.swallow"; }
+			}
+		}
+
+		part {
+			name : "image.bg.percent";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : 38 65;
+				max : 38 65;
+				fixed : 1 1;
+				visible : 1;
+				image.normal: "Charging/battery_charging_number_percent.png";
+				align : 0.0 0.5;
+				rel1 { relative : 1.0 0.0; to : "image.number.swallow";}
+				rel2 { relative : 1.0 1.0; to : "image.number.swallow"; }
+			}
+		}
+	}
+	programs
+	{
+		PROGRAM_BATTERY_LEVEL(0);
+		PROGRAM_BATTERY_LEVEL(5);
+		PROGRAM_BATTERY_LEVEL(10);
+		PROGRAM_BATTERY_LEVEL(15);
+		PROGRAM_BATTERY_LEVEL(20);
+		PROGRAM_BATTERY_LEVEL(25);
+		PROGRAM_BATTERY_LEVEL(30);
+		PROGRAM_BATTERY_LEVEL(35);
+		PROGRAM_BATTERY_LEVEL(40);
+		PROGRAM_BATTERY_LEVEL(45);
+		PROGRAM_BATTERY_LEVEL(50);
+		PROGRAM_BATTERY_LEVEL(55);
+		PROGRAM_BATTERY_LEVEL(60);
+		PROGRAM_BATTERY_LEVEL(65);
+		PROGRAM_BATTERY_LEVEL(70);
+		PROGRAM_BATTERY_LEVEL(75);
+		PROGRAM_BATTERY_LEVEL(80);
+		PROGRAM_BATTERY_LEVEL(85);
+		PROGRAM_BATTERY_LEVEL(90);
+		PROGRAM_BATTERY_LEVEL(95);
+		PROGRAM_BATTERY_LEVEL(100);
+		program {
+			name : "number.set.1";
+			signal : "number.set.1";
+			source : "image.number.swallow";
+			action : STATE_SET "1number" 0.0;
+			target : "image.number.swallow";
+		}
+		program {
+			name : "number.set.2";
+			signal : "number.set.2";
+			source : "image.number.swallow";
+			action : STATE_SET "2number" 0.0;
+			target : "image.number.swallow";
+		}
+		program {
+			name : "number.set.3";
+			signal : "number.set.3";
+			source : "image.number.swallow";
+			action : STATE_SET "3number" 0.0;
+			target : "image.number.swallow";
+		}
+		program {
+			name : "image.bg.charging.show";
+			signal : "image.bg.charging.show";
+			source : "image.bg.charging";
+			action : STATE_SET "default" 0.0;
+			target : "image.bg.charging";
+		}
+		program {
+			name : "image.bg.charging.hide";
+			signal : "image.bg.charging.hide";
+			source : "image.bg.charging";
+			action : STATE_SET "hide" 0.0;
+			target : "image.bg.charging";
+		}
+
+	}
+}
+group {
+	name : "windicator/moment_view/battery/number";
+	images {
+		image : "Charging/battery_charging_number_0.png" COMP;
+		image : "Charging/battery_charging_number_1.png" COMP;
+		image : "Charging/battery_charging_number_2.png" COMP;
+		image : "Charging/battery_charging_number_3.png" COMP;
+		image : "Charging/battery_charging_number_4.png" COMP;
+		image : "Charging/battery_charging_number_5.png" COMP;
+		image : "Charging/battery_charging_number_6.png" COMP;
+		image : "Charging/battery_charging_number_7.png" COMP;
+		image : "Charging/battery_charging_number_8.png" COMP;
+		image : "Charging/battery_charging_number_9.png" COMP;
+		image : "Charging/battery_charging_number_percent.png" COMP;
+		image : "Charging/battery_wireless_charging_icon.png" COMP;
+	}
+	parts {
+		part {
+			name : "bg";
+			type : RECT;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : 44 65;
+				max : 44 65;
+				color : 0 0 0 0;
+			}
+			description {
+				state : "1number" 0.0;
+				inherit : "default" 0.0;
+				min : 44 65;
+				max : 44 65;
+				visible : 1;
+			}
+			description {
+				state : "2number" 0.0;
+				inherit : "default" 0.0;
+				min : 88 65;
+				max : 88 65;
+				visible : 1;
+			}
+			description {
+				state : "3number" 0.0;
+				inherit : "default" 0.0;
+				min : 88+44 65;
+				max : 88+44 65;
+				visible : 1;
+			}
+		}
+
+		part {
+			name : "image.number.1";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				visible : 1;
+				min : 44 65;
+				max : 44 65;
+				fixed : 1 1;
+				image.normal: "Charging/battery_charging_number_0.png";
+				align :1.0.0 0.5;
+				rel1 { relative : 0.0 0.0; to : "image.number.2"; }
+				rel2 { relative : 0.0 1.0; to : "image.number.2"; }
+			}
+			DESCRIPTION_BATTERY_NUMBER(0);
+			DESCRIPTION_BATTERY_NUMBER(1);
+			DESCRIPTION_BATTERY_NUMBER(2);
+			DESCRIPTION_BATTERY_NUMBER(3);
+			DESCRIPTION_BATTERY_NUMBER(4);
+			DESCRIPTION_BATTERY_NUMBER(5);
+			DESCRIPTION_BATTERY_NUMBER(6);
+			DESCRIPTION_BATTERY_NUMBER(7);
+			DESCRIPTION_BATTERY_NUMBER(8);
+			DESCRIPTION_BATTERY_NUMBER(9);
+			description {
+				state : "hide" 0.0;
+				inherit : "default" 0.0;
+				min : 0 65;
+				max : 0 65;
+				visible: 0;
+			}
+		}
+		part {
+			name : "image.number.2";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				visible : 1;
+				min : 44 65;
+				max : 44 65;
+				fixed : 1 1;
+				image.normal: "Charging/battery_charging_number_0.png";
+				align : 1.0 0.5;
+				rel1 { relative : 1.0 0.0; to : "bg"; }
+				rel2 { relative : 1.0 1.0; to : "bg"; }
+			}
+			DESCRIPTION_BATTERY_NUMBER(0);
+			DESCRIPTION_BATTERY_NUMBER(1);
+			DESCRIPTION_BATTERY_NUMBER(2);
+			DESCRIPTION_BATTERY_NUMBER(3);
+			DESCRIPTION_BATTERY_NUMBER(4);
+			DESCRIPTION_BATTERY_NUMBER(5);
+			DESCRIPTION_BATTERY_NUMBER(6);
+			DESCRIPTION_BATTERY_NUMBER(7);
+			DESCRIPTION_BATTERY_NUMBER(8);
+			DESCRIPTION_BATTERY_NUMBER(9);
+			description {
+				state : "hide" 0.0;
+				inherit : "default" 0.0;
+				min : 0 65;
+				max : 0 65;
+				visible: 0;
+			}
+		}
+		part {
+			name : "image.number.0";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				visible : 1;
+				min : 44 65;
+				max : 44 65;
+				fixed : 1 1;
+				image.normal: "Charging/battery_charging_number_1.png";
+				align : 1.0 0.5;
+				rel1 { relative : 0.0 0.0; to : "image.number.1"; }
+				rel2 { relative : 0.0 1.0; to : "image.number.1"; }
+			}
+			description {
+				state : "hide" 0.0;
+				inherit : "default" 0.0;
+				min : 0 0;
+				max : 0 0;
+				visible: 1;
+			}
+		}
+		part {
+			name : "test";
+			type : RECT;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				visible : 0;
+				color : 0 255 0 125;
+				rel1 { relative : 0.0 0.0; to : "image.number.0";}
+				rel2 { relative : 1.0 1.0; to : "image.number.0"; }
+			}
+		}
+		part {
+			name : "test2";
+			type : RECT;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				visible : 0;
+				color : 0 0 255 125;
+				rel1 { relative : 0.0 0.0; to : "bg";}
+				rel2 { relative : 1.0 1.0; to : "bg"; }
+			}
+		}
+	}
+	programs
+	{
+		program {
+			name : "number1_hide";
+			signal : "number1_hide";
+			source : "image.number.1";
+			action : STATE_SET "hide" 0.0;
+			target : "image.number.1";
+		}
+		PROGRAM_BATTERY_NUMBER1(0);
+		PROGRAM_BATTERY_NUMBER1(1);
+		PROGRAM_BATTERY_NUMBER1(2);
+		PROGRAM_BATTERY_NUMBER1(3);
+		PROGRAM_BATTERY_NUMBER1(4);
+		PROGRAM_BATTERY_NUMBER1(5);
+		PROGRAM_BATTERY_NUMBER1(6);
+		PROGRAM_BATTERY_NUMBER1(7);
+		PROGRAM_BATTERY_NUMBER1(8);
+		PROGRAM_BATTERY_NUMBER1(9);
+		program {
+			name : "number2_hide";
+			signal : "number2_hide";
+			source : "image.number.2";
+			action : STATE_SET "hide" 0.0;
+			target : "image.number.2";
+		}
+		PROGRAM_BATTERY_NUMBER2(0);
+		PROGRAM_BATTERY_NUMBER2(1);
+		PROGRAM_BATTERY_NUMBER2(2);
+		PROGRAM_BATTERY_NUMBER2(3);
+		PROGRAM_BATTERY_NUMBER2(4);
+		PROGRAM_BATTERY_NUMBER2(5);
+		PROGRAM_BATTERY_NUMBER2(6);
+		PROGRAM_BATTERY_NUMBER2(7);
+		PROGRAM_BATTERY_NUMBER2(8);
+		PROGRAM_BATTERY_NUMBER2(9);
+		program {
+			name : "number0_show";
+			signal : "number0_show";
+			source : "image.number.0";
+			action : STATE_SET "default" 0.0;
+			target : "image.number.0";
+		}
+		program {
+			name : "number0_hide";
+			signal : "number0_hide";
+			source : "image.number.0";
+			action : STATE_SET "hide" 0.0;
+			target : "image.number.0";
+		}
+		program {
+			name : "number.set.1";
+			signal : "number.set.1";
+			source : "bg";
+			action : STATE_SET "1number" 0.0;
+			target : "bg";
+		}
+		program {
+			name : "number.set.2";
+			signal : "number.set.2";
+			source : "bg";
+			action : STATE_SET "2number" 0.0;
+			target : "bg";
+		}
+		program {
+			name : "number.set.3";
+			signal : "number.set.3";
+			source : "bg";
+			action : STATE_SET "3number" 0.0;
+			target : "bg";
+		}
+
+
+	}
+}
+

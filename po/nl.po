@@ -1,0 +1,276 @@
+msgid "WDS_ST_TPOP_DISABLING_ALL_FUNCTIONS_EXCEPT_CALLS_MESSAGES_NOTIFICATIONS_ABB"
+msgstr "Alle functies uitschakelen, behalve oproepen/berichten/meldingen."
+
+msgid "WDS_ST_TPOP_ENABLING_POWER_SAVING_ING_ABB"
+msgstr "Spaarst. wordt ingeschakeld..."
+
+msgid "WDS_ST_TPOP_DISABLING_POWER_SAVING_ING_ABB"
+msgstr "Spaarstand uitschakelen..."
+
+msgid "IDS_HS_BODY_BATTERY"
+msgstr "Batterij"
+
+msgid "WDS_ST_TPOP_SILENCE_ALL_ALERTS_EXCEPT_ALARMS_ABB"
+msgstr "Alle waarschuwingen dempen behalve alarmen."
+
+msgid "WDS_ST_TPOP_KEEP_MAX_BRIGHTNESS_FOR_PD_MINS_ABB"
+msgstr "Behoud max. helderh. %d min."
+
+msgid "WDS_HS_MBODY_MUSIC_PLAYER_M_APPLICATION_ABB"
+msgstr "Muziekspeler"
+
+msgid "WDS_ST_HEADER_FLIGHT_MODE_ABB"
+msgstr "Vliegtuigstand"
+
+msgid "WDS_ST_MBODY_POWER_SAVING_ABB"
+msgstr "Spaarstand"
+
+msgid "WDS_ST_TPOP_FLIGHT_MODE_DISABLES_CALLS_MESSAGING_AND_ALL_CONNECTIONS_TO_USE_WI_FI_AND_BLUETOOTH_GO_TO_SETTINGS"
+msgstr "In Vliegtuigstand zijn oproepen, berichten en alle verbindingen uitgeschakeld. Ga naar Instellingen om Wi-Fi en Bluetooth te gebruiken."
+
+msgid "IDS_COM_BODY_UNTICK_T_TTS"
+msgstr "Deselecteren"
+
+msgid "IDS_COM_BODY_TICK_T_TTS"
+msgstr "Selecteren"
+
+msgid "IDS_COM_BODY_SEARCHING"
+msgstr "Zoeken"
+
+msgid "IDS_COM_BODY_PD_PERCENT_BATTERY_T_TTS"
+msgstr "Batterij %d procent"
+
+msgid "IDS_COM_BODY_ON_M_STATUS"
+msgstr "Aan"
+
+msgid "IDS_COM_BODY_OFF_M_STATUS"
+msgstr "Uit"
+
+msgid "IDS_COM_BODY_NO_SIM"
+msgstr "Geen SIM"
+
+msgid "IDS_COM_BODY_NO_SERVICE"
+msgstr "Geen netwerk"
+
+msgid "IDS_COM_BODY_INVALID_SIM_CARD"
+msgstr "Ongeldige SIM-kaart."
+
+msgid "IDS_COM_BODY_FLIGHT_MODE"
+msgstr "Vliegtuigstand"
+
+msgid "IDS_COM_BODY_EMERGENCY_CALLS_ONLY"
+msgstr "Alleen noodoproepen."
+
+msgid "IDS_CST_SBODY_DEACTIVATED_ATNT_M_STATUS"
+msgstr "Deactivated"
+
+msgid "IDS_CST_SBODY_ACTIVATED_ATNT_M_STATUS"
+msgstr "Activated"
+
+msgid "IDS_CST_BODY_CALL_FORWARDING"
+msgstr "Oproepen doorschakelen"
+
+msgid "IDS_IDLE_POP_AFTER_P1SD_MINS_BRIGHTNESS_WILL_BE_RESET_TO_DEFAULT_LEVEL_HP2SD"
+msgstr "Na %1$d min wordt de helderheid teruggezet op het standaardniveau (%2$d)."
+
+msgid "IDS_IDLE_HEADER_RINGTONE_VOLUME_ABB"
+msgstr "Beltoonvolume"
+
+msgid "IDS_IDLE_BODY_TW_MOBILE_CHN"
+msgstr "TW Mobile"
+
+msgid "IDS_IDLE_BODY_FAREASTONE_CHN"
+msgstr "FarEasTone"
+
+msgid "IDS_IDLE_BODY_CMCC_CHN"
+msgstr "CMCC"
+
+msgid "IDS_TTS_BODY_P1SD_OF_P2SD_BARS_SIGNAL_STRENGTH_TTS"
+msgstr "%1$d van %2$d streepjes signaalsterkte"
+
+msgid "IDS_ST_TMBODY_POWER_SAVING_MODE"
+msgstr "Spaarstand"
+
+msgid "IDS_ST_POP_USE_A_GREYSCALE_HOME_SCREEN"
+msgstr "Gebruik een startscherm in grijstinten."
+
+msgid "IDS_ST_POP_TURN_OFF_WLAN_CHN"
+msgstr "Schakel WLAN uit."
+
+msgid "IDS_ST_POP_SAVE_BATTERY_POWER_BY_APPLYING_THE_FOLLOWING_SETTINGS_ON_YOUR_GEAR_C"
+msgstr "Bespaar batterijvoeding door de volgende instellingen op uw Gear toe te passen:"
+
+msgid "IDS_ST_POP_POWER_SAVING_MODE_WILL_BE_DISABLED"
+msgstr "Spaarstand wordt uitgeschakeld."
+
+msgid "IDS_ST_OPT_AUTO_M_MODE_ABB"
+msgstr "Auto"
+
+msgid "IDS_ST_MBODY_REMOTELY_CONNECTED_ABB"
+msgstr "Op afstand verbonden"
+
+msgid "IDS_ST_MBODY_NOT_CONNECTED_ABB"
+msgstr "Niet verbonden"
+
+msgid "IDS_ST_MBODY_GEAR_ONLY_ABB"
+msgstr "Alleen Gear"
+
+msgid "IDS_ST_MBODY_DO_NOT_DISTURB_ABB2"
+msgstr "Niet storen"
+
+msgid "IDS_ST_MBODY_DO_NOT_DISTURB_ABB"
+msgstr "Niet storen"
+
+msgid "IDS_ST_MBODY_CONNECTED_VIA_BT_ABB"
+msgstr "Verbonden via BT"
+
+msgid "IDS_ST_BUTTON_BRIGHTNESS"
+msgstr "Helderheid"
+
+msgid "IDS_ST_BUTTON2_POWER_SAVING"
+msgstr "Spaarstand"
+
+msgid "IDS_ST_BODY_TURN_OFF_WI_FI"
+msgstr "Schakel Wi-Fi uit."
+
+msgid "IDS_ST_BODY_SCREEN_ON"
+msgstr "Scherm aan"
+
+msgid "IDS_ST_BODY_ROAMING"
+msgstr "Roaming"
+
+msgid "IDS_ST_BODY_OUTDOOR_MODE_ABB"
+msgstr "Buitenstand"
+
+msgid "IDS_ST_BODY_NO_SIGNAL"
+msgstr "Geen signaal"
+
+msgid "IDS_ST_BODY_LIMIT_THE_MAXIMUM_PERFORMANCE_OF_THE_CPU"
+msgstr "De maximale snelheid van de CPU beperken."
+
+msgid "IDS_ST_BODY_DISPLAYANDLIGHT_BRIGHTNESS_LEVEL"
+msgstr "Helderheidsniveau"
+
+msgid "IDS_ST_BODY_DISABLED_M_STATUS"
+msgstr "Uitgeschakeld"
+
+msgid "IDS_SIM_BODY_T_STAR_M_CHINA_OPERATOR_CHN"
+msgstr "T Star"
+
+msgid "IDS_SIM_BODY_KGT_M_CHINA_OPERATOR_CHN"
+msgstr "KGT"
+
+msgid "IDS_SIM_BODY_CHUNGHWA_M_CHINA_OPERATOR_CHN"
+msgstr "Chunghwa"
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_READER_ENABLED_T_TTS"
+msgstr "Schermlezer ingeschakeld."
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_READER_DISABLED_T_TTS"
+msgstr "Schermlezer uitgeschakeld."
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_OFF_T_TTS"
+msgstr "Scherm uit."
+
+msgid "IDS_WMGR_SBODY_REQUESTED_TO_ENABLE_M_STATUS_ABB"
+msgstr "Inschakelverzoek"
+
+msgid "IDS_WMGR_SBODY_REQUESTED_TO_DISABLE_M_STATUS_ABB"
+msgstr "Uitschakelverzoek"
+
+msgid "IDS_WMGR_SBODY_CONNECTED_REMOTELY_M_STATUS_ABB"
+msgstr "Op afstand verbonden"
+
+msgid "IDS_WMGR_NPBODY_REQUESTED_TO_ENABLE"
+msgstr "Inschakelen aangevraagd"
+
+msgid "IDS_WMGR_NPBODY_REQUESTED_TO_DISABLE"
+msgstr "Uitschakelen aangevr."
+
+msgid "IDS_WMGR_BODY_TAP_FWD_CALLS_TO_GEAR_TO_VIEW_THE_SETTINGS_FOR_THIS_FUNCTION_OR_TO_ENABLE_IT_ABB"
+msgstr "Tik op Doorsch naar Gear om instellingen te tonen of de functie in te schakelen."
+
+msgid "IDS_WNOTI_SBODY_REQUESTED_TO_TURN_ON_ABB_VZW_M_STATUS"
+msgstr "Requested to turn on"
+
+msgid "IDS_WNOTI_SBODY_REQUESTED_TO_TURN_OFF_ABB_VZW_M_STATUS"
+msgstr "Requested to turn off"
+
+msgid "IDS_WNOTI_POP_REQUESTED_TO_TURN_ON_FWD_CALLS_TO_GEAR_VZW"
+msgstr "Requested to turn on Fwd calls to Gear."
+
+msgid "IDS_WNOTI_POP_REQUESTED_TO_TURN_OFF_FWD_CALLS_TO_GEAR_VZW"
+msgstr "Requested to turn off Fwd calls to Gear."
+
+msgid "IDS_WNOTI_MBODY_MOBILE_TO_GEAR_ABB"
+msgstr "Mobiel naar Gear"
+
+msgid "IDS_WNOTI_MBODY_GEAR_TO_MOBILE_ABB"
+msgstr "Gear naar mobiel"
+
+msgid "IDS_WNOTI_MBODY_AUTO_CALL_FORWARDING_ABB"
+msgstr "Autom. doorschakelen"
+
+msgid "IDS_WNOTI_BODY_SWIPE_UPWARDS_TO_GO_BACK_TO_CLOCK_ABB"
+msgstr "Veeg omhoog om terug te gaan naar klok."
+
+msgid "IDS_MUSIC_BODY_MUSIC_PLAYER"
+msgstr "MP3-speler"
+
+msgid "IDS_HS_MBODY_CONTROLS_M_APPLICATION_NAME_ABB3"
+msgstr "Controls"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_ENABLE_TTS"
+msgstr "Tik twee keer om in te schakelen."
+
+msgid "WDS_ST_BODY_BT_CONNECTED_ABB"
+msgstr "BT verbonden"
+
+msgid "WDS_ST_BODY_OFF_ABB"
+msgstr "Uit"
+
+msgid "WDS_ST_BODY_ON_ABB"
+msgstr "Aan"
+
+msgid "WDS_ST_BODY_REMOTELY_CONNECTED_ABB"
+msgstr "Op afst. verbonden"
+
+msgid "WDS_ST_BODY_STANDALONE_ABB"
+msgstr "Standalone"
+
+msgid "WDS_ST_TPOP_TURN_OFF_VIBRATION_FOR_ALL_ALERTS_EXCEPT_ALARMS_ABB"
+msgstr "Schakel trilstand uit voor alle waarschuwingen behalve alarmen."
+
+msgid "WDS_QP_TMBODY_CONNECTED_VIA_BLUETOOTH_ABB"
+msgstr "Verbonden via Bluetooth"
+
+msgid "WDS_QP_TMBODY_CONNECTED_REMOTELY_ABB"
+msgstr "Op afstand verbonden"
+
+msgid "IDS_ST_POP_FLIGHT_MODE_DISABLES_CALLING_AND_MESSAGING_FUNCTIONS_AND_TURNS_OFF_MOBILE_DATA_AND_CONNECTIVITY_FUNCTIONS_SUCH_AS_WLAN_AND_BLUETOOTH_MSG_CHN"
+msgstr "De Vliegtuigstand schakelt oproep- en berichtfuncties, mobiele gegevens en verbindingsfuncties als WLAN en Bluetooth uit. Als u WLAN en Bluetooth wilt gebruiken, schakelt u ze in via Instellingen."
+
+msgid "WDS_TTS_TBBODY_SCREEN_ON"
+msgstr "Scherm aan."
+
+msgid "WDS_ST_TPOP_SOUNDS_WILL_BE_MUTED_AND_SCREEN_WILL_REMAIN_TURNED_OFF_FOR_INCOMING_CALLS_AND_ALERTS_BUT_NOT_ALARMS"
+msgstr "Geluiden worden gedempt en scherm blijft uitgeschakeld voor inkomende oproepen en waarschuwingen, maar niet voor alarmen."
+
+msgid "WDS_ST_TPOP_VIBRATION_WILL_BE_TURNED_OFF_AND_SCREEN_WILL_REMAIN_TURNED_OFF_FOR_INCOMING_CALLS_AND_ALERTS_BUT_NOT_ALARMS"
+msgstr "Trillen wordt uitgeschakeld en scherm blijft uitgeschakeld voor inkomende oproepen en waarschuwingen, maar niet voor alarmen."
+
+msgid "WDS_ST_BODY_VIBRATION_WILL_BE_TURNED_OFF_AND_SCREEN_WILL_REMAIN_TURNED_OFF"
+msgstr "Trilstand wordt uitgezet en het scherm blijft uitgeschakeld."
+
+msgid "WDS_ST_BODY_SOUNDS_WILL_BE_MUTED_AND_SCREEN_WILL_REMAIN_TURNED_OFF"
+msgstr "Geluiden worden gedempt en het scherm blijft uitgeschakeld."
+
+msgid "WDS_WMGR_SBODY_CALL_FORWARDING_REQUESTED_ABB_VZW"
+msgstr "Call forwarding requested"
+
+msgid "WDS_ST_POP_AIRPLANE_MODE_TURNS_OFF_CALLS_MESSAGING_AND_ALL_CONNECTIONS_TO_USE_WI_FI_OR_BLUETOOTH_GO_TO_SETTINGS_VZW"
+msgstr "Airplane mode turns off calls, messaging and all connections. To use Wi-Fi or Bluetooth, go to Settings."
+
+msgid "IDS_ST_SBODY_CHINA_TELECOM_M_SERVICE_PROVIDER_CHN_CTC"
+msgstr "China Telecom"
+

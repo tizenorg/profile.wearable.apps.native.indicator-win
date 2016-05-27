@@ -1,0 +1,48 @@
+org.tizen.windicator tizen::vconf::location rl
+org.tizen.windicator tizen::vconf::location::enable rl
+org.tizen.windicator tizen::vconf::public::r::platform::rw rwxl
+org.tizen.windicator tizen::vconf::telephony::admin rwl
+org.tizen.windicator app.default.include
+org.tizen.windicator sound_server rw
+org.tizen.windicator ail::db rw
+org.tizen.windicator sound_server rw
+org.tizen.windicator svi-data rwaxt
+org.tizen.windicator xorg rw
+org.tizen.windicator system::use_internet r
+org.tizen.windicator isf rwx
+org.tizen.windicator immvibed rw
+org.tizen.windicator tts-server rx
+org.tizen.windicator device::bklight rw
+org.tizen.windicator deviced::display rw
+org.tizen.windicator deviced::haptic rw
+org.tizen.windicator dbus wx
+org.tizen.windicator sdbd rwxat
+org.tizen.windicator aul::launch rwxat
+org.tizen.windicator com.samsung.clock rx
+org.tizen.windicator org.tizen.w-home rwx
+org.tizen.windicator org.tizen.w-music-player rwxat
+org.tizen.windicator msg-service::read rw
+org.tizen.windicator msg-service::write rw
+org.tizen.windicator msg-service::db r
+org.tizen.windicator msg-service rwx
+org.tizen.windicator aul::terminate x
+org.tizen.windicator pkgmgr::db rwx
+org.tizen.windicator pkgmgr::info r
+org.tizen.windicator tizen::vconf::network r
+org.tizen.windicator org.tizen.svoice r
+org.tizen.windicator org.tizen.clocksetting r
+org.tizen.windicator e17::notification rw
+org.tizen.windicator tmp::access rwx
+org.tizen.windicator tizen::vconf::platform::rw rw
+org.tizen.windicator tizen::vconf::public::r rw
+
+org.tizen.windicator tizen::vconf::setting::admin rwlx
+
+#object rule.
+dbus org.tizen.windicator rwx
+e17 org.tizen.windicator rwxat
+org.tizen.w-home org.tizen.windicator rwx
+
+#default include
+org.tizen.windicator app.default include
+

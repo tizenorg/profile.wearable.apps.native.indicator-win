@@ -1,0 +1,276 @@
+msgid "WDS_ST_TPOP_DISABLING_ALL_FUNCTIONS_EXCEPT_CALLS_MESSAGES_NOTIFICATIONS_ABB"
+msgstr "إلغاء تفعيل كل الوظائف باستثناء المكالمات/الرسائل/الإشعارات."
+
+msgid "WDS_ST_TPOP_ENABLING_POWER_SAVING_ING_ABB"
+msgstr "جارٍ تفعيل توفير الطاقة..."
+
+msgid "WDS_ST_TPOP_DISABLING_POWER_SAVING_ING_ABB"
+msgstr "جارٍ إلغاء تفعيل توفير الطاقة..."
+
+msgid "IDS_HS_BODY_BATTERY"
+msgstr "البطارية"
+
+msgid "WDS_ST_TPOP_SILENCE_ALL_ALERTS_EXCEPT_ALARMS_ABB"
+msgstr "قم بكتم كل التنبيهات باستثناء المنبهات."
+
+msgid "WDS_ST_TPOP_KEEP_MAX_BRIGHTNESS_FOR_PD_MINS_ABB"
+msgstr "حافظ على الحد الأقصى لدرجة السطوع لمدة %d من الدقائق."
+
+msgid "WDS_HS_MBODY_MUSIC_PLAYER_M_APPLICATION_ABB"
+msgstr "مشغل الموسيقى"
+
+msgid "WDS_ST_HEADER_FLIGHT_MODE_ABB"
+msgstr "وضع الطيران"
+
+msgid "WDS_ST_MBODY_POWER_SAVING_ABB"
+msgstr "توفير الطاقة"
+
+msgid "WDS_ST_TPOP_FLIGHT_MODE_DISABLES_CALLS_MESSAGING_AND_ALL_CONNECTIONS_TO_USE_WI_FI_AND_BLUETOOTH_GO_TO_SETTINGS"
+msgstr "يقوم وضع الطيران بإلغاء تفعيل المكالمات والمراسلة والاتصالات كافة. لاستخدام شبكة Wi-Fi والبلوتوث، انتقل إلى الضبط."
+
+msgid "IDS_COM_BODY_UNTICK_T_TTS"
+msgstr "إلغاء التحديد"
+
+msgid "IDS_COM_BODY_TICK_T_TTS"
+msgstr "تحديد"
+
+msgid "IDS_COM_BODY_SEARCHING"
+msgstr "البحث"
+
+msgid "IDS_COM_BODY_PD_PERCENT_BATTERY_T_TTS"
+msgstr "شحن البطارية %d"
+
+msgid "IDS_COM_BODY_ON_M_STATUS"
+msgstr "مفعل"
+
+msgid "IDS_COM_BODY_OFF_M_STATUS"
+msgstr "غير مفعل"
+
+msgid "IDS_COM_BODY_NO_SIM"
+msgstr "لا توجد SIM"
+
+msgid "IDS_COM_BODY_NO_SERVICE"
+msgstr "لا توجد خدمة"
+
+msgid "IDS_COM_BODY_INVALID_SIM_CARD"
+msgstr "بطاقة غير صالحة."
+
+msgid "IDS_COM_BODY_FLIGHT_MODE"
+msgstr "وضع الطيران"
+
+msgid "IDS_COM_BODY_EMERGENCY_CALLS_ONLY"
+msgstr "مكالمات طوارئ فقط."
+
+msgid "IDS_CST_SBODY_DEACTIVATED_ATNT_M_STATUS"
+msgstr "Deactivated"
+
+msgid "IDS_CST_SBODY_ACTIVATED_ATNT_M_STATUS"
+msgstr "Activated"
+
+msgid "IDS_CST_BODY_CALL_FORWARDING"
+msgstr "تحويل المكالمات"
+
+msgid "IDS_IDLE_POP_AFTER_P1SD_MINS_BRIGHTNESS_WILL_BE_RESET_TO_DEFAULT_LEVEL_HP2SD"
+msgstr "بعد مرور %1$d دقائق، ستتم إعادة ضبط السطوع إلى المستوى الافتراضي (%2$d)."
+
+msgid "IDS_IDLE_HEADER_RINGTONE_VOLUME_ABB"
+msgstr "صوت نغمة الرنين"
+
+msgid "IDS_IDLE_BODY_TW_MOBILE_CHN"
+msgstr "TW Mobile"
+
+msgid "IDS_IDLE_BODY_FAREASTONE_CHN"
+msgstr "FarEasTone"
+
+msgid "IDS_IDLE_BODY_CMCC_CHN"
+msgstr "CMCC"
+
+msgid "IDS_TTS_BODY_P1SD_OF_P2SD_BARS_SIGNAL_STRENGTH_TTS"
+msgstr "قوة الإشارة %1$d من أصل %2$d أشرطة"
+
+msgid "IDS_ST_TMBODY_POWER_SAVING_MODE"
+msgstr "وضع توفير الطاقة"
+
+msgid "IDS_ST_POP_USE_A_GREYSCALE_HOME_SCREEN"
+msgstr "استخدم شاشة رئيسية رمادية."
+
+msgid "IDS_ST_POP_TURN_OFF_WLAN_CHN"
+msgstr "قم بإيقاف تشغيل شبكة WLAN."
+
+msgid "IDS_ST_POP_SAVE_BATTERY_POWER_BY_APPLYING_THE_FOLLOWING_SETTINGS_ON_YOUR_GEAR_C"
+msgstr "توفير طاقة البطارية عبر تطبيق الضبط التالي على ساعة Gear:"
+
+msgid "IDS_ST_POP_POWER_SAVING_MODE_WILL_BE_DISABLED"
+msgstr "سيتم إلغاء تفعيل وضع توفير الطاقة."
+
+msgid "IDS_ST_OPT_AUTO_M_MODE_ABB"
+msgstr "تلقائي"
+
+msgid "IDS_ST_MBODY_REMOTELY_CONNECTED_ABB"
+msgstr "تم الاتصال عن بعد"
+
+msgid "IDS_ST_MBODY_NOT_CONNECTED_ABB"
+msgstr "لم يتم الاتصال"
+
+msgid "IDS_ST_MBODY_GEAR_ONLY_ABB"
+msgstr "ساعة Gear فقط"
+
+msgid "IDS_ST_MBODY_DO_NOT_DISTURB_ABB2"
+msgstr "عدم الإزعاج"
+
+msgid "IDS_ST_MBODY_DO_NOT_DISTURB_ABB"
+msgstr "عدم الإزعاج"
+
+msgid "IDS_ST_MBODY_CONNECTED_VIA_BT_ABB"
+msgstr "تم الاتصال عبر البلوتوث"
+
+msgid "IDS_ST_BUTTON_BRIGHTNESS"
+msgstr "السطوع"
+
+msgid "IDS_ST_BUTTON2_POWER_SAVING"
+msgstr "توفير الطاقة"
+
+msgid "IDS_ST_BODY_TURN_OFF_WI_FI"
+msgstr "قم بإيقاف تشغيل شبكة Wi-Fi."
+
+msgid "IDS_ST_BODY_SCREEN_ON"
+msgstr "تشغيل الشاشة"
+
+msgid "IDS_ST_BODY_ROAMING"
+msgstr "التجوال"
+
+msgid "IDS_ST_BODY_OUTDOOR_MODE_ABB"
+msgstr "وضع الخارج"
+
+msgid "IDS_ST_BODY_NO_SIGNAL"
+msgstr "لا توجد إشارة"
+
+msgid "IDS_ST_BODY_LIMIT_THE_MAXIMUM_PERFORMANCE_OF_THE_CPU"
+msgstr "خفض الحد الأقصى لأداء وحدة المعالجة المركزية."
+
+msgid "IDS_ST_BODY_DISPLAYANDLIGHT_BRIGHTNESS_LEVEL"
+msgstr "مستوى السطوع"
+
+msgid "IDS_ST_BODY_DISABLED_M_STATUS"
+msgstr "غير مفعل"
+
+msgid "IDS_SIM_BODY_T_STAR_M_CHINA_OPERATOR_CHN"
+msgstr "T Star"
+
+msgid "IDS_SIM_BODY_KGT_M_CHINA_OPERATOR_CHN"
+msgstr "KGT"
+
+msgid "IDS_SIM_BODY_CHUNGHWA_M_CHINA_OPERATOR_CHN"
+msgstr "Chunghwa"
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_READER_ENABLED_T_TTS"
+msgstr "تمّ تفعيل قارئ الشاشة."
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_READER_DISABLED_T_TTS"
+msgstr "تمّ إلغاء تفعيل قارئ الشاشة."
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_OFF_T_TTS"
+msgstr "تم إيقاف تشغيل الشاشة."
+
+msgid "IDS_WMGR_SBODY_REQUESTED_TO_ENABLE_M_STATUS_ABB"
+msgstr "تم طلب التفعيل"
+
+msgid "IDS_WMGR_SBODY_REQUESTED_TO_DISABLE_M_STATUS_ABB"
+msgstr "تم طلب إلغاء التفعيل"
+
+msgid "IDS_WMGR_SBODY_CONNECTED_REMOTELY_M_STATUS_ABB"
+msgstr "تم الاتصال عن بعد"
+
+msgid "IDS_WMGR_NPBODY_REQUESTED_TO_ENABLE"
+msgstr "تم طلب التفعيل"
+
+msgid "IDS_WMGR_NPBODY_REQUESTED_TO_DISABLE"
+msgstr "تم طلب إلغاء التفعيل"
+
+msgid "IDS_WMGR_BODY_TAP_FWD_CALLS_TO_GEAR_TO_VIEW_THE_SETTINGS_FOR_THIS_FUNCTION_OR_TO_ENABLE_IT_ABB"
+msgstr "انقر فوق إعادة توجيه المكالمات إلى ساعة Gear لعرض الضبط لهذه الوظيفة أو تفعيلها."
+
+msgid "IDS_WNOTI_SBODY_REQUESTED_TO_TURN_ON_ABB_VZW_M_STATUS"
+msgstr "Requested to turn on"
+
+msgid "IDS_WNOTI_SBODY_REQUESTED_TO_TURN_OFF_ABB_VZW_M_STATUS"
+msgstr "Requested to turn off"
+
+msgid "IDS_WNOTI_POP_REQUESTED_TO_TURN_ON_FWD_CALLS_TO_GEAR_VZW"
+msgstr "Requested to turn on Fwd calls to Gear."
+
+msgid "IDS_WNOTI_POP_REQUESTED_TO_TURN_OFF_FWD_CALLS_TO_GEAR_VZW"
+msgstr "Requested to turn off Fwd calls to Gear."
+
+msgid "IDS_WNOTI_MBODY_MOBILE_TO_GEAR_ABB"
+msgstr "من الهاتف إلى Gear"
+
+msgid "IDS_WNOTI_MBODY_GEAR_TO_MOBILE_ABB"
+msgstr "من Gear إلى الهاتف"
+
+msgid "IDS_WNOTI_MBODY_AUTO_CALL_FORWARDING_ABB"
+msgstr "إعادة توجيه المكالمات تلقائياً"
+
+msgid "IDS_WNOTI_BODY_SWIPE_UPWARDS_TO_GO_BACK_TO_CLOCK_ABB"
+msgstr "اسحب للأعلى للعودة إلى الساعة."
+
+msgid "IDS_MUSIC_BODY_MUSIC_PLAYER"
+msgstr "مشغل الموسيقى"
+
+msgid "IDS_HS_MBODY_CONTROLS_M_APPLICATION_NAME_ABB3"
+msgstr "أدوات التحكم"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_ENABLE_TTS"
+msgstr "انقر نقراً مزدوجاً للتفعيل."
+
+msgid "WDS_ST_BODY_BT_CONNECTED_ABB"
+msgstr "تم الاتصال عبر البلوتوث"
+
+msgid "WDS_ST_BODY_OFF_ABB"
+msgstr "إيقاف التشغيل"
+
+msgid "WDS_ST_BODY_ON_ABB"
+msgstr "تشغيل"
+
+msgid "WDS_ST_BODY_REMOTELY_CONNECTED_ABB"
+msgstr "تم الاتصال عن بعد"
+
+msgid "WDS_ST_BODY_STANDALONE_ABB"
+msgstr "مستقل"
+
+msgid "WDS_ST_TPOP_TURN_OFF_VIBRATION_FOR_ALL_ALERTS_EXCEPT_ALARMS_ABB"
+msgstr "أوقف تشغيل الاهتزاز لكل التنبيهات باستثناء المنبهات."
+
+msgid "WDS_QP_TMBODY_CONNECTED_VIA_BLUETOOTH_ABB"
+msgstr "تم الاتصال عبر البلوتوث"
+
+msgid "WDS_QP_TMBODY_CONNECTED_REMOTELY_ABB"
+msgstr "تم الاتصال عن بعد"
+
+msgid "IDS_ST_POP_FLIGHT_MODE_DISABLES_CALLING_AND_MESSAGING_FUNCTIONS_AND_TURNS_OFF_MOBILE_DATA_AND_CONNECTIVITY_FUNCTIONS_SUCH_AS_WLAN_AND_BLUETOOTH_MSG_CHN"
+msgstr "يقوم وضع الطيران بإلغاء تفعيل وظائف الاتصال والمراسلة، وبإيقاف تشغيل بيانات الهاتف المحمول ووظائف الاتصال، مثل شبكة WLAN والبلوتوث. لاستخدام شبكة WLAN والبلوتوث، شغّلهما في الضبط."
+
+msgid "WDS_TTS_TBBODY_SCREEN_ON"
+msgstr "إن الشاشة قيد التشغيل."
+
+msgid "WDS_ST_TPOP_SOUNDS_WILL_BE_MUTED_AND_SCREEN_WILL_REMAIN_TURNED_OFF_FOR_INCOMING_CALLS_AND_ALERTS_BUT_NOT_ALARMS"
+msgstr "سيتم كتم الأصوات وستبقى الشاشة متوقفة عن التشغيل للمكالمات الواردة والتحذيرات ولكن ليس للتنبيهات."
+
+msgid "WDS_ST_TPOP_VIBRATION_WILL_BE_TURNED_OFF_AND_SCREEN_WILL_REMAIN_TURNED_OFF_FOR_INCOMING_CALLS_AND_ALERTS_BUT_NOT_ALARMS"
+msgstr "سيتم إيقاف تشغيل الاهتزاز وستبقى الشاشة متوقفة عن التشغيل للمكالمات الواردة والتحذيرات ولكن ليس للتنبيهات."
+
+msgid "WDS_ST_BODY_VIBRATION_WILL_BE_TURNED_OFF_AND_SCREEN_WILL_REMAIN_TURNED_OFF"
+msgstr "سيتم إيقاف تشغيل الاهتزاز وستبقى الشاشة متوقفة عن التشغيل."
+
+msgid "WDS_ST_BODY_SOUNDS_WILL_BE_MUTED_AND_SCREEN_WILL_REMAIN_TURNED_OFF"
+msgstr "سيتم كتم الأصوات وستبقى الشاشة متوقفة عن التشغيل."
+
+msgid "WDS_WMGR_SBODY_CALL_FORWARDING_REQUESTED_ABB_VZW"
+msgstr "Call forwarding requested"
+
+msgid "WDS_ST_POP_AIRPLANE_MODE_TURNS_OFF_CALLS_MESSAGING_AND_ALL_CONNECTIONS_TO_USE_WI_FI_OR_BLUETOOTH_GO_TO_SETTINGS_VZW"
+msgstr "Airplane mode turns off calls, messaging and all connections. To use Wi-Fi or Bluetooth, go to Settings."
+
+msgid "IDS_ST_SBODY_CHINA_TELECOM_M_SERVICE_PROVIDER_CHN_CTC"
+msgstr "China Telecom"
+

@@ -1,0 +1,276 @@
+msgid "WDS_ST_TPOP_DISABLING_ALL_FUNCTIONS_EXCEPT_CALLS_MESSAGES_NOTIFICATIONS_ABB"
+msgstr "ການ​ປິດ​ໃຊ້​ງານ​ຟັງ​ຊັນຍົກ​ເວັ້ນການ​ໂທ/ຂໍ້ຄວາມ/ການ​ແຈ້ງ​ເຕືອນ​ທັງໝົດ."
+
+msgid "WDS_ST_TPOP_ENABLING_POWER_SAVING_ING_ABB"
+msgstr "ກຳລັງ​ເປີດໃຊ້ງານປະຢັດໄຟ..."
+
+msgid "WDS_ST_TPOP_DISABLING_POWER_SAVING_ING_ABB"
+msgstr "ກຳລັງ​ປິດ​ໃຊ້​ງານການ​ປະ​ຢັດ​​ໄຟ..."
+
+msgid "IDS_HS_BODY_BATTERY"
+msgstr "ແບັດເຕີຣີ"
+
+msgid "WDS_ST_TPOP_SILENCE_ALL_ALERTS_EXCEPT_ALARMS_ABB"
+msgstr "ປິດສຽງການເຕືອນທັງໝົດ ຍົກເວັ້ນ ໂມງປຸກ."
+
+msgid "WDS_ST_TPOP_KEEP_MAX_BRIGHTNESS_FOR_PD_MINS_ABB"
+msgstr "ຮັກສາຄວາມສະຫວ່າງສູງສຸດເປັນເວລາ %d ນທ."
+
+msgid "WDS_HS_MBODY_MUSIC_PLAYER_M_APPLICATION_ABB"
+msgstr "ເຄື່ອງຫຼິ້ນເພງ"
+
+msgid "WDS_ST_HEADER_FLIGHT_MODE_ABB"
+msgstr "ໂໝດການບິນ"
+
+msgid "WDS_ST_MBODY_POWER_SAVING_ABB"
+msgstr "ການປະຢັດໄຟ"
+
+msgid "WDS_ST_TPOP_FLIGHT_MODE_DISABLES_CALLS_MESSAGING_AND_ALL_CONNECTIONS_TO_USE_WI_FI_AND_BLUETOOTH_GO_TO_SETTINGS"
+msgstr "ໂໝດການບິນປິດໃຊ້ງານການໂທ, ຂໍ້ຄວາມແລະການເຊື່ອມຕໍ່ທັງໝົດ. ເພື່ອນຳໃຊ້ Wi-Fi ແລະບລູ ທູດ, ໄປທີ່ ການຕັ້ງຄ່າ."
+
+msgid "IDS_COM_BODY_UNTICK_T_TTS"
+msgstr "Untick"
+
+msgid "IDS_COM_BODY_TICK_T_TTS"
+msgstr "ໝາຍຕິກ"
+
+msgid "IDS_COM_BODY_SEARCHING"
+msgstr "ການຄົ້ນຫາ"
+
+msgid "IDS_COM_BODY_PD_PERCENT_BATTERY_T_TTS"
+msgstr "ແບັດເຕີຣີ %d ເປີເຊັນ"
+
+msgid "IDS_COM_BODY_ON_M_STATUS"
+msgstr "ເປີດ"
+
+msgid "IDS_COM_BODY_OFF_M_STATUS"
+msgstr "ປິດ"
+
+msgid "IDS_COM_BODY_NO_SIM"
+msgstr "ບໍ່ມີ SIM"
+
+msgid "IDS_COM_BODY_NO_SERVICE"
+msgstr "ບໍ່ມີການບໍລິການ"
+
+msgid "IDS_COM_BODY_INVALID_SIM_CARD"
+msgstr "ແຜ່ນ SIM ບໍ່ຖືກຕ້ອງ."
+
+msgid "IDS_COM_BODY_FLIGHT_MODE"
+msgstr "ໂໝດການບິນ"
+
+msgid "IDS_COM_BODY_EMERGENCY_CALLS_ONLY"
+msgstr "​ໂທສຸກ​ເສີນ​ເທົ່າ​ນັ້ນ."
+
+msgid "IDS_CST_SBODY_DEACTIVATED_ATNT_M_STATUS"
+msgstr "Deactivated"
+
+msgid "IDS_CST_SBODY_ACTIVATED_ATNT_M_STATUS"
+msgstr "Activated"
+
+msgid "IDS_CST_BODY_CALL_FORWARDING"
+msgstr "ການໂອນສາຍໂທ"
+
+msgid "IDS_IDLE_POP_AFTER_P1SD_MINS_BRIGHTNESS_WILL_BE_RESET_TO_DEFAULT_LEVEL_HP2SD"
+msgstr "ຫຼັງຈາກ %1$d ນາທີ, ຄວາມແຈ້ງຈະຖືກຕັ້ງຄ່າກັບໄປຫາລະດັບມາດຕະຖານ (%2$d)."
+
+msgid "IDS_IDLE_HEADER_RINGTONE_VOLUME_ABB"
+msgstr "ລະດັບສຽງເອີ້ນເຂົ້າ"
+
+msgid "IDS_IDLE_BODY_TW_MOBILE_CHN"
+msgstr "TW ມືຖື"
+
+msgid "IDS_IDLE_BODY_FAREASTONE_CHN"
+msgstr "FarEasTone"
+
+msgid "IDS_IDLE_BODY_CMCC_CHN"
+msgstr "CMCC"
+
+msgid "IDS_TTS_BODY_P1SD_OF_P2SD_BARS_SIGNAL_STRENGTH_TTS"
+msgstr "ຄວາມແຮງສັນຍານ %1$d ໃນ %2$d ຂີດ"
+
+msgid "IDS_ST_TMBODY_POWER_SAVING_MODE"
+msgstr "ໂໝດປະຢັດໄຟ"
+
+msgid "IDS_ST_POP_USE_A_GREYSCALE_HOME_SCREEN"
+msgstr "ໃຊ້ໜ້າຈໍຫຼັກສີເທົາ."
+
+msgid "IDS_ST_POP_TURN_OFF_WLAN_CHN"
+msgstr "Turn off WLAN."
+
+msgid "IDS_ST_POP_SAVE_BATTERY_POWER_BY_APPLYING_THE_FOLLOWING_SETTINGS_ON_YOUR_GEAR_C"
+msgstr "ປະຢັດໄຟແບັດເຕີຣີ ໂດຍການໃຊ້ການຕັ້ງຄ່າຕໍ່ໄປນີ້ຢູ່ໃນເກຍຂອງທ່ານ:"
+
+msgid "IDS_ST_POP_POWER_SAVING_MODE_WILL_BE_DISABLED"
+msgstr "ໂໝດປະຢັດໄຟຈະປິດໃຊ້ງານ."
+
+msgid "IDS_ST_OPT_AUTO_M_MODE_ABB"
+msgstr "ອັດຕະໂນມັດ"
+
+msgid "IDS_ST_MBODY_REMOTELY_CONNECTED_ABB"
+msgstr "ເຊື່ອມຕໍ່ທາງໄກແລ້ວ"
+
+msgid "IDS_ST_MBODY_NOT_CONNECTED_ABB"
+msgstr "ບໍ່ໄດ້ເຊື່ອມຕໍ່"
+
+msgid "IDS_ST_MBODY_GEAR_ONLY_ABB"
+msgstr "ເກຍເທົ່ານັ້ນ"
+
+msgid "IDS_ST_MBODY_DO_NOT_DISTURB_ABB2"
+msgstr "ຢ່າລົບກວນ"
+
+msgid "IDS_ST_MBODY_DO_NOT_DISTURB_ABB"
+msgstr "ຫ້າມລົບກວນ"
+
+msgid "IDS_ST_MBODY_CONNECTED_VIA_BT_ABB"
+msgstr "ເຊື່ອມຕໍ່ຜ່ານບລູທູດແລ້ວ"
+
+msgid "IDS_ST_BUTTON_BRIGHTNESS"
+msgstr "ຄວາມແຈ້ງສະຫວ່າງ"
+
+msgid "IDS_ST_BUTTON2_POWER_SAVING"
+msgstr "ປະຢັດໄຟ"
+
+msgid "IDS_ST_BODY_TURN_OFF_WI_FI"
+msgstr "ປິດ Wi-Fi."
+
+msgid "IDS_ST_BODY_SCREEN_ON"
+msgstr "ໜ້າຈໍເປີດ"
+
+msgid "IDS_ST_BODY_ROAMING"
+msgstr "ໂຣມມິງ"
+
+msgid "IDS_ST_BODY_OUTDOOR_MODE_ABB"
+msgstr "ໂໝດຢູ່ຂ້າງນອກ"
+
+msgid "IDS_ST_BODY_NO_SIGNAL"
+msgstr "ບໍ່ມີສັນຍານ"
+
+msgid "IDS_ST_BODY_LIMIT_THE_MAXIMUM_PERFORMANCE_OF_THE_CPU"
+msgstr "ຈໍາກັດການປະຕິບັດງານສູງສຸດຂອງ CPU."
+
+msgid "IDS_ST_BODY_DISPLAYANDLIGHT_BRIGHTNESS_LEVEL"
+msgstr "ລະດັບຄວາມສະຫວ່າງ"
+
+msgid "IDS_ST_BODY_DISABLED_M_STATUS"
+msgstr "ໄດ້ປິດໃຊ້ງານ"
+
+msgid "IDS_SIM_BODY_T_STAR_M_CHINA_OPERATOR_CHN"
+msgstr "T Star"
+
+msgid "IDS_SIM_BODY_KGT_M_CHINA_OPERATOR_CHN"
+msgstr "KGT"
+
+msgid "IDS_SIM_BODY_CHUNGHWA_M_CHINA_OPERATOR_CHN"
+msgstr "ຈູງວາ"
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_READER_ENABLED_T_TTS"
+msgstr "ເຄື່ອງອ່ານໜ້າຈໍເປີດໃຊ້ງານ."
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_READER_DISABLED_T_TTS"
+msgstr "ເຄື່ອງອ່ານໜ້າຈໍປິດໃຊ້ງານ."
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_OFF_T_TTS"
+msgstr "ໜ້າຈໍປິດ."
+
+msgid "IDS_WMGR_SBODY_REQUESTED_TO_ENABLE_M_STATUS_ABB"
+msgstr "ຂໍເປີດໃຊ້ງານແລ້ວ"
+
+msgid "IDS_WMGR_SBODY_REQUESTED_TO_DISABLE_M_STATUS_ABB"
+msgstr "ຂໍປິດໃຊ້ງານແລ້ວ"
+
+msgid "IDS_WMGR_SBODY_CONNECTED_REMOTELY_M_STATUS_ABB"
+msgstr "ເຊື່ອມຕໍ່ທາງໄກແລ້ວ"
+
+msgid "IDS_WMGR_NPBODY_REQUESTED_TO_ENABLE"
+msgstr "ຂໍເປີດໃຊ້ງານແລ້ວ"
+
+msgid "IDS_WMGR_NPBODY_REQUESTED_TO_DISABLE"
+msgstr "ຂໍປິດໃຊ້ງານແລ້ວ"
+
+msgid "IDS_WMGR_BODY_TAP_FWD_CALLS_TO_GEAR_TO_VIEW_THE_SETTINGS_FOR_THIS_FUNCTION_OR_TO_ENABLE_IT_ABB"
+msgstr "ແຕະໂອນສາຍໄປຫາເກຍ ເພື່ອເບິ່ງການຕັ້ງຄ່າສໍາລັບຟັງຄ໌ຊັນນີ້ ຫຼືເພື່ອເປີດໃຊ້ງານມັນ."
+
+msgid "IDS_WNOTI_SBODY_REQUESTED_TO_TURN_ON_ABB_VZW_M_STATUS"
+msgstr "Requested to turn on"
+
+msgid "IDS_WNOTI_SBODY_REQUESTED_TO_TURN_OFF_ABB_VZW_M_STATUS"
+msgstr "Requested to turn off"
+
+msgid "IDS_WNOTI_POP_REQUESTED_TO_TURN_ON_FWD_CALLS_TO_GEAR_VZW"
+msgstr "Requested to turn on Fwd calls to Gear."
+
+msgid "IDS_WNOTI_POP_REQUESTED_TO_TURN_OFF_FWD_CALLS_TO_GEAR_VZW"
+msgstr "Requested to turn off Fwd calls to Gear."
+
+msgid "IDS_WNOTI_MBODY_MOBILE_TO_GEAR_ABB"
+msgstr "ມືຖືຫາເກຍ"
+
+msgid "IDS_WNOTI_MBODY_GEAR_TO_MOBILE_ABB"
+msgstr "ເກຍຫາມືຖື"
+
+msgid "IDS_WNOTI_MBODY_AUTO_CALL_FORWARDING_ABB"
+msgstr "ໂອນສາຍໂທອັດຕະໂນມັດ"
+
+msgid "IDS_WNOTI_BODY_SWIPE_UPWARDS_TO_GO_BACK_TO_CLOCK_ABB"
+msgstr "ຮູດຂຶ້ນເທິງ ເພື່ອກັບໄປຫາໂມງ."
+
+msgid "IDS_MUSIC_BODY_MUSIC_PLAYER"
+msgstr "ເຄື່ອງຫຼິ້ນເພງ"
+
+msgid "IDS_HS_MBODY_CONTROLS_M_APPLICATION_NAME_ABB3"
+msgstr "ການຄວບຄຸມ"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_ENABLE_TTS"
+msgstr "ແຕະສອງເທື່ອຊ້ອນ ເພື່ອເປີດໃຊ້ງານ."
+
+msgid "WDS_ST_BODY_BT_CONNECTED_ABB"
+msgstr "BT ເຊື່ອມຕໍ່ແລ້ວ"
+
+msgid "WDS_ST_BODY_OFF_ABB"
+msgstr "ປິດ"
+
+msgid "WDS_ST_BODY_ON_ABB"
+msgstr "ເປີດ"
+
+msgid "WDS_ST_BODY_REMOTELY_CONNECTED_ABB"
+msgstr "ເຊື່ອມຕໍ່ໄລຍະໄກແລ້ວ"
+
+msgid "WDS_ST_BODY_STANDALONE_ABB"
+msgstr "ສະແຕນອະໂລນ"
+
+msgid "WDS_ST_TPOP_TURN_OFF_VIBRATION_FOR_ALL_ALERTS_EXCEPT_ALARMS_ABB"
+msgstr "ປິດການສັ່ນສຳລັບການເຕືອນທັງໝົດຍົກເວັ້ນໂມງປຸກ."
+
+msgid "WDS_QP_TMBODY_CONNECTED_VIA_BLUETOOTH_ABB"
+msgstr "ເຊື່ອມຕໍ່ຜ່ານບລູທູດແລ້ວ"
+
+msgid "WDS_QP_TMBODY_CONNECTED_REMOTELY_ABB"
+msgstr "ເຊື່ອມຕໍ່ໄລຍະໄກແລ້ວ"
+
+msgid "IDS_ST_POP_FLIGHT_MODE_DISABLES_CALLING_AND_MESSAGING_FUNCTIONS_AND_TURNS_OFF_MOBILE_DATA_AND_CONNECTIVITY_FUNCTIONS_SUCH_AS_WLAN_AND_BLUETOOTH_MSG_CHN"
+msgstr "Flight mode disables calling and messaging functions, and turns off Mobile data and connectivity functions, such as WLAN and Bluetooth. To use WLAN and Bluetooth, turn them on in Settings."
+
+msgid "WDS_TTS_TBBODY_SCREEN_ON"
+msgstr "ໜ້າຈໍເປີດ."
+
+msgid "WDS_ST_TPOP_SOUNDS_WILL_BE_MUTED_AND_SCREEN_WILL_REMAIN_TURNED_OFF_FOR_INCOMING_CALLS_AND_ALERTS_BUT_NOT_ALARMS"
+msgstr "ສຽງຈະຖືກປິດສຽງແລະໜ້າຈໍຈະຍັງຄົງປິດຢູ່ສຳລັບສາຍໂທເຂົ້າແລະການເຕືອນ, ແຕ່ບໍ່ແມ່ນໂມງປຸກ."
+
+msgid "WDS_ST_TPOP_VIBRATION_WILL_BE_TURNED_OFF_AND_SCREEN_WILL_REMAIN_TURNED_OFF_FOR_INCOMING_CALLS_AND_ALERTS_BUT_NOT_ALARMS"
+msgstr "ການສັ່ນຈະຖືກປິດແລະໜ້າຈໍຈະຍັງຄົງປິດຢູ່ສຳລັບສາຍໂທເຂົ້າແລະການເຕືອນ, ແຕ່ບໍ່ແມ່ນໂມງປຸກ."
+
+msgid "WDS_ST_BODY_VIBRATION_WILL_BE_TURNED_OFF_AND_SCREEN_WILL_REMAIN_TURNED_OFF"
+msgstr "ການສັ່ນຈະຖືກປິດແລະໜ້າຈໍຈະຍັງຄົງປິດຢູ່."
+
+msgid "WDS_ST_BODY_SOUNDS_WILL_BE_MUTED_AND_SCREEN_WILL_REMAIN_TURNED_OFF"
+msgstr "ສຽງຈະຖືກປິດສຽງແລະໜ້າຈໍຈະຍັງຄົງປິດຢູ່."
+
+msgid "WDS_WMGR_SBODY_CALL_FORWARDING_REQUESTED_ABB_VZW"
+msgstr "Call forwarding requested"
+
+msgid "WDS_ST_POP_AIRPLANE_MODE_TURNS_OFF_CALLS_MESSAGING_AND_ALL_CONNECTIONS_TO_USE_WI_FI_OR_BLUETOOTH_GO_TO_SETTINGS_VZW"
+msgstr "Airplane mode turns off calls, messaging and all connections. To use Wi-Fi or Bluetooth, go to Settings."
+
+msgid "IDS_ST_SBODY_CHINA_TELECOM_M_SERVICE_PROVIDER_CHN_CTC"
+msgstr "China Telecom"
+

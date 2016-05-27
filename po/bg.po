@@ -1,0 +1,276 @@
+msgid "WDS_ST_TPOP_DISABLING_ALL_FUNCTIONS_EXCEPT_CALLS_MESSAGES_NOTIFICATIONS_ABB"
+msgstr "Деактивиране на всички функции без повикване/съобщения/уведомления."
+
+msgid "WDS_ST_TPOP_ENABLING_POWER_SAVING_ING_ABB"
+msgstr "Вкл. на Пестене на енергия..."
+
+msgid "WDS_ST_TPOP_DISABLING_POWER_SAVING_ING_ABB"
+msgstr "Изкл. Пестене на енергия..."
+
+msgid "IDS_HS_BODY_BATTERY"
+msgstr "Батерия"
+
+msgid "WDS_ST_TPOP_SILENCE_ALL_ALERTS_EXCEPT_ALARMS_ABB"
+msgstr "Заглушете всички известия без алармите."
+
+msgid "WDS_ST_TPOP_KEEP_MAX_BRIGHTNESS_FOR_PD_MINS_ABB"
+msgstr "Дръжте яркостта макс. за %d мин."
+
+msgid "WDS_HS_MBODY_MUSIC_PLAYER_M_APPLICATION_ABB"
+msgstr "Муз. плейър"
+
+msgid "WDS_ST_HEADER_FLIGHT_MODE_ABB"
+msgstr "Режим полет"
+
+msgid "WDS_ST_MBODY_POWER_SAVING_ABB"
+msgstr "Пест. енергия"
+
+msgid "WDS_ST_TPOP_FLIGHT_MODE_DISABLES_CALLS_MESSAGING_AND_ALL_CONNECTIONS_TO_USE_WI_FI_AND_BLUETOOTH_GO_TO_SETTINGS"
+msgstr "Режим Полет деактивира повикванията, съобщенията и всички връзки. За да използвате Wi-Fi и Bluetooth, отидете в „Настройки“."
+
+msgid "IDS_COM_BODY_UNTICK_T_TTS"
+msgstr "Махни отметката"
+
+msgid "IDS_COM_BODY_TICK_T_TTS"
+msgstr "Сложи отметка"
+
+msgid "IDS_COM_BODY_SEARCHING"
+msgstr "Търсене"
+
+msgid "IDS_COM_BODY_PD_PERCENT_BATTERY_T_TTS"
+msgstr "%d процента батерия"
+
+msgid "IDS_COM_BODY_ON_M_STATUS"
+msgstr "Включено"
+
+msgid "IDS_COM_BODY_OFF_M_STATUS"
+msgstr "Изключено"
+
+msgid "IDS_COM_BODY_NO_SIM"
+msgstr "Няма SIM"
+
+msgid "IDS_COM_BODY_NO_SERVICE"
+msgstr "Няма услуга"
+
+msgid "IDS_COM_BODY_INVALID_SIM_CARD"
+msgstr "Невалидна SIM карта."
+
+msgid "IDS_COM_BODY_FLIGHT_MODE"
+msgstr "Режим полет"
+
+msgid "IDS_COM_BODY_EMERGENCY_CALLS_ONLY"
+msgstr "Само спешни повиквания."
+
+msgid "IDS_CST_SBODY_DEACTIVATED_ATNT_M_STATUS"
+msgstr "Deactivated"
+
+msgid "IDS_CST_SBODY_ACTIVATED_ATNT_M_STATUS"
+msgstr "Activated"
+
+msgid "IDS_CST_BODY_CALL_FORWARDING"
+msgstr "Препращане на повикване"
+
+msgid "IDS_IDLE_POP_AFTER_P1SD_MINS_BRIGHTNESS_WILL_BE_RESET_TO_DEFAULT_LEVEL_HP2SD"
+msgstr "След %1$d минути яркостта ще се нулира до нивото по подразбиране (%2$d)."
+
+msgid "IDS_IDLE_HEADER_RINGTONE_VOLUME_ABB"
+msgstr "Сила тон на звънене"
+
+msgid "IDS_IDLE_BODY_TW_MOBILE_CHN"
+msgstr "TW Mobile"
+
+msgid "IDS_IDLE_BODY_FAREASTONE_CHN"
+msgstr "FarEasTone"
+
+msgid "IDS_IDLE_BODY_CMCC_CHN"
+msgstr "CMCC"
+
+msgid "IDS_TTS_BODY_P1SD_OF_P2SD_BARS_SIGNAL_STRENGTH_TTS"
+msgstr "%1$d от %2$d чертички сила на сигнала"
+
+msgid "IDS_ST_TMBODY_POWER_SAVING_MODE"
+msgstr "Режим на пестене енергия"
+
+msgid "IDS_ST_POP_USE_A_GREYSCALE_HOME_SCREEN"
+msgstr "Използвайте начален екран в сива скала."
+
+msgid "IDS_ST_POP_TURN_OFF_WLAN_CHN"
+msgstr "Turn off WLAN."
+
+msgid "IDS_ST_POP_SAVE_BATTERY_POWER_BY_APPLYING_THE_FOLLOWING_SETTINGS_ON_YOUR_GEAR_C"
+msgstr "Пестете заряда на батерията, като приложите следните настройки на вашия Gear:"
+
+msgid "IDS_ST_POP_POWER_SAVING_MODE_WILL_BE_DISABLED"
+msgstr "Режим на пестене на енергия ще бъде деактивиран."
+
+msgid "IDS_ST_OPT_AUTO_M_MODE_ABB"
+msgstr "Авто"
+
+msgid "IDS_ST_MBODY_REMOTELY_CONNECTED_ABB"
+msgstr "Свързано отдалечено"
+
+msgid "IDS_ST_MBODY_NOT_CONNECTED_ABB"
+msgstr "Не е свързано"
+
+msgid "IDS_ST_MBODY_GEAR_ONLY_ABB"
+msgstr "Само на Gear"
+
+msgid "IDS_ST_MBODY_DO_NOT_DISTURB_ABB2"
+msgstr "Не безпокойте"
+
+msgid "IDS_ST_MBODY_DO_NOT_DISTURB_ABB"
+msgstr "Не безпокойте"
+
+msgid "IDS_ST_MBODY_CONNECTED_VIA_BT_ABB"
+msgstr "Свързано чрез BT"
+
+msgid "IDS_ST_BUTTON_BRIGHTNESS"
+msgstr "Яркост"
+
+msgid "IDS_ST_BUTTON2_POWER_SAVING"
+msgstr "Пестене на енергия"
+
+msgid "IDS_ST_BODY_TURN_OFF_WI_FI"
+msgstr "Изключете Wi-Fi."
+
+msgid "IDS_ST_BODY_SCREEN_ON"
+msgstr "Екранът е включен"
+
+msgid "IDS_ST_BODY_ROAMING"
+msgstr "Роуминг"
+
+msgid "IDS_ST_BODY_OUTDOOR_MODE_ABB"
+msgstr "Режим открито"
+
+msgid "IDS_ST_BODY_NO_SIGNAL"
+msgstr "Няма сигнал"
+
+msgid "IDS_ST_BODY_LIMIT_THE_MAXIMUM_PERFORMANCE_OF_THE_CPU"
+msgstr "Ограничаване на максималната производителност на процесора"
+
+msgid "IDS_ST_BODY_DISPLAYANDLIGHT_BRIGHTNESS_LEVEL"
+msgstr "Ниво на яркостта"
+
+msgid "IDS_ST_BODY_DISABLED_M_STATUS"
+msgstr "Деактивирано"
+
+msgid "IDS_SIM_BODY_T_STAR_M_CHINA_OPERATOR_CHN"
+msgstr "T Star"
+
+msgid "IDS_SIM_BODY_KGT_M_CHINA_OPERATOR_CHN"
+msgstr "KGT"
+
+msgid "IDS_SIM_BODY_CHUNGHWA_M_CHINA_OPERATOR_CHN"
+msgstr "Chunghwa"
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_READER_ENABLED_T_TTS"
+msgstr "Екранният четец е активиран."
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_READER_DISABLED_T_TTS"
+msgstr "Екранният четец е деактивиран."
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_OFF_T_TTS"
+msgstr "Екранът е изключен."
+
+msgid "IDS_WMGR_SBODY_REQUESTED_TO_ENABLE_M_STATUS_ABB"
+msgstr "Искане за активация"
+
+msgid "IDS_WMGR_SBODY_REQUESTED_TO_DISABLE_M_STATUS_ABB"
+msgstr "Искане за деактивация"
+
+msgid "IDS_WMGR_SBODY_CONNECTED_REMOTELY_M_STATUS_ABB"
+msgstr "Свързано отдалечено"
+
+msgid "IDS_WMGR_NPBODY_REQUESTED_TO_ENABLE"
+msgstr "Искане за активиране"
+
+msgid "IDS_WMGR_NPBODY_REQUESTED_TO_DISABLE"
+msgstr "Искане за деактивиране"
+
+msgid "IDS_WMGR_BODY_TAP_FWD_CALLS_TO_GEAR_TO_VIEW_THE_SETTINGS_FOR_THIS_FUNCTION_OR_TO_ENABLE_IT_ABB"
+msgstr "Докоснете „Препращане на повиквания към Gear“ за настр. или актив. на функцията."
+
+msgid "IDS_WNOTI_SBODY_REQUESTED_TO_TURN_ON_ABB_VZW_M_STATUS"
+msgstr "Requested to turn on"
+
+msgid "IDS_WNOTI_SBODY_REQUESTED_TO_TURN_OFF_ABB_VZW_M_STATUS"
+msgstr "Requested to turn off"
+
+msgid "IDS_WNOTI_POP_REQUESTED_TO_TURN_ON_FWD_CALLS_TO_GEAR_VZW"
+msgstr "Requested to turn on Fwd calls to Gear."
+
+msgid "IDS_WNOTI_POP_REQUESTED_TO_TURN_OFF_FWD_CALLS_TO_GEAR_VZW"
+msgstr "Requested to turn off Fwd calls to Gear."
+
+msgid "IDS_WNOTI_MBODY_MOBILE_TO_GEAR_ABB"
+msgstr "Моб. уст. към Gear"
+
+msgid "IDS_WNOTI_MBODY_GEAR_TO_MOBILE_ABB"
+msgstr "Gear към моб. уст."
+
+msgid "IDS_WNOTI_MBODY_AUTO_CALL_FORWARDING_ABB"
+msgstr "Авто препр. повикв."
+
+msgid "IDS_WNOTI_BODY_SWIPE_UPWARDS_TO_GO_BACK_TO_CLOCK_ABB"
+msgstr "Плъз. нагоре за обратно към часовника."
+
+msgid "IDS_MUSIC_BODY_MUSIC_PLAYER"
+msgstr "Музикален плейър"
+
+msgid "IDS_HS_MBODY_CONTROLS_M_APPLICATION_NAME_ABB3"
+msgstr "Управления"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_ENABLE_TTS"
+msgstr "Докоснете двукратно, за да активирате."
+
+msgid "WDS_ST_BODY_BT_CONNECTED_ABB"
+msgstr "BT е свързан"
+
+msgid "WDS_ST_BODY_OFF_ABB"
+msgstr "Изк"
+
+msgid "WDS_ST_BODY_ON_ABB"
+msgstr "Вкл"
+
+msgid "WDS_ST_BODY_REMOTELY_CONNECTED_ABB"
+msgstr "Свърз. отдалечено"
+
+msgid "WDS_ST_BODY_STANDALONE_ABB"
+msgstr "Самостоятелно"
+
+msgid "WDS_ST_TPOP_TURN_OFF_VIBRATION_FOR_ALL_ALERTS_EXCEPT_ALARMS_ABB"
+msgstr "Изключете вибрацията за всички известия без алармите."
+
+msgid "WDS_QP_TMBODY_CONNECTED_VIA_BLUETOOTH_ABB"
+msgstr "Свързано чрез Bluetooth"
+
+msgid "WDS_QP_TMBODY_CONNECTED_REMOTELY_ABB"
+msgstr "Свързано отдалечено"
+
+msgid "IDS_ST_POP_FLIGHT_MODE_DISABLES_CALLING_AND_MESSAGING_FUNCTIONS_AND_TURNS_OFF_MOBILE_DATA_AND_CONNECTIVITY_FUNCTIONS_SUCH_AS_WLAN_AND_BLUETOOTH_MSG_CHN"
+msgstr "Flight mode disables calling and messaging functions, and turns off Mobile data and connectivity functions, such as WLAN and Bluetooth. To use WLAN and Bluetooth, turn them on in Settings."
+
+msgid "WDS_TTS_TBBODY_SCREEN_ON"
+msgstr "Екранът е включен."
+
+msgid "WDS_ST_TPOP_SOUNDS_WILL_BE_MUTED_AND_SCREEN_WILL_REMAIN_TURNED_OFF_FOR_INCOMING_CALLS_AND_ALERTS_BUT_NOT_ALARMS"
+msgstr "Звуците ще бъдат изключени и екранът ще остане изключен за входящи повиквания и известия, но не и за аларми."
+
+msgid "WDS_ST_TPOP_VIBRATION_WILL_BE_TURNED_OFF_AND_SCREEN_WILL_REMAIN_TURNED_OFF_FOR_INCOMING_CALLS_AND_ALERTS_BUT_NOT_ALARMS"
+msgstr "Вибрацията ще се изключи и екранът ще остане изключен за входящи повиквания и известия, но не и за аларми."
+
+msgid "WDS_ST_BODY_VIBRATION_WILL_BE_TURNED_OFF_AND_SCREEN_WILL_REMAIN_TURNED_OFF"
+msgstr "Вибрацията ще бъде изключена и екранът ще остане изключен."
+
+msgid "WDS_ST_BODY_SOUNDS_WILL_BE_MUTED_AND_SCREEN_WILL_REMAIN_TURNED_OFF"
+msgstr "Звуците ще бъдат изключени и екранът ще остане изключен."
+
+msgid "WDS_WMGR_SBODY_CALL_FORWARDING_REQUESTED_ABB_VZW"
+msgstr "Call forwarding requested"
+
+msgid "WDS_ST_POP_AIRPLANE_MODE_TURNS_OFF_CALLS_MESSAGING_AND_ALL_CONNECTIONS_TO_USE_WI_FI_OR_BLUETOOTH_GO_TO_SETTINGS_VZW"
+msgstr "Airplane mode turns off calls, messaging and all connections. To use Wi-Fi or Bluetooth, go to Settings."
+
+msgid "IDS_ST_SBODY_CHINA_TELECOM_M_SERVICE_PROVIDER_CHN_CTC"
+msgstr "China Telecom"
+

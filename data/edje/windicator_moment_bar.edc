@@ -1,0 +1,531 @@
+/*
+ * Copyright (c) 2015 Samsung Electronics Co., Ltd All Rights Reserved
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+#define ROTARY_FOCUS_SET_BT(index)\
+	program { \
+		name : "rotary.focus.set."index; \
+		signal : "rotary.focus.set."index; \
+		source : "img.focus"; \
+		action : STATE_SET index 0.0; \
+		target : "img.focus";\
+	} \
+
+#define ROTARY_INDEX_SET_BT(index)\
+	program { \
+		name : "rotary.index.set."index; \
+		signal : "rotary.index.set."index; \
+		source : "img.center.wheel.bg"; \
+		action : STATE_SET index 0.0; \
+		target : "img.center.wheel.bg.shadow";\
+		target : "img.center.wheel.bg";\
+		target : "img.focus";\
+		transition: ACCEL_FAC 0.2 0.33;\
+	} \
+
+#define ROTARY_INDEX_SET_BT_FOR_END(index)\
+	program { \
+		name : "rotary.index.set.end."index; \
+		signal : "rotary.index.set.end."index; \
+		source : "img.center.wheel.bg"; \
+		action : STATE_SET index 0.0; \
+		target : "img.center.wheel.bg.shadow";\
+		target : "img.center.wheel.bg";\
+		target : "img.focus";\
+		transition: ACCEL_FAC 0.35 0.33;\
+	} \
+
+#define ROTARY_INDEX_SET_BT_NO_ANIMATION(index)\
+	program { \
+		name : "rotary.index.set.no.anim."index; \
+		signal : "rotary.index.set.no.anim."index; \
+		source : "img.center.wheel.bg"; \
+		action : STATE_SET index 0.0; \
+		target : "img.center.wheel.bg.shadow";\
+		target : "img.center.wheel.bg";\
+		target : "img.focus";\
+	} \
+
+//		transition: DECEL_FAC 0.4 0.33;\
+//		transition: ACCEL_FAC 0.2;\
+//		transition: LINEAR 0.2;\
+
+group {
+	name : "windicator/moment_bar/first_page/bt";
+	images {
+		image : "b_moment_bar_detail_bg.png" COMP;
+		image : "b_moment_bar_detail_bg_cover.png" COMP;
+		image : "Controls/b_moment_more_opt_ic_bg.png" COMP;
+		image : "Controls/brightness.png" COMP;
+		image : "Controls/donotdisturb.png" COMP;
+		/* touch area */
+		image : "touch/moment_bar_touch5_1.png" COMP;
+		image : "touch/moment_bar_touch5_2.png" COMP;
+		image : "touch/moment_bar_touch5_3.png" COMP;
+		image : "touch/moment_bar_touch5_4.png" COMP;
+		image : "touch/moment_bar_touch5_5.png" COMP;
+
+		image : "touch/moment_bar_touch6_screen_1.png" COMP;
+		image : "touch/moment_bar_touch6_screen_2.png" COMP;
+		image : "touch/moment_bar_touch6_screen_3.png" COMP;
+		image : "touch/moment_bar_touch6_screen_4.png" COMP;
+		image : "touch/moment_bar_touch6_screen_5.png" COMP;
+		image : "touch/moment_bar_touch6_screen_6.png" COMP;
+	}
+	parts {
+		part {
+			name : "rect.bg";
+			type : RECT;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				fixed : 1 1;
+				color : 0 0 0 255;
+			}
+		}
+	  /*
+		part {
+			name : "img.bg";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				fixed : 1 1;
+				image.normal: "b_moment_bar_detail_bg.png";
+				color_class : "AO013";
+			}
+		}
+		part {
+			name : "img.bg.cover";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				fixed : 1 1;
+				image.normal: "b_moment_bar_detail_bg_cover.png";
+				color_class : "AO0131";
+			}
+		}*/
+#if 0
+		/* Icons */
+		// Battery
+		part {
+			name : "sw.icon.battery";
+			type : SWALLOW;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : 24 38;
+				max : 24 38;
+				fixed : 1 1;
+				align : 0.0 0.0;
+				visible : 1;
+				rel1 { relative : 0.0 0.0; to : "img.bg"; offset : 170 0;}
+				rel2 { relative : 0.0 0.0; to : "img.bg"; }
+			}
+			description {
+				state : "hide" 0.0;
+				inherit : "default" 0.0;
+				visible : 0;
+			}
+		}
+		part {
+			name : "txt.battery";
+			type : TEXT;
+			scale : 1;
+			description{
+				state : "default" 0.0;
+				visible : 1;
+				min : 360 20;
+				max : 360 20;
+				fixed : 1 1;
+				align : 0.5 0.0;
+				color_class : "AT015";
+				rel1 { relative : 0.5 1.0; to : "sw.icon.battery"; }
+				rel2 { relative : 0.5 1.0; to : "sw.icon.battery"; }
+				text {
+					min : 1 1;
+					align : 0.5 0.5;
+					text_class : "AT015";
+					text : "0%";
+				}
+			}
+		}
+#endif
+		/* index 0 */
+// BRIGHTNESS
+		part {	/* index 1 */
+			name : "brightness.swallow";
+			type : SWALLOW;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				max : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				fixed : 1 1;
+				align : 0.0 0.0;
+//				image.normal: "Controls/b_moment_more_opt_ic_bg.png";
+				color_class : "AO0122";
+				rel1 { relative : 0.0 0.0; to : "rect.bg"; offset : 251 246;}
+				rel2 { relative : 0.0 0.0; to : "rect.bg"; }
+			}
+			description {
+				state : "LO" 0.0;
+				inherit : "default" 0.0;
+				rel1 { relative : 0.0 0.0; to : "rect.bg"; offset : 223 268;}
+			}
+		}
+		part {
+			name : "img.brightness.touch.area";
+			type : IMAGE;
+			repeat_events: 1;
+			precise_is_inside: 1;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				color : 200 0 0 0;
+				image.normal: "touch/moment_bar_touch6_screen_2.png";
+				rel1.to: "rect.bg";
+				rel2.to: "rect.bg";
+			}
+			description {
+				state : "LO" 0.0;
+				inherit : "default" 0.0;
+				image.normal: "touch/moment_bar_touch5_2.png";
+			}
+		}
+// DO_NOT_DISTURB
+		part { 
+			name : "dnd.swallow";
+			type : SWALLOW;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				max : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				fixed : 1 1;
+				align : 0.0 0.0;
+				color_class : "AO0122";
+				rel1 { relative : 0.0 0.0; to : "rect.bg"; offset : 186 284;}
+				rel2 { relative : 0.0 0.0; to : "rect.bg"; }
+			}
+			description {
+				state : "LO" 0.0;
+				inherit : "default" 0.0;
+				rel1 { relative : 0.0 0.0; to : "rect.bg"; offset : 148 289;}
+			}
+		}
+		part {
+			name : "img.dnd.touch.area";
+			type : IMAGE;
+			repeat_events: 1;
+			precise_is_inside: 1;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				color : 0 200 0 0;
+				image.normal: "touch/moment_bar_touch6_screen_3.png";
+				rel1.to: "rect.bg";
+				rel2.to: "rect.bg";
+			}
+			description {
+				state : "LO" 0.0;
+				inherit : "default" 0.0;
+				image.normal: "touch/moment_bar_touch5_3.png";
+			}
+		}
+// FLIGHT_MODE
+		part { 
+			name : "flight.swallow";
+			type : SWALLOW;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				max : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				fixed : 1 1;
+				align : 0.0 0.0;
+				color_class : "AO0122";
+				rel1 { relative : 0.0 0.0; to : "rect.bg"; offset : 110 284;}
+				rel2 { relative : 0.0 0.0; to : "rect.bg"; }
+			}
+			description {
+				state : "LO" 0.0;
+				inherit : "default" 0.0;
+				rel1 { relative : 0.0 0.0; to : "rect.bg"; offset : 73 268;}
+			}
+ 
+		}
+		part {
+			name : "img.flight.touch.area";
+			type : IMAGE;
+			repeat_events: 1;
+			precise_is_inside: 1;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				color : 100 0 10 0;
+				image.normal: "touch/moment_bar_touch6_screen_4.png";
+				rel1.to: "rect.bg";
+				rel2.to: "rect.bg";
+			}
+			description {
+				state : "LO" 0.0;
+				inherit : "default" 0.0;
+				image.normal: "touch/moment_bar_touch5_4.png";
+			}
+		}
+// MUSIC
+ 		part { 
+			name : "music.swallow";
+			type : SWALLOW;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				max : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				fixed : 1 1;
+				align : 0.0 0.0;
+				rel1 { relative : 0.0 0.0; to : "rect.bg"; offset : 45 246;}
+				rel2 { relative : 0.0 0.0; to : "rect.bg"; }
+			}
+			description {
+				state : "LO" 0.0;
+				inherit : "default" 0.0;
+				visible : 0;
+			}
+		}
+		part {
+			name : "img.music.touch.area";
+			type : IMAGE;
+			repeat_events: 1;
+			precise_is_inside: 1;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				color : 0 0 200 0;
+				image.normal: "touch/moment_bar_touch6_screen_5.png";
+				rel1.to: "rect.bg";
+				rel2.to: "rect.bg";
+			}
+			description {
+				state : "LO" 0.0;
+				inherit : "default" 0.0;
+				visible : 0;
+			}
+		}
+		part {
+			name : "sw.main.view";
+			type : SWALLOW;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				fixed : 1 1;
+				align : 0.5 0.5;
+				rel1 { relative : 0.5 0.5; to : "rect.bg"; }
+				rel2 { relative : 0.5 0.5; to : "rect.bg"; }
+			}
+		}
+
+		/* Slider to set brightness */
+		part {
+			name : "sw.dynamic";
+			type : SWALLOW;
+			scale : 1;
+			repeat_events : 1;
+			description {
+				state : "default" 0.0;
+				fixed: 1 1;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				align : 0.5 0.5;
+				rel1 { relative : 0.5 0.5; to : "rect.bg"; }
+				rel2 { relative : 0.5 0.5; to : "rect.bg"; }
+			}
+		}
+/*		part {
+			name : "sw.brightness.large_icon";
+			type : SWALLOW;
+			scale : 1;
+			repeat_events : 1;
+			description {
+				state : "default" 0.0;
+				fixed : 1 1;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				align : 0.5 0.5;
+				rel1 { relative : 0.5 0.5; to : "img.bg"; }
+				rel2 { relative : 0.5 0.5; to : "img.bg"; }
+			}
+		}*/
+		/* Slider to set brightness */
+		/*
+		part {
+			name : "sw.circle_slider";
+			type : SWALLOW;
+			scale : 1;
+			repeat_events : 1;
+			description {
+				state : "default" 0.0;
+				fixed: 1 1;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				align : 0.5 0.5;
+				visible : 0;
+				rel1 { relative : 0.5 0.5; to : "img.bg"; }
+				rel2 { relative : 0.5 0.5; to : "img.bg"; }
+			}
+			description {
+				state : "show" 0.0;
+				inherit : "default" 0.0;
+				visible : 1;
+			}
+		}*/
+	}
+	programs {
+		/* LO layout */
+		program {
+			name : "set_lo_layout";
+			signal : "set_lo_layout";
+			source : "sw.all";
+			action : STATE_SET "LO" 0.0;
+			target : "brightness.swallow";
+			target : "dnd.swallow";
+			target : "music.swallow";
+			target : "img.brightness.touch.area";
+			target : "img.dnd.touch.area";
+			target : "img.flight.touch.area";
+			target : "img.music.touch.area";
+		}
+		program {
+			name : "set_default_layout";
+			signal : "set_default_layout";
+			source : "sw.all";
+			action : STATE_SET "default" 0.0;
+			target : "brightness.swallow";
+			target : "dnd.swallow";
+			target : "music.swallow";
+			target : "img.brightness.touch.area";
+			target : "img.dnd.touch.area";
+			target : "img.flight.touch.area";
+			target : "img.music.touch.area";
+		}
+
+//		ROTARY_FOCUS_SET_BT("0");
+//		ROTARY_FOCUS_SET_BT("1");
+//		ROTARY_FOCUS_SET_BT("10");
+//		ROTARY_FOCUS_SET_BT("2");
+//		ROTARY_FOCUS_SET_BT("3");
+//		ROTARY_FOCUS_SET_BT("4");
+//		ROTARY_FOCUS_SET_BT("14");
+
+/*		ROTARY_INDEX_SET_BT("0");
+		ROTARY_INDEX_SET_BT_NO_ANIMATION("0");
+		ROTARY_INDEX_SET_BT("1");
+		ROTARY_INDEX_SET_BT("10");
+		ROTARY_INDEX_SET_BT_FOR_END("10");
+		ROTARY_INDEX_SET_BT("2");
+		ROTARY_INDEX_SET_BT("3");
+		ROTARY_INDEX_SET_BT("4");
+		ROTARY_INDEX_SET_BT_NO_ANIMATION("4");
+		ROTARY_INDEX_SET_BT("14");
+		ROTARY_INDEX_SET_BT_FOR_END("14");
+		program {
+			name : "sw.circle_slider.hide";
+			signal : "sw.circle_slider.hide";
+			source : "sw.circle_slider";
+			action : STATE_SET "default" 0.0;
+			target : "sw.circle_slider";
+		}
+		program {
+			name : "sw.circle_slider.show";
+			signal : "sw.circle_slider.show";
+			source : "sw.circle_slider";
+			action : STATE_SET "show" 0.0;
+			target : "sw.circle_slider";
+		}*/
+
+		/* Scs Events */
+		/*
+		program {
+			name : "img.icon.scs.not_connected";
+			signal : "img.icon.scs.not_connected";
+			source : "img.icon.scs";
+			action : STATE_SET "default" 0.0;
+			target : "img.icon.scs";
+		//	transition: DECEL_FAC 0.4 0.33;
+		}
+		program {
+			name : "img.icon.scs.bt_connected";
+			signal : "img.icon.scs.bt_connected";
+			source : "img.icon.scs";
+			action : STATE_SET "bt_connected" 0.0;
+			target : "img.icon.scs";
+		//	transition: DECEL_FAC 0.4 0.33;
+		}
+		program {
+			name : "img.icon.scs.remotely_connected";
+			signal : "img.icon.scs.remotely_connected";
+			source : "img.icon.scs";
+			action : STATE_SET "remotely_connected" 0.0;
+			target : "img.icon.scs";
+		//	transition: DECEL_FAC 0.4 0.33;
+		}
+		*/
+#if 0
+		/* Battery events */
+		program {
+			name : "BatteryActionStop";
+			action : ACTION_STOP;
+			target : "hideBattery,blink";
+			target : "showBattery,blink";
+		}
+		program {
+			name : "hideBattery,blink";
+			signal : "hideBattery,blink";
+			source : "sw.icon.battery";
+			action : STATE_SET "hide" 0.0;
+			target : "sw.icon.battery";
+			in : 0.5 0.0;
+			after : "showBattery,blink";
+		}
+		program {
+			name : "showBattery,blink";
+			signal : "hideBattery,blink";
+			source : "sw.icon.battery";
+			action : STATE_SET "default" 0.0;
+			target : "sw.icon.battery";
+			in : 0.5 0.0;
+			after : "hideBattery,blink";
+		}
+		program {
+			name : "showBattery";
+			signal : "showBattery";
+			source : "sw.icon.battery";
+			action : STATE_SET "default" 0.0;
+			target : "sw.icon.battery";
+			after : "BatteryActionStop";
+		}
+#endif
+	}
+}

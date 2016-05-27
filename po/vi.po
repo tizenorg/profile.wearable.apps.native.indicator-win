@@ -1,0 +1,276 @@
+msgid "WDS_ST_TPOP_DISABLING_ALL_FUNCTIONS_EXCEPT_CALLS_MESSAGES_NOTIFICATIONS_ABB"
+msgstr "Tắt tất cả chức năng ngoại trừ cuộc gọi/tin nhắn/thông báo."
+
+msgid "WDS_ST_TPOP_ENABLING_POWER_SAVING_ING_ABB"
+msgstr "Đang bật Tiết kiệm pin..."
+
+msgid "WDS_ST_TPOP_DISABLING_POWER_SAVING_ING_ABB"
+msgstr "Đang tắt Tiết kiệm pin..."
+
+msgid "IDS_HS_BODY_BATTERY"
+msgstr "Pin"
+
+msgid "WDS_ST_TPOP_SILENCE_ALL_ALERTS_EXCEPT_ALARMS_ABB"
+msgstr "Tắt âm tất cả thông báo trừ chuông báo."
+
+msgid "WDS_ST_TPOP_KEEP_MAX_BRIGHTNESS_FOR_PD_MINS_ABB"
+msgstr "Giữ độ sáng tối đa trong %d phút."
+
+msgid "WDS_HS_MBODY_MUSIC_PLAYER_M_APPLICATION_ABB"
+msgstr "Máy nghe nhạc"
+
+msgid "WDS_ST_HEADER_FLIGHT_MODE_ABB"
+msgstr "Chế độ Máy bay"
+
+msgid "WDS_ST_MBODY_POWER_SAVING_ABB"
+msgstr "Tiết kiệm pin"
+
+msgid "WDS_ST_TPOP_FLIGHT_MODE_DISABLES_CALLS_MESSAGING_AND_ALL_CONNECTIONS_TO_USE_WI_FI_AND_BLUETOOTH_GO_TO_SETTINGS"
+msgstr "Chế độ Máy bay sẽ tắt cuộc gọi, tin nhắn và tất cả kết nối. Để sử dụng Wi-Fi và Bluetooth, hãy đi đến Cài đặt."
+
+msgid "IDS_COM_BODY_UNTICK_T_TTS"
+msgstr "Bỏ chọn"
+
+msgid "IDS_COM_BODY_TICK_T_TTS"
+msgstr "Chọn"
+
+msgid "IDS_COM_BODY_SEARCHING"
+msgstr "Đang tìm"
+
+msgid "IDS_COM_BODY_PD_PERCENT_BATTERY_T_TTS"
+msgstr "%d phần trăm pin"
+
+msgid "IDS_COM_BODY_ON_M_STATUS"
+msgstr "Bật"
+
+msgid "IDS_COM_BODY_OFF_M_STATUS"
+msgstr "Tắt"
+
+msgid "IDS_COM_BODY_NO_SIM"
+msgstr "Không có thẻ SIM"
+
+msgid "IDS_COM_BODY_NO_SERVICE"
+msgstr "Không có dịch vụ"
+
+msgid "IDS_COM_BODY_INVALID_SIM_CARD"
+msgstr "Thẻ SIM không hợp lệ."
+
+msgid "IDS_COM_BODY_FLIGHT_MODE"
+msgstr "Chế độ Máy bay"
+
+msgid "IDS_COM_BODY_EMERGENCY_CALLS_ONLY"
+msgstr "Chỉ gọi được các cuộc SOS"
+
+msgid "IDS_CST_SBODY_DEACTIVATED_ATNT_M_STATUS"
+msgstr "Đã hủy kích hoạt"
+
+msgid "IDS_CST_SBODY_ACTIVATED_ATNT_M_STATUS"
+msgstr "Đã kích hoạt"
+
+msgid "IDS_CST_BODY_CALL_FORWARDING"
+msgstr "Chuyển tiếp cuộc gọi"
+
+msgid "IDS_IDLE_POP_AFTER_P1SD_MINS_BRIGHTNESS_WILL_BE_RESET_TO_DEFAULT_LEVEL_HP2SD"
+msgstr "Sau %1$d phút, độ sáng sẽ được đặt lại mức mặc định (%2$d)."
+
+msgid "IDS_IDLE_HEADER_RINGTONE_VOLUME_ABB"
+msgstr "Âm lượng chuông"
+
+msgid "IDS_IDLE_BODY_TW_MOBILE_CHN"
+msgstr "TW Mobile"
+
+msgid "IDS_IDLE_BODY_FAREASTONE_CHN"
+msgstr "FarEasTone"
+
+msgid "IDS_IDLE_BODY_CMCC_CHN"
+msgstr "CMCC"
+
+msgid "IDS_TTS_BODY_P1SD_OF_P2SD_BARS_SIGNAL_STRENGTH_TTS"
+msgstr "Cường độ tín hiệu %1$d/%2$d vạch"
+
+msgid "IDS_ST_TMBODY_POWER_SAVING_MODE"
+msgstr "Chế độ Tiết kiệm pin"
+
+msgid "IDS_ST_POP_USE_A_GREYSCALE_HOME_SCREEN"
+msgstr "Sử dụng màn hình chờ trắng đen."
+
+msgid "IDS_ST_POP_TURN_OFF_WLAN_CHN"
+msgstr "Tắt WLAN."
+
+msgid "IDS_ST_POP_SAVE_BATTERY_POWER_BY_APPLYING_THE_FOLLOWING_SETTINGS_ON_YOUR_GEAR_C"
+msgstr "Tiết kiệm pin bằng cách áp dụng cài đặt sau trên Gear của bạn:"
+
+msgid "IDS_ST_POP_POWER_SAVING_MODE_WILL_BE_DISABLED"
+msgstr "Chế độ Tiết kiệm pin sẽ tắt."
+
+msgid "IDS_ST_OPT_AUTO_M_MODE_ABB"
+msgstr "Tự động"
+
+msgid "IDS_ST_MBODY_REMOTELY_CONNECTED_ABB"
+msgstr "Đã kết nối từ xa"
+
+msgid "IDS_ST_MBODY_NOT_CONNECTED_ABB"
+msgstr "Không kết nối"
+
+msgid "IDS_ST_MBODY_GEAR_ONLY_ABB"
+msgstr "Chỉ Gear"
+
+msgid "IDS_ST_MBODY_DO_NOT_DISTURB_ABB2"
+msgstr "Không làm phiền"
+
+msgid "IDS_ST_MBODY_DO_NOT_DISTURB_ABB"
+msgstr "Không làm phiền"
+
+msgid "IDS_ST_MBODY_CONNECTED_VIA_BT_ABB"
+msgstr "Đã kết nối qua BT"
+
+msgid "IDS_ST_BUTTON_BRIGHTNESS"
+msgstr "Độ sáng"
+
+msgid "IDS_ST_BUTTON2_POWER_SAVING"
+msgstr "Tiết kiệm pin"
+
+msgid "IDS_ST_BODY_TURN_OFF_WI_FI"
+msgstr "Tắt Wi-Fi."
+
+msgid "IDS_ST_BODY_SCREEN_ON"
+msgstr "Màn hình bật"
+
+msgid "IDS_ST_BODY_ROAMING"
+msgstr "Chuyển vùng"
+
+msgid "IDS_ST_BODY_OUTDOOR_MODE_ABB"
+msgstr "Chế độ ngoài trời"
+
+msgid "IDS_ST_BODY_NO_SIGNAL"
+msgstr "Không có tín hiệu"
+
+msgid "IDS_ST_BODY_LIMIT_THE_MAXIMUM_PERFORMANCE_OF_THE_CPU"
+msgstr "Giới hạn hiệu năng tối đa của CPU."
+
+msgid "IDS_ST_BODY_DISPLAYANDLIGHT_BRIGHTNESS_LEVEL"
+msgstr "Độ sáng"
+
+msgid "IDS_ST_BODY_DISABLED_M_STATUS"
+msgstr "Đã tắt"
+
+msgid "IDS_SIM_BODY_T_STAR_M_CHINA_OPERATOR_CHN"
+msgstr "T Star"
+
+msgid "IDS_SIM_BODY_KGT_M_CHINA_OPERATOR_CHN"
+msgstr "KGT"
+
+msgid "IDS_SIM_BODY_CHUNGHWA_M_CHINA_OPERATOR_CHN"
+msgstr "Chunghwa"
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_READER_ENABLED_T_TTS"
+msgstr "Đã bật trình đọc màn hình."
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_READER_DISABLED_T_TTS"
+msgstr "Đã tắt trình đọc màn hình."
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_OFF_T_TTS"
+msgstr "Màn hình tắt."
+
+msgid "IDS_WMGR_SBODY_REQUESTED_TO_ENABLE_M_STATUS_ABB"
+msgstr "Đã yêu cầu bật"
+
+msgid "IDS_WMGR_SBODY_REQUESTED_TO_DISABLE_M_STATUS_ABB"
+msgstr "Đã yêu cầu tắt"
+
+msgid "IDS_WMGR_SBODY_CONNECTED_REMOTELY_M_STATUS_ABB"
+msgstr "Đã kết nối từ xa"
+
+msgid "IDS_WMGR_NPBODY_REQUESTED_TO_ENABLE"
+msgstr "Đã yêu cầu bật"
+
+msgid "IDS_WMGR_NPBODY_REQUESTED_TO_DISABLE"
+msgstr "Đã yêu cầu tắt"
+
+msgid "IDS_WMGR_BODY_TAP_FWD_CALLS_TO_GEAR_TO_VIEW_THE_SETTINGS_FOR_THIS_FUNCTION_OR_TO_ENABLE_IT_ABB"
+msgstr "Chạm Ch.tiếp c.gọi đến Gear để xem cài đặt cho chức năng này hoặc để bật nó."
+
+msgid "IDS_WNOTI_SBODY_REQUESTED_TO_TURN_ON_ABB_VZW_M_STATUS"
+msgstr "Đã yêu cầu bật"
+
+msgid "IDS_WNOTI_SBODY_REQUESTED_TO_TURN_OFF_ABB_VZW_M_STATUS"
+msgstr "Đã yêu cầu tắt"
+
+msgid "IDS_WNOTI_POP_REQUESTED_TO_TURN_ON_FWD_CALLS_TO_GEAR_VZW"
+msgstr "Đã yêu cầu bật Chuyển tiếp cuộc gọi đến Gear."
+
+msgid "IDS_WNOTI_POP_REQUESTED_TO_TURN_OFF_FWD_CALLS_TO_GEAR_VZW"
+msgstr "Đã yêu cầu tắt Chuyển tiếp cuộc gọi đến Gear."
+
+msgid "IDS_WNOTI_MBODY_MOBILE_TO_GEAR_ABB"
+msgstr "Di động đến Gear"
+
+msgid "IDS_WNOTI_MBODY_GEAR_TO_MOBILE_ABB"
+msgstr "Gear đến di động"
+
+msgid "IDS_WNOTI_MBODY_AUTO_CALL_FORWARDING_ABB"
+msgstr "Tự động chuyển tiếp cuộc gọi"
+
+msgid "IDS_WNOTI_BODY_SWIPE_UPWARDS_TO_GO_BACK_TO_CLOCK_ABB"
+msgstr "Vuốt lên để trở về đồng hồ."
+
+msgid "IDS_MUSIC_BODY_MUSIC_PLAYER"
+msgstr "Nghe nhạc"
+
+msgid "IDS_HS_MBODY_CONTROLS_M_APPLICATION_NAME_ABB3"
+msgstr "Điều khiển"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_ENABLE_TTS"
+msgstr "Chạm hai lần để bật."
+
+msgid "WDS_ST_BODY_BT_CONNECTED_ABB"
+msgstr "Đã kết nối BT"
+
+msgid "WDS_ST_BODY_OFF_ABB"
+msgstr "Tắt"
+
+msgid "WDS_ST_BODY_ON_ABB"
+msgstr "Bật"
+
+msgid "WDS_ST_BODY_REMOTELY_CONNECTED_ABB"
+msgstr "Đã kết nối từ xa"
+
+msgid "WDS_ST_BODY_STANDALONE_ABB"
+msgstr "Độc lập"
+
+msgid "WDS_ST_TPOP_TURN_OFF_VIBRATION_FOR_ALL_ALERTS_EXCEPT_ALARMS_ABB"
+msgstr "Tắt rung đối với tất cả thông báo ngoại trừ chuông báo."
+
+msgid "WDS_QP_TMBODY_CONNECTED_VIA_BLUETOOTH_ABB"
+msgstr "Đã kết nối qua Bluetooth"
+
+msgid "WDS_QP_TMBODY_CONNECTED_REMOTELY_ABB"
+msgstr "Đã kết nối từ xa"
+
+msgid "IDS_ST_POP_FLIGHT_MODE_DISABLES_CALLING_AND_MESSAGING_FUNCTIONS_AND_TURNS_OFF_MOBILE_DATA_AND_CONNECTIVITY_FUNCTIONS_SUCH_AS_WLAN_AND_BLUETOOTH_MSG_CHN"
+msgstr "Chế độ Máy bay sẽ tắt chức năng gọi điện và nhắn tin đồng thời tắt cả Dữ liệu di động và chức năng kết nối như WLAN và Bluetooth. Để dùng WLAN và Bluetooth, hãy bật chúng trong Cài đặt."
+
+msgid "WDS_TTS_TBBODY_SCREEN_ON"
+msgstr "Màn hình bật."
+
+msgid "WDS_ST_TPOP_SOUNDS_WILL_BE_MUTED_AND_SCREEN_WILL_REMAIN_TURNED_OFF_FOR_INCOMING_CALLS_AND_ALERTS_BUT_NOT_ALARMS"
+msgstr "Âm thanh sẽ bị tắt và màn hình vẫn không bật đối với các thông báo và cuộc gọi đến, ngoại trừ chuông báo."
+
+msgid "WDS_ST_TPOP_VIBRATION_WILL_BE_TURNED_OFF_AND_SCREEN_WILL_REMAIN_TURNED_OFF_FOR_INCOMING_CALLS_AND_ALERTS_BUT_NOT_ALARMS"
+msgstr "Rung sẽ bị tắt và màn hình vẫn không bật đối với các thông báo và cuộc gọi đến, ngoại trừ chuông báo."
+
+msgid "WDS_ST_BODY_VIBRATION_WILL_BE_TURNED_OFF_AND_SCREEN_WILL_REMAIN_TURNED_OFF"
+msgstr "Rung sẽ bị tắt và màn hình sẽ không bật."
+
+msgid "WDS_ST_BODY_SOUNDS_WILL_BE_MUTED_AND_SCREEN_WILL_REMAIN_TURNED_OFF"
+msgstr "Âm thanh sẽ bị tắt và màn hình sẽ không bật."
+
+msgid "WDS_WMGR_SBODY_CALL_FORWARDING_REQUESTED_ABB_VZW"
+msgstr "Yêu cầu ch.tiếp cuộc gọi"
+
+msgid "WDS_ST_POP_AIRPLANE_MODE_TURNS_OFF_CALLS_MESSAGING_AND_ALL_CONNECTIONS_TO_USE_WI_FI_OR_BLUETOOTH_GO_TO_SETTINGS_VZW"
+msgstr "Chế độ Máy bay sẽ tắt cuộc gọi, tin nhắn và tất cả kết nối. Để sử dụng Wi-Fi hoặc Bluetooth, hãy đi đến Cài đặt."
+
+msgid "IDS_ST_SBODY_CHINA_TELECOM_M_SERVICE_PROVIDER_CHN_CTC"
+msgstr "China Telecom"
+

@@ -1,0 +1,401 @@
+/*
+ * Copyright (c) 2015 Samsung Electronics Co., Ltd All Rights Reserved
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+
+group {
+	name : "windicator/callfwd_btn";
+	images {
+		image : "Controls/b_moment_more_opt_ic_bg.png" COMP;
+		image : "Controls/call_forwarding.png" COMP;
+		image : "Controls/esim.png" COMP;
+		image : "Indicator_business/call_forwarding_business.png" COMP;
+	}
+	parts {
+		part {
+			name : "bg";
+			type : SPACER;
+			scale :1;
+			description {
+				state : "default";
+				min : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				max : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+			}
+		}
+		part {
+			name : "img.callfwd.bg";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				max : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				fixed : 1 1;
+				align : 0.0 0.0;
+				image.normal: "Controls/b_moment_more_opt_ic_bg.png";
+				color_class : "AO0122";
+				rel1 { relative : 0.0 0.0; to : "bg"; }
+				rel2 { relative : 0.0 0.0; to : "bg"; }
+			}
+			description {
+				state : "numbersync" 0.0;
+				inherit : "default" 0.0;
+			}
+			description {
+				state : "esim" 0.0;
+				inherit : "default" 0.0;
+			}
+			description {
+				state : "disable" 0.0;
+				inherit : "default" 0.0;
+				color_class : "AO0122D";
+			}
+			description {
+				state : "selected" 0.0;
+				inherit : "default" 0.0;
+				color_class : "AO0122P";
+			}
+		}
+		part {
+			name : "img.callfwd.icon";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				max : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				fixed : 1 1;
+				align : 0.0 0.0;
+				image.normal: "Controls/call_forwarding.png";
+				color_class : "AO012";
+				rel1 { relative : 0.0 0.0; to : "bg"; }
+				rel2 { relative : 0.0 0.0; to : "bg"; }
+			}
+			description {
+				state : "numbersync" 0.0;
+				inherit : "default" 0.0;
+				image.normal: "Indicator_business/call_forwarding_business.png";
+			}
+			description {
+				state : "esim" 0.0;
+				inherit : "default" 0.0;
+				image.normal: "Controls/esim.png";
+			}
+			description {
+				state : "disable" 0.0;
+				inherit : "default" 0.0;
+				color_class : "AO012D";
+			}
+		}
+
+	}
+	programs {
+		program {
+			name : "img.callfwd.enable";
+			signal : "img.callfwd.enable";
+			source : "img.callfwd.icon";
+			action : STATE_SET "default" 0.0;
+			target : "img.callfwd.icon";
+			target : "img.callfwd.bg";
+//			target : "txt.callfwd";
+		}
+		program {
+			name : "img.callfwd.disable";
+			signal : "img.callfwd.disable";
+			source : "img.callfwd.icon";
+			action : STATE_SET "disable" 0.0;
+			target : "img.callfwd.icon";
+			target : "img.callfwd.bg";
+//			target : "txt.callfwd";
+		}
+		/* Number sync */
+		program {
+			name : "img.callfwd.numbersync";
+			signal : "img.callfwd.numbersync";
+			source : "img.callfwd.icon";
+			action : STATE_SET "numbersync" 0.0;
+			target : "img.callfwd.icon";
+			target : "img.callfwd.bg";
+		}
+		/* eSim */
+		program {
+			name : "img.esim.enable";
+			signal : "img.esim.enable";
+			source : "img.callfwd.icon";
+			action : STATE_SET "esim" 0.0;
+			target : "img.callfwd.icon";
+			target : "img.callfwd.bg";
+		}
+
+		/* Press effect */
+		program {
+			name: "callfwd.pressed";
+			signal: "callfwd.pressed";
+			source: "img.callfwd.bg";
+			action: STATE_SET "selected" 0.0;
+			target: "img.callfwd.bg";
+		}
+		program {
+			name: "callfwd.released";
+			signal: "callfwd.released";
+			source: "img.callfwd.bg";
+			action: STATE_SET "default" 0.0;
+			target: "img.callfwd.bg";
+		}
+	}
+}
+#if 0
+group {
+	name : "windicator/callfwd_btn";
+	images {
+		image : "mb_3g_indi_link_bg.png" COMP;
+		image : "moment_bar_focus_bt_touch_1.png" COMP;
+		image : "mb_3g_indi_link_icon_call.png" COMP;
+//		image : "mb_3g_indi_link_stroke.png" COMP;
+	}
+	parts {
+		part {
+			name : "bg";
+			type : SPACER;
+			scale :1;
+			description {
+				state : "default";
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+			}
+		}
+		part {
+			name : "padding.top";
+			type : SPACER;
+			scale : 1;
+			description {
+				state : "default";
+				min : 360 135;
+				max : 360 135;
+				fixed: 1 1;
+				align : 0.0 0.0;
+			//	color :200 0 0 200;
+				rel1 { relative : 0.0 0.0; to : "bg";}
+				rel2 { relative : 0.0 0.0; to : "bg";}
+			}
+		}
+		part {
+			name : "img.callfwd.bg";
+			type : IMAGE;
+			clip_to : "clipper_callfwd";
+			scale : 1;
+			repeat_events : 1;
+			description {
+				state : "default" 0.0;
+				min : MUSIC_BTN_WIDTH MUSIC_BTN_HEIGHT;
+				max : MUSIC_BTN_WIDTH MUSIC_BTN_HEIGHT;
+				fixed : 1 1;
+				image.normal: "mb_3g_indi_link_bg.png";
+				color_class : "AO027";
+				align : 0.5 0.0;
+				rel1 { relative : 0.5 1.0; to : "padding.top";}
+				rel2 { relative : 0.5 1.0; to : "padding.top";}
+			}
+			description {
+				state: "disable" 0.0;
+				inherit: "default";
+				color_class : "AO0271";
+			}
+		}
+		part {
+			name : "sw.callfwd.btn";
+			type : SWALLOW;
+		//	clip_to : "clipper_music";
+			scale : 1;
+		//	mouse_events : 1;
+			repeat_events : 1;
+			description {
+				state : "default" 0.0;
+				min : 80 80;
+				max : 80 80;
+				fixed : 1 1;
+				align : 0.5 0.5;
+				rel1.to: "img.callfwd.bg";
+				rel2.to: "img.callfwd.bg";
+			}
+		}
+		part {
+			name : "img.callfwd.icon";
+			type : IMAGE;
+			clip_to : "clipper_callfwd";
+			scale : 1;
+			repeat_events : 1;
+			description {
+				state : "default" 0.0;
+				min : MUSIC_BTN_WIDTH MUSIC_BTN_HEIGHT;
+				max : MUSIC_BTN_WIDTH MUSIC_BTN_HEIGHT;
+				fixed : 1 1;
+				image.normal: "mb_3g_indi_link_icon_call.png";
+				color_class : "AO025";
+				align : 0.5 0.0;
+				rel1 { relative : 0.5 1.0; to : "padding.top";}
+				rel2 { relative : 0.5 1.0; to : "padding.top";}
+			}
+			description {
+				state: "disable" 0.0;
+				inherit: "default";
+				color_class : "AO025D";
+			}
+		}
+		part {
+			name : "padding.center.2";
+			type : SPACER;
+			scale : 1;
+			description {
+				state : "default";
+				min : 360 PADDING_CENTER_2;
+				max : 360 PADDING_CENTER_2;
+				fixed: 1 1;
+			//	color :0 0 200 200;
+				align : 0.5 0.0;
+				rel1 { relative : 0.5 1.0; to : "img.callfwd.icon";}
+				rel2 { relative : 0.5 1.0; to : "img.callfwd.icon";}
+			}
+		}
+		part {
+			name : "txt.callfwd";
+			type : TEXT;
+			clip_to : "clipper_callfwd";
+			scale : 1;
+			description{
+				state : "default" 0.0;
+				min : DND_TEXT_WIDTH DND_TEXT_HEIGHT;
+				fixed : 1 1;
+				align : 0.5 0.0;
+				color_class : "AT0114";
+				rel1{ relative: 0.5 1.0; to : "padding.center.2";}
+				rel2{ relative: 0.5 1.0;to : "padding.center.2";}
+				text {
+					min : 1 1;
+					align: 0.5 0.5;
+					text : "Call forwadring";
+					ellipsis : 0;
+					text_class : "AT0114";
+				}
+			}
+			description {
+				state: "disable" 0.0;
+				inherit: "default";
+				color_class : "AO0271";
+			}
+		}
+		part {
+			name: "clipper_callfwd";
+			type: RECT;
+			scale: 1;
+			mouse_events: 0;
+			description {
+				state: "default" 0.0;
+				color: 255 255 255 0;
+				rel1.to: "bg";
+				rel2.to: "bg";
+			}
+			description {
+				state: "fade_in" 0.0;
+				inherit: "default";
+				color: 255 255 255 255;
+			}
+		}
+		part {
+			name : "callfwd.touch.area";
+		//	type : RECT;
+			type : IMAGE;
+			precise_is_inside: 1;
+			repeat_events: 1;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+		//		min : 232 232;
+		//		max : 232 232;
+		//		fixed : 1 1;
+				color : 100 0 120 0;
+		//		align : 0.5 0.5;
+				image.normal: "moment_bar_focus_bt_touch_1.png";
+//				color_class : "AO0217";
+				rel1.to: "bg";
+				rel2.to: "bg";
+			}
+		}
+	}
+	programs {
+		program {
+			name : "img.callfwd.enable";
+			signal : "img.callfwd.enable";
+			source : "img.callfwd.icon";
+			action : STATE_SET "default" 0.0;
+			target : "img.callfwd.icon";
+			target : "img.callfwd.bg";
+			target : "txt.callfwd";
+		}
+		program {
+			name : "img.callfwd.disable";
+			signal : "img.callfwd.disable";
+			source : "img.callfwd.icon";
+			action : STATE_SET "disable" 0.0;
+			target : "img.callfwd.icon";
+			target : "img.callfwd.bg";
+			target : "txt.callfwd";
+		}
+
+		// Hide
+		program {
+			name: "callfwd_hide";
+			signal: "callfwd_hide";
+			source: "clipper_callfwd";
+			action: STATE_SET "default" 0.0;
+			target: "clipper_callfwd";
+			after: "callfwd_fade_out_end";
+		}
+		// Fade Out effect
+		program {
+			name: "callfwd_fade_out";
+			signal: "callfwd_fade_out";
+			source: "clipper_callfwd";
+			action: STATE_SET "default" 0.0;
+			target: "clipper_callfwd";
+			transition: ACCEL_FAC 0.1 0.33;
+			after: "callfwd_fade_out_end";
+		}
+		program {
+			name : "callfwd_fade_out_end";
+			action : SIGNAL_EMIT "callfwd_fade_out_end" "signal";
+		}
+
+		// Fade In effect
+		program {
+			name: "callfwd_fade_in";
+			signal: "callfwd_fade_in";
+			source: "clipper_callfwd";
+			action: STATE_SET "default" 0.0;
+			target: "clipper_callfwd";
+			transition: ACCEL_FAC 0.1 0.33;
+			after: "callfwd_fade_in_start";
+		}
+		program {
+			name: "callfwd_fade_in_start";
+			signal: "callfwd_fade_in";
+			source: "clipper_callfwd";
+			action: STATE_SET "fade_in" 0.0;
+			target: "clipper_callfwd";
+			transition: ACCEL_FAC 0.1 0.33;
+		}
+	}
+}
+#endif

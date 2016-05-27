@@ -1,0 +1,276 @@
+msgid "WDS_ST_TPOP_DISABLING_ALL_FUNCTIONS_EXCEPT_CALLS_MESSAGES_NOTIFICATIONS_ABB"
+msgstr "Desactivar todas as funções, excepto chamadas/mensagens/notificações."
+
+msgid "WDS_ST_TPOP_ENABLING_POWER_SAVING_ING_ABB"
+msgstr "A activar Economia energia..."
+
+msgid "WDS_ST_TPOP_DISABLING_POWER_SAVING_ING_ABB"
+msgstr "A desactivar Economia ener..."
+
+msgid "IDS_HS_BODY_BATTERY"
+msgstr "Bateria"
+
+msgid "WDS_ST_TPOP_SILENCE_ALL_ALERTS_EXCEPT_ALARMS_ABB"
+msgstr "Silenciar todos os alertas excepto alarmes."
+
+msgid "WDS_ST_TPOP_KEEP_MAX_BRIGHTNESS_FOR_PD_MINS_ABB"
+msgstr "Manter brilho máx. por %d min."
+
+msgid "WDS_HS_MBODY_MUSIC_PLAYER_M_APPLICATION_ABB"
+msgstr "Leitor Música"
+
+msgid "WDS_ST_HEADER_FLIGHT_MODE_ABB"
+msgstr "Modo de voo"
+
+msgid "WDS_ST_MBODY_POWER_SAVING_ABB"
+msgstr "Eco. energia"
+
+msgid "WDS_ST_TPOP_FLIGHT_MODE_DISABLES_CALLS_MESSAGING_AND_ALL_CONNECTIONS_TO_USE_WI_FI_AND_BLUETOOTH_GO_TO_SETTINGS"
+msgstr "O Modo de voo desactiva chamadas, mensagens e todas as ligações. Para utilizar Wi-Fi e Bluetooth, aceda às Definições."
+
+msgid "IDS_COM_BODY_UNTICK_T_TTS"
+msgstr "Desmarcar"
+
+msgid "IDS_COM_BODY_TICK_T_TTS"
+msgstr "Marcar"
+
+msgid "IDS_COM_BODY_SEARCHING"
+msgstr "A procurar"
+
+msgid "IDS_COM_BODY_PD_PERCENT_BATTERY_T_TTS"
+msgstr "%d porcento de bateria"
+
+msgid "IDS_COM_BODY_ON_M_STATUS"
+msgstr "Ligar"
+
+msgid "IDS_COM_BODY_OFF_M_STATUS"
+msgstr "Desligar"
+
+msgid "IDS_COM_BODY_NO_SIM"
+msgstr "Sem SIM"
+
+msgid "IDS_COM_BODY_NO_SERVICE"
+msgstr "Sem serviço"
+
+msgid "IDS_COM_BODY_INVALID_SIM_CARD"
+msgstr "Cartão SIM inválido."
+
+msgid "IDS_COM_BODY_FLIGHT_MODE"
+msgstr "Modo de voo"
+
+msgid "IDS_COM_BODY_EMERGENCY_CALLS_ONLY"
+msgstr "Apenas chamadas de emergência."
+
+msgid "IDS_CST_SBODY_DEACTIVATED_ATNT_M_STATUS"
+msgstr "Deactivated"
+
+msgid "IDS_CST_SBODY_ACTIVATED_ATNT_M_STATUS"
+msgstr "Activated"
+
+msgid "IDS_CST_BODY_CALL_FORWARDING"
+msgstr "Desvio de chamadas"
+
+msgid "IDS_IDLE_POP_AFTER_P1SD_MINS_BRIGHTNESS_WILL_BE_RESET_TO_DEFAULT_LEVEL_HP2SD"
+msgstr "Depois de %1$d minutos, o nível predefinido do brilho será reposto (%2$d)."
+
+msgid "IDS_IDLE_HEADER_RINGTONE_VOLUME_ABB"
+msgstr "Volume tom de toque"
+
+msgid "IDS_IDLE_BODY_TW_MOBILE_CHN"
+msgstr "TW Mobile"
+
+msgid "IDS_IDLE_BODY_FAREASTONE_CHN"
+msgstr "FarEasTone"
+
+msgid "IDS_IDLE_BODY_CMCC_CHN"
+msgstr "CMCC"
+
+msgid "IDS_TTS_BODY_P1SD_OF_P2SD_BARS_SIGNAL_STRENGTH_TTS"
+msgstr "%1$d de %2$d barras de potência de sinal"
+
+msgid "IDS_ST_TMBODY_POWER_SAVING_MODE"
+msgstr "Modo de economia de energia"
+
+msgid "IDS_ST_POP_USE_A_GREYSCALE_HOME_SCREEN"
+msgstr "Utilizar um ecrã principal cinza."
+
+msgid "IDS_ST_POP_TURN_OFF_WLAN_CHN"
+msgstr "Desligar WLAN."
+
+msgid "IDS_ST_POP_SAVE_BATTERY_POWER_BY_APPLYING_THE_FOLLOWING_SETTINGS_ON_YOUR_GEAR_C"
+msgstr "Poupe bateria aplicando as seguintes definições ao seu Gear:"
+
+msgid "IDS_ST_POP_POWER_SAVING_MODE_WILL_BE_DISABLED"
+msgstr "O Modo de economia de energia será desactivado."
+
+msgid "IDS_ST_OPT_AUTO_M_MODE_ABB"
+msgstr "Auto"
+
+msgid "IDS_ST_MBODY_REMOTELY_CONNECTED_ABB"
+msgstr "Ligado remotamente"
+
+msgid "IDS_ST_MBODY_NOT_CONNECTED_ABB"
+msgstr "Não ligado"
+
+msgid "IDS_ST_MBODY_GEAR_ONLY_ABB"
+msgstr "Gear apenas"
+
+msgid "IDS_ST_MBODY_DO_NOT_DISTURB_ABB2"
+msgstr "Não incomodar"
+
+msgid "IDS_ST_MBODY_DO_NOT_DISTURB_ABB"
+msgstr "Não incomodar"
+
+msgid "IDS_ST_MBODY_CONNECTED_VIA_BT_ABB"
+msgstr "Ligado via BT"
+
+msgid "IDS_ST_BUTTON_BRIGHTNESS"
+msgstr "Brilho"
+
+msgid "IDS_ST_BUTTON2_POWER_SAVING"
+msgstr "Economia energia"
+
+msgid "IDS_ST_BODY_TURN_OFF_WI_FI"
+msgstr "Desligar Wi-Fi."
+
+msgid "IDS_ST_BODY_SCREEN_ON"
+msgstr "Ecrã ligado"
+
+msgid "IDS_ST_BODY_ROAMING"
+msgstr "Roaming"
+
+msgid "IDS_ST_BODY_OUTDOOR_MODE_ABB"
+msgstr "Modo exterior"
+
+msgid "IDS_ST_BODY_NO_SIGNAL"
+msgstr "Nenhum sinal"
+
+msgid "IDS_ST_BODY_LIMIT_THE_MAXIMUM_PERFORMANCE_OF_THE_CPU"
+msgstr "Limitar o desempenho máximo da CPU."
+
+msgid "IDS_ST_BODY_DISPLAYANDLIGHT_BRIGHTNESS_LEVEL"
+msgstr "Nível de brilho"
+
+msgid "IDS_ST_BODY_DISABLED_M_STATUS"
+msgstr "Desactivado"
+
+msgid "IDS_SIM_BODY_T_STAR_M_CHINA_OPERATOR_CHN"
+msgstr "T Star"
+
+msgid "IDS_SIM_BODY_KGT_M_CHINA_OPERATOR_CHN"
+msgstr "KGT"
+
+msgid "IDS_SIM_BODY_CHUNGHWA_M_CHINA_OPERATOR_CHN"
+msgstr "Chunghwa"
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_READER_ENABLED_T_TTS"
+msgstr "Leitor de ecrã activado."
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_READER_DISABLED_T_TTS"
+msgstr "Leitor de ecrã desactivado."
+
+msgid "IDS_TPLATFORM_BODY_SCREEN_OFF_T_TTS"
+msgstr "Ecrã desligado."
+
+msgid "IDS_WMGR_SBODY_REQUESTED_TO_ENABLE_M_STATUS_ABB"
+msgstr "Pedido para activar"
+
+msgid "IDS_WMGR_SBODY_REQUESTED_TO_DISABLE_M_STATUS_ABB"
+msgstr "Pedido p/ desactivar"
+
+msgid "IDS_WMGR_SBODY_CONNECTED_REMOTELY_M_STATUS_ABB"
+msgstr "Ligado remotamente"
+
+msgid "IDS_WMGR_NPBODY_REQUESTED_TO_ENABLE"
+msgstr "Feito pedido para activar"
+
+msgid "IDS_WMGR_NPBODY_REQUESTED_TO_DISABLE"
+msgstr "Feito pedido para desactivar"
+
+msgid "IDS_WMGR_BODY_TAP_FWD_CALLS_TO_GEAR_TO_VIEW_THE_SETTINGS_FOR_THIS_FUNCTION_OR_TO_ENABLE_IT_ABB"
+msgstr "Toque Reenc. chamadas para Gear para ver as def. desta função ou para a activar."
+
+msgid "IDS_WNOTI_SBODY_REQUESTED_TO_TURN_ON_ABB_VZW_M_STATUS"
+msgstr "Requested to turn on"
+
+msgid "IDS_WNOTI_SBODY_REQUESTED_TO_TURN_OFF_ABB_VZW_M_STATUS"
+msgstr "Requested to turn off"
+
+msgid "IDS_WNOTI_POP_REQUESTED_TO_TURN_ON_FWD_CALLS_TO_GEAR_VZW"
+msgstr "Requested to turn on Fwd calls to Gear."
+
+msgid "IDS_WNOTI_POP_REQUESTED_TO_TURN_OFF_FWD_CALLS_TO_GEAR_VZW"
+msgstr "Requested to turn off Fwd calls to Gear."
+
+msgid "IDS_WNOTI_MBODY_MOBILE_TO_GEAR_ABB"
+msgstr "Móvel para Gear"
+
+msgid "IDS_WNOTI_MBODY_GEAR_TO_MOBILE_ABB"
+msgstr "Gear para móvel"
+
+msgid "IDS_WNOTI_MBODY_AUTO_CALL_FORWARDING_ABB"
+msgstr "Reenc. chamadas auto"
+
+msgid "IDS_WNOTI_BODY_SWIPE_UPWARDS_TO_GO_BACK_TO_CLOCK_ABB"
+msgstr "Deslize para cima para voltar relógio."
+
+msgid "IDS_MUSIC_BODY_MUSIC_PLAYER"
+msgstr "Leitor de Música"
+
+msgid "IDS_HS_MBODY_CONTROLS_M_APPLICATION_NAME_ABB3"
+msgstr "Controlos"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_ENABLE_TTS"
+msgstr "Toque duas vezes para activar."
+
+msgid "WDS_ST_BODY_BT_CONNECTED_ABB"
+msgstr "BT ligado"
+
+msgid "WDS_ST_BODY_OFF_ABB"
+msgstr "Desligado"
+
+msgid "WDS_ST_BODY_ON_ABB"
+msgstr "Ligar"
+
+msgid "WDS_ST_BODY_REMOTELY_CONNECTED_ABB"
+msgstr "Ligado remotamente"
+
+msgid "WDS_ST_BODY_STANDALONE_ABB"
+msgstr "Autónomo"
+
+msgid "WDS_ST_TPOP_TURN_OFF_VIBRATION_FOR_ALL_ALERTS_EXCEPT_ALARMS_ABB"
+msgstr "Desligar vibração para todos os alertas excepto alarmes."
+
+msgid "WDS_QP_TMBODY_CONNECTED_VIA_BLUETOOTH_ABB"
+msgstr "Ligado via Bluetooth"
+
+msgid "WDS_QP_TMBODY_CONNECTED_REMOTELY_ABB"
+msgstr "Ligado remotamente"
+
+msgid "IDS_ST_POP_FLIGHT_MODE_DISABLES_CALLING_AND_MESSAGING_FUNCTIONS_AND_TURNS_OFF_MOBILE_DATA_AND_CONNECTIVITY_FUNCTIONS_SUCH_AS_WLAN_AND_BLUETOOTH_MSG_CHN"
+msgstr "O Modo de voo desactiva as funções de chamadas e mensagens, e desliga as funções de Dados móveis e conectividade, como a WLAN e o Bluetooth. Para utilizar a WLAN e o Bluetooth, ligue-os nas Definições."
+
+msgid "WDS_TTS_TBBODY_SCREEN_ON"
+msgstr "Ecrã ligado."
+
+msgid "WDS_ST_TPOP_SOUNDS_WILL_BE_MUTED_AND_SCREEN_WILL_REMAIN_TURNED_OFF_FOR_INCOMING_CALLS_AND_ALERTS_BUT_NOT_ALARMS"
+msgstr "Os sons serão silenciados e o ecrã permanecerá desligado para as chamadas recebidas e alertas, mas não para os alarmes."
+
+msgid "WDS_ST_TPOP_VIBRATION_WILL_BE_TURNED_OFF_AND_SCREEN_WILL_REMAIN_TURNED_OFF_FOR_INCOMING_CALLS_AND_ALERTS_BUT_NOT_ALARMS"
+msgstr "A vibração será desligada e o ecrã permanecerá desligado para as chamadas recebidas e alertas, mas não para os alarmes."
+
+msgid "WDS_ST_BODY_VIBRATION_WILL_BE_TURNED_OFF_AND_SCREEN_WILL_REMAIN_TURNED_OFF"
+msgstr "A vibração é desligada e o ecrã mantém-se desligado."
+
+msgid "WDS_ST_BODY_SOUNDS_WILL_BE_MUTED_AND_SCREEN_WILL_REMAIN_TURNED_OFF"
+msgstr "Os sons são silenciados e o ecrã mantém-se desligado."
+
+msgid "WDS_WMGR_SBODY_CALL_FORWARDING_REQUESTED_ABB_VZW"
+msgstr "Call forwarding requested"
+
+msgid "WDS_ST_POP_AIRPLANE_MODE_TURNS_OFF_CALLS_MESSAGING_AND_ALL_CONNECTIONS_TO_USE_WI_FI_OR_BLUETOOTH_GO_TO_SETTINGS_VZW"
+msgstr "Airplane mode turns off calls, messaging and all connections. To use Wi-Fi or Bluetooth, go to Settings."
+
+msgid "IDS_ST_SBODY_CHINA_TELECOM_M_SERVICE_PROVIDER_CHN_CTC"
+msgstr "China Telecom"
+

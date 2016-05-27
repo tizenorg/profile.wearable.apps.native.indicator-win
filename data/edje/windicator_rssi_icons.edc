@@ -1,0 +1,360 @@
+/*
+ * Copyright (c) 2015 Samsung Electronics Co., Ltd All Rights Reserved
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+
+
+#define DESCRIPTION_RSSI(num)\
+	description {\
+		state : "state_"num;\
+		inherit : "default" 0.0;\
+		image.normal : RSSI_IMAGE_DIR"/signal_strength_"num".png";\
+	}\
+
+#define DESCRIPTION_RSSI_SPRINT(num)\
+	description {\
+		state : "state_sprint_"num;\
+		inherit : "default" 0.0;\
+		image.normal : "Indicator_business/Roaming_RSSI/RSSI_Sprint/stat_sys_signal_"num".png";\
+	}\
+
+#define DESCRIPTION_RSSI_VERIZON(num)\
+	description {\
+		state : "state_verizon_"num;\
+		inherit : "default" 0.0;\
+		image.normal : "Indicator_business/Roaming_RSSI/RSSI_vzw/tw_stat_sys_5_level_signal_"num".png";\
+	}\
+
+#define DESCRIPTION_ROAMING_RSSI(num)\
+	description {\
+		state : "state_roaming_"num;\
+		inherit : "default" 0.0;\
+		image.normal : RSSI_IMAGE_DIR"/roaming_strength_"num".png";\
+	}\
+
+#define DESCRIPTION_ROAMING_RSSI_CTC(num)\
+	description {\
+		state : "state_roaming_ctc_"num;\
+		inherit : "default" 0.0;\
+		image.normal : "CTC/Roaming_ctc/roaming_ctc_4_level_"num".png";\
+	}\
+
+
+#define PROGRAM_RSSI(num)\
+	program {\
+		name : "set_rssi_"num;\
+		signal : "set_rssi_"num;\
+		source : "img.rssi";\
+		action : STATE_SET "state_"num 0.0;\
+		target : "img.rssi";\
+	}\
+
+#define PROGRAM_RSSI_SPRINT(num)\
+	program {\
+		name : "set_rssi_sprint_"num;\
+		signal : "set_rssi_sprint_"num;\
+		source : "img.rssi";\
+		action : STATE_SET "state_sprint_"num 0.0;\
+		target : "img.rssi";\
+	}\
+
+#define PROGRAM_RSSI_VERIZON(num)\
+	program {\
+		name : "set_rssi_verizon_"num;\
+		signal : "set_rssi_verizon_"num;\
+		source : "img.rssi";\
+		action : STATE_SET "state_verizon_"num 0.0;\
+		target : "img.rssi";\
+	}\
+
+
+#define PROGRAM_ROAMING_RSSI(num)\
+	program {\
+		name : "set_roaming_rssi_"num;\
+		signal : "set_roaming_rssi_"num;\
+		source : "img.rssi";\
+		action : STATE_SET "state_roaming_"num 0.0;\
+		target : "img.rssi";\
+	}\
+
+#define PROGRAM_ROAMING_RSSI_CTC(num)\
+	program {\
+		name : "set_roaming_rssi_ctc_"num;\
+		signal : "set_roaming_rssi_ctc_"num;\
+		source : "img.rssi";\
+		action : STATE_SET "state_roaming_ctc_"num 0.0;\
+		target : "img.rssi";\
+	}\
+
+group {
+	name : "windicator/rssi_icon";
+	images {
+
+		/* Sprint */
+		image : Indicator_business/Roaming_RSSI/RSSI_Sprint/stat_sys_signal_0.png COMP;
+		image : Indicator_business/Roaming_RSSI/RSSI_Sprint/stat_sys_signal_1.png COMP;
+		image : Indicator_business/Roaming_RSSI/RSSI_Sprint/stat_sys_signal_2.png COMP;
+		image : Indicator_business/Roaming_RSSI/RSSI_Sprint/stat_sys_signal_3.png COMP;
+		image : Indicator_business/Roaming_RSSI/RSSI_Sprint/stat_sys_signal_4.png COMP;
+		image : Indicator_business/Roaming_RSSI/RSSI_Sprint/stat_sys_nosignal.png COMP;
+		image : Indicator_business/Roaming_RSSI/RSSI_Sprint/SPR_network/stat_sys_data_connected_roam.png COMP;
+
+		/* Verizon */
+		image : Indicator_business/Roaming_RSSI/RSSI_vzw/tw_stat_sys_5_level_signal_0.png COMP;
+		image : Indicator_business/Roaming_RSSI/RSSI_vzw/tw_stat_sys_5_level_signal_1.png COMP;
+		image : Indicator_business/Roaming_RSSI/RSSI_vzw/tw_stat_sys_5_level_signal_2.png COMP;
+		image : Indicator_business/Roaming_RSSI/RSSI_vzw/tw_stat_sys_5_level_signal_3.png COMP;
+		image : Indicator_business/Roaming_RSSI/RSSI_vzw/tw_stat_sys_5_level_signal_4.png COMP;
+		image : Indicator_business/Roaming_RSSI/RSSI_vzw/tw_stat_sys_5_level_signal_5.png COMP;
+		image : Indicator_business/stat_sys_data_vzw_unknown.png COMP;
+		image : Indicator_business/Roaming_RSSI/Roaming/stat_sys_data_connected_cdma_roam.png COMP;
+
+		/* T-mobile */
+		image : Indicator_business/Roaming_RSSI/RSSI/TMO/tw_stat_sys_5_level_no_svc.png COMP;
+
+		/* CTC */
+		image : "CSC/Roaming_ctc/roaming_ctc_4_level_00.png" COMP;
+		image : "CSC/Roaming_ctc/roaming_ctc_4_level_01.png" COMP;
+		image : "CSC/Roaming_ctc/roaming_ctc_4_level_02.png" COMP;
+		image : "CSC/Roaming_ctc/roaming_ctc_4_level_03.png" COMP;
+		image : "CSC/Roaming_ctc/roaming_ctc_4_level_04.png" COMP;
+
+		image : RSSI_IMAGE_DIR"/signal_strength_00.png" COMP;
+		image : RSSI_IMAGE_DIR"/signal_strength_01.png" COMP;
+		image : RSSI_IMAGE_DIR"/signal_strength_02.png" COMP;
+		image : RSSI_IMAGE_DIR"/signal_strength_03.png" COMP;
+		image : RSSI_IMAGE_DIR"/signal_strength_04.png" COMP;
+
+		image : RSSI_IMAGE_DIR"/roaming_strength_00.png" COMP;
+		image : RSSI_IMAGE_DIR"/roaming_strength_01.png" COMP;
+		image : RSSI_IMAGE_DIR"/roaming_strength_02.png" COMP;
+		image : RSSI_IMAGE_DIR"/roaming_strength_03.png" COMP;
+		image : RSSI_IMAGE_DIR"/roaming_strength_04.png" COMP;
+		image : indicator/indi_flight_mode.png COMP;
+		image : indicator/indi_no_signal.png COMP;
+		image : Indicator_business/stat_sys_data_unknown.png COMP;
+		
+	}
+	parts {
+		part {
+			name : "img.rssi";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				visible : 1;
+				min : DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
+				max : DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
+				fixed : 1 1;
+				image.normal : "indicator/indi_no_signal.png";
+				//image.normal : RSSI_IMAGE_DIR"/signal_strength_03.png";
+				color_class : "AO016";
+			}
+			DESCRIPTION_RSSI(00);
+			DESCRIPTION_RSSI(01);
+			DESCRIPTION_RSSI(02);
+			DESCRIPTION_RSSI(03);
+			DESCRIPTION_RSSI(04);
+			DESCRIPTION_RSSI_SPRINT(0);
+			DESCRIPTION_RSSI_SPRINT(1);
+			DESCRIPTION_RSSI_SPRINT(2);
+			DESCRIPTION_RSSI_SPRINT(3);
+			DESCRIPTION_RSSI_SPRINT(4);
+			DESCRIPTION_RSSI_VERIZON(0);
+			DESCRIPTION_RSSI_VERIZON(1);
+			DESCRIPTION_RSSI_VERIZON(2);
+			DESCRIPTION_RSSI_VERIZON(3);
+			DESCRIPTION_RSSI_VERIZON(4);
+			DESCRIPTION_RSSI_VERIZON(5);
+
+			DESCRIPTION_ROAMING_RSSI(00);
+			DESCRIPTION_ROAMING_RSSI(01);
+			DESCRIPTION_ROAMING_RSSI(02);
+			DESCRIPTION_ROAMING_RSSI(03);
+			DESCRIPTION_ROAMING_RSSI(04);
+
+			/* No signal */
+			description {
+				state : "state_No_signal";
+				inherit : "default" 0.0;
+			}
+			description {
+				state : "state_sprint_No_signal";
+				inherit : "default" 0.0;
+				image.normal : "Indicator_business/Roaming_RSSI/RSSI_Sprint/stat_sys_nosignal.png";
+			}
+			description {
+				state : "state_verizon_No_signal";
+				inherit : "default" 0.0;
+				image.normal : "Indicator_business/stat_sys_data_vzw_unknown.png";
+			}
+			description {
+				state : "state_tmo_No_signal";
+				inherit : "default" 0.0;
+				image.normal : "Indicator_business/Roaming_RSSI/RSSI/TMO/tw_stat_sys_5_level_no_svc.png";
+			}
+
+			description {
+				state : "state_Flight_mode";
+				inherit : "default" 0.0;
+				image.normal : "indicator/indi_flight_mode.png";
+			}
+			description {
+				state : "state_none";
+				inherit : "default" 0.0;
+				visible: 0;
+			}
+		}
+		/* for Sprint */
+		part {
+			name : "img.roaming";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				visible : 0;
+				min : DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
+				max : DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
+				fixed : 1 1;
+				image.normal : "Indicator_business/Roaming_RSSI/RSSI_Sprint/SPR_network/stat_sys_data_connected_roam.png";
+				color_class : "AO016";
+			}
+			description {
+				state : "show";
+				inherit : "default" 0.0;
+				visible: 1;
+			}
+		}
+		/* for Verizon */
+		part {
+			name : "img.delta.roaming";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				visible : 0;
+				min : DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
+				max : DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
+				fixed : 1 1;
+				image.normal : "Indicator_business/Roaming_RSSI/Roaming/stat_sys_data_connected_cdma_roam.png";
+				color_class : "AO016";
+			}
+			description {
+				state : "show";
+				inherit : "default" 0.0;
+				visible: 1;
+			}
+		}
+	}
+
+	programs {
+		/* for Sprint */
+		program {
+			name : "set_rssi_roaming_show";
+			signal : "set_rssi_roaming_show";
+			source : "img.roaming";
+			action : STATE_SET "show" 0.0;
+			target : "img.roaming";
+		}
+		program {
+			name : "set_rssi_roaming_hide";
+			signal : "set_rssi_roaming_hide";
+			source : "img.roaming";
+			action : STATE_SET "default" 0.0;
+			target : "img.roaming";
+		}
+		/* for Verizon */
+		program {
+			name : "set_delta_roaming_on";
+			signal : "set_delta_roaming_on";
+			source : "img.delta.roaming";
+			action : STATE_SET "show" 0.0;
+			target : "img.delta.roaming";
+		}
+		program {
+			name : "set_delta_roaming_off";
+			signal : "set_delta_roaming_off";
+			source : "img.delta.roaming";
+			action : STATE_SET "default" 0.0;
+			target : "img.delta.roaming";
+		}
+		PROGRAM_RSSI(00);
+		PROGRAM_RSSI(01);
+		PROGRAM_RSSI(02);
+		PROGRAM_RSSI(03);
+		PROGRAM_RSSI(04);
+
+		PROGRAM_RSSI_SPRINT(0);
+		PROGRAM_RSSI_SPRINT(1);
+		PROGRAM_RSSI_SPRINT(2);
+		PROGRAM_RSSI_SPRINT(3);
+		PROGRAM_RSSI_SPRINT(4);
+
+		PROGRAM_RSSI_VERIZON(0);
+		PROGRAM_RSSI_VERIZON(1);
+		PROGRAM_RSSI_VERIZON(2);
+		PROGRAM_RSSI_VERIZON(3);
+		PROGRAM_RSSI_VERIZON(4);
+		PROGRAM_RSSI_VERIZON(5);
+
+		PROGRAM_ROAMING_RSSI(00);
+		PROGRAM_ROAMING_RSSI(01);
+		PROGRAM_ROAMING_RSSI(02);
+		PROGRAM_ROAMING_RSSI(03);
+		PROGRAM_ROAMING_RSSI(04);
+		program {
+			name : "set_rssi_No_signal";
+			signal : "set_rssi_No_signal";
+			source : "img.rssi";
+			action : STATE_SET "state_No_signal" 0.0;
+			target : "img.rssi";
+		}
+		program {
+			name : "set_rssi_sprint_No_signal";
+			signal : "set_rssi_sprint_No_signal";
+			source : "img.rssi";
+			action : STATE_SET "state_sprint_No_signal" 0.0;
+			target : "img.rssi";
+		}
+		program {
+			name : "set_rssi_verizon_No_signal";
+			signal : "set_rssi_verizon_No_signal";
+			source : "img.rssi";
+			action : STATE_SET "state_verizon_No_signal" 0.0;
+			target : "img.rssi";
+		}
+		program {
+			name : "set_rssi_tmo_No_signal";
+			signal : "set_rssi_tmo_No_signal";
+			source : "img.rssi";
+			action : STATE_SET "state_tmo_No_signal" 0.0;
+			target : "img.rssi";
+		}
+		program {
+			name : "set_rssi_Flight_mode";
+			signal : "set_rssi_Flight_mode";
+			source : "img.rssi";
+			action : STATE_SET "state_Flight_mode" 0.0;
+			target : "img.rssi";
+		}
+		program {
+			name : "set_rssi_none";
+			signal : "set_rssi_none";
+			source : "img.rssi";
+			action : STATE_SET "state_none" 0.0;
+			target : "img.rssi";
+		}
+	}
+}

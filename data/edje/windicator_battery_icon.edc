@@ -1,0 +1,301 @@
+/*
+ * Copyright (c) 2015 Samsung Electronics Co., Ltd All Rights Reserved
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+#if (NETWORK_ATT == 1)
+#define BATTERY_DIR_PREFIX "Battery/ATT"
+#elif (NETWORK_VERIZON == 1) || (NETWORK_SPRINT == 1) || (NETWORK_TMB == 1)
+#define BATTERY_DIR_PREFIX "Battery/VRW_SPR_TMO"
+#else
+#define BATTERY_DIR_PREFIX "battery"
+#endif
+
+#define DESCRIPTION_BATTERY(num)\
+	description {\
+		state : "battery_level_"num;\
+		inherit : "default" 0.0;\
+		image.normal : BATTERY_DIR_PREFIX"/battery_"num".png";\
+	}\
+
+#define DESCRIPTION_CHARGING_BATTERY(num)\
+	description {\
+		state : "battery_level_charging_"num;\
+		inherit : "default" 0.0;\
+		image.normal : BATTERY_DIR_PREFIX"/battery_"num".png";\
+	}\
+
+#define PROGRAM_BATTERY(num)\
+	program {\
+		name : "change_level_"num;\
+		signal : "change_level_"num;\
+		source : "img.battery";\
+		action : STATE_SET "battery_level_"num 0.0;\
+		target : "img.battery";\
+	}\
+
+#define PROGRAM_CHARGING_BATTERY(num)\
+	program {\
+		name : "change_charging_level_"num;\
+		signal : "change_charging_level_"num;\
+		source : "img.battery";\
+		action : STATE_SET "battery_level_charging_"num 0.0;\
+		target : "img.battery";\
+	}\
+
+group {
+	name : "windicator/battery_icon";
+
+	images {
+		image: BATTERY_DIR_PREFIX"/battery_00.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_05.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_10.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_15.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_20.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_25.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_30.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_35.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_40.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_45.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_50.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_55.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_60.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_65.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_70.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_75.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_80.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_85.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_90.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_95.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_100.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_bg.png" COMP;
+		image: BATTERY_DIR_PREFIX"/battery_charge.png" COMP;
+	}
+	parts {
+		part {
+			name : "img.battery.bg";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min: BATTERY_ICON_WIDTH BATTERY_ICON_HEIGHT;
+				max: BATTERY_ICON_WIDTH BATTERY_ICON_HEIGHT;
+				fixed: 1 1;
+				color_class : "AO017";
+				image.normal : BATTERY_DIR_PREFIX"/battery_bg.png";
+			}
+		}
+		part {
+			name : "img.battery";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min: BATTERY_ICON_WIDTH BATTERY_ICON_HEIGHT;
+				max: BATTERY_ICON_WIDTH BATTERY_ICON_HEIGHT;
+				fixed: 1 1;
+				color_class : "AO018L1";
+				image.normal : BATTERY_DIR_PREFIX"/battery_50.png";
+			}
+			description {
+				state : "hide";
+				inherit: "default" 0.0;
+				visible: 0;
+			}
+			/* Verizon, ATT */
+			description {
+				state : "Red4";
+				inherit: "default" 0.0;
+				color_class : "AO018L2";
+				image.normal : BATTERY_DIR_PREFIX"/battery_00.png";
+			}
+			description {
+				state : "Red10";
+				inherit: "default" 0.0;
+				color_class : "AO018L2";
+				image.normal : BATTERY_DIR_PREFIX"/battery_10.png";
+			}
+			description {
+				state : "Yellow15";
+				inherit: "default" 0.0;
+				color_class : "AO018L3";
+				image.normal : BATTERY_DIR_PREFIX"/battery_15.png";
+			}
+			description {
+				state : "Yellow20";
+				inherit: "default" 0.0;
+				color_class : "AO018L3";
+				image.normal : BATTERY_DIR_PREFIX"/battery_20.png";
+			}
+			DESCRIPTION_BATTERY(00);
+			DESCRIPTION_BATTERY(05);
+			DESCRIPTION_BATTERY(10);
+			DESCRIPTION_BATTERY(15);
+			DESCRIPTION_BATTERY(20);
+			DESCRIPTION_BATTERY(25);
+			DESCRIPTION_BATTERY(30);
+			DESCRIPTION_BATTERY(35);
+			DESCRIPTION_BATTERY(40);
+			DESCRIPTION_BATTERY(45);
+			DESCRIPTION_BATTERY(50);
+			DESCRIPTION_BATTERY(55);
+			DESCRIPTION_BATTERY(60);
+			DESCRIPTION_BATTERY(65);
+			DESCRIPTION_BATTERY(70);
+			DESCRIPTION_BATTERY(75);
+			DESCRIPTION_BATTERY(80);
+			DESCRIPTION_BATTERY(85);
+			DESCRIPTION_BATTERY(90);
+			DESCRIPTION_BATTERY(95);
+			DESCRIPTION_BATTERY(100);
+
+			DESCRIPTION_CHARGING_BATTERY(00);
+			DESCRIPTION_CHARGING_BATTERY(05);
+			DESCRIPTION_CHARGING_BATTERY(10);
+			DESCRIPTION_CHARGING_BATTERY(15);
+			DESCRIPTION_CHARGING_BATTERY(20);
+			DESCRIPTION_CHARGING_BATTERY(25);
+			DESCRIPTION_CHARGING_BATTERY(30);
+			DESCRIPTION_CHARGING_BATTERY(35);
+			DESCRIPTION_CHARGING_BATTERY(40);
+			DESCRIPTION_CHARGING_BATTERY(45);
+			DESCRIPTION_CHARGING_BATTERY(50);
+			DESCRIPTION_CHARGING_BATTERY(55);
+			DESCRIPTION_CHARGING_BATTERY(60);
+			DESCRIPTION_CHARGING_BATTERY(65);
+			DESCRIPTION_CHARGING_BATTERY(70);
+			DESCRIPTION_CHARGING_BATTERY(75);
+			DESCRIPTION_CHARGING_BATTERY(80);
+			DESCRIPTION_CHARGING_BATTERY(85);
+			DESCRIPTION_CHARGING_BATTERY(90);
+			DESCRIPTION_CHARGING_BATTERY(95);
+			DESCRIPTION_CHARGING_BATTERY(100);
+		}
+		part {
+			name : "img.battery.charge";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min: BATTERY_ICON_WIDTH BATTERY_ICON_HEIGHT;
+				max: BATTERY_ICON_WIDTH BATTERY_ICON_HEIGHT;
+				fixed: 1 1;
+				visible: 0;
+				color_class: "AO019L1";
+				image.normal : BATTERY_DIR_PREFIX"/battery_charge.png";
+			}
+			description {
+				state : "show";
+				inherit: "default" 0.0;
+				visible: 1;
+			}
+		}
+	}
+
+	programs {
+		program {
+			name : "hide.img.battery";
+			signal : "hide.img.battery";
+			source : "img.battery";
+			action : STATE_SET "hide" 0.0;
+			target : "img.battery";
+		}
+		/* Verizon, ATT */
+		program {
+			name : "Red4";
+			signal : "Red4";
+			source : "img.battery";
+			action : STATE_SET "Red4" 0.0;
+			target : "img.battery";
+		}
+		program {
+			name : "Red10";
+			signal : "Red10";
+			source : "img.battery";
+			action : STATE_SET "Red10" 0.0;
+			target : "img.battery";
+		}
+		program {
+			name : "Yellow15";
+			signal : "Yellow15";
+			source : "img.battery";
+			action : STATE_SET "Yellow15" 0.0;
+			target : "img.battery";
+		}
+		program {
+			name : "Yellow20";
+			signal : "Yellow20";
+			source : "img.battery";
+			action : STATE_SET "Yellow20" 0.0;
+			target : "img.battery";
+		}
+		PROGRAM_BATTERY(00);
+		PROGRAM_BATTERY(05);
+		PROGRAM_BATTERY(10);
+		PROGRAM_BATTERY(15);
+		PROGRAM_BATTERY(20);
+		PROGRAM_BATTERY(25);
+		PROGRAM_BATTERY(30);
+		PROGRAM_BATTERY(35);
+		PROGRAM_BATTERY(40);
+		PROGRAM_BATTERY(45);
+		PROGRAM_BATTERY(50);
+		PROGRAM_BATTERY(55);
+		PROGRAM_BATTERY(60);
+		PROGRAM_BATTERY(65);
+		PROGRAM_BATTERY(70);
+		PROGRAM_BATTERY(75);
+		PROGRAM_BATTERY(80);
+		PROGRAM_BATTERY(85);
+		PROGRAM_BATTERY(90);
+		PROGRAM_BATTERY(95);
+		PROGRAM_BATTERY(100);
+
+		PROGRAM_CHARGING_BATTERY(00);
+		PROGRAM_CHARGING_BATTERY(05);
+		PROGRAM_CHARGING_BATTERY(10);
+		PROGRAM_CHARGING_BATTERY(15);
+		PROGRAM_CHARGING_BATTERY(20);
+		PROGRAM_CHARGING_BATTERY(25);
+		PROGRAM_CHARGING_BATTERY(30);
+		PROGRAM_CHARGING_BATTERY(35);
+		PROGRAM_CHARGING_BATTERY(40);
+		PROGRAM_CHARGING_BATTERY(45);
+		PROGRAM_CHARGING_BATTERY(50);
+		PROGRAM_CHARGING_BATTERY(55);
+		PROGRAM_CHARGING_BATTERY(60);
+		PROGRAM_CHARGING_BATTERY(65);
+		PROGRAM_CHARGING_BATTERY(70);
+		PROGRAM_CHARGING_BATTERY(75);
+		PROGRAM_CHARGING_BATTERY(80);
+		PROGRAM_CHARGING_BATTERY(85);
+		PROGRAM_CHARGING_BATTERY(90);
+		PROGRAM_CHARGING_BATTERY(95);
+		PROGRAM_CHARGING_BATTERY(100);
+		program {
+			name : "Show.Battery.Charge";
+			signal : "Show.Battery.Charge";
+			source : "img.battery.charge";
+			action : STATE_SET "show" 0.0;
+			target : "img.battery.charge";
+		}
+		program {
+			name : "Hide.Battery.Charge";
+			signal : "Hide.Battery.Charge";
+			source : "img.battery.charge";
+			action : STATE_SET "default" 0.0;
+			target : "img.battery.charge";
+		}
+	}
+}

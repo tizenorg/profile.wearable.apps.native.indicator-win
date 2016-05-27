@@ -1,0 +1,537 @@
+---------------------------------------
+pkg_type [rpm]	pkgid [com.samsung.windicator]	version [0.0.3]	preload [1]	installed_time [1464099949]
+**List of Ui-Apps**
+Appid: com.samsung.windicator
+Package: com.samsung.windicator
+Exec: /usr/apps/com.samsung.windicator/bin/windicator
+Icon: /usr/apps/com.samsung.windicator/shared/res/com.samsung.windicator.png
+Label: Controls
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 0 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [hangul]	version [1.0.4]	preload [1]	installed_time [1464086691]
+**List of Ui-Apps**
+Appid: org.tizen.ise-engine-hangul
+Package: hangul
+Exec: /usr/lib/scim-1.0/scim-launcher
+Icon: 
+Label: Hangul keyboard
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [ise-default]	version [1.2.37]	preload [1]	installed_time [1464086687]
+**List of Ui-Apps**
+Appid: ise-default
+Package: ise-default
+Exec: /usr/lib/scim-1.0/scim-helper-launcher
+Icon: 
+Label: Tizen keyboard
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [ise-engine-anthy]	version [1.0.6]	preload [1]	installed_time [1464086696]
+**List of Ui-Apps**
+Appid: org.tizen.ise-engine-anthy
+Package: ise-engine-anthy
+Exec: /usr/lib/scim-1.0/scim-launcher
+Icon: 
+Label: Japanese keyboard
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [ise-engine-default]	version [1.0.5]	preload [1]	installed_time [1464086694]
+**List of Ui-Apps**
+Appid: org.tizen.ise-engine-default
+Package: ise-engine-default
+Exec: /usr/lib/scim-1.0/scim-launcher
+Icon: 
+Label: Default keyboard
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [ise-engine-sunpinyin]	version [1.0.5]	preload [1]	installed_time [1464086687]
+**List of Ui-Apps**
+Appid: org.tizen.ise-engine-sunpinyin
+Package: ise-engine-sunpinyin
+Exec: /usr/lib/scim-1.0/scim-launcher
+Icon: 
+Label: Chinese (sunpinyin) keyboard
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.bt-syspopup]	version [2.0.25]	preload [1]	installed_time [1464086694]
+**List of Ui-Apps**
+Appid: org.tizen.bt-syspopup
+Package: org.tizen.bt-syspopup
+Exec: /usr/apps/org.tizen.bt-syspopup/bin/bt-syspopup
+Icon: /usr/apps/org.tizen.bt-syspopup/shared/res/org.tizen.bt-syspopup.png
+Label: Bluetooth System Popup
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.chromium-efl]	version [47.2526.69.49]	preload [1]	installed_time [1464086690]
+**List of Ui-Apps**
+Appid: org.tizen.chromium-efl.efl_webview_app
+Package: org.tizen.chromium-efl
+Exec: /usr/apps/org.tizen.chromium-efl/bin/efl_webview_app
+Icon: /usr/apps/org.tizen.chromium-efl/shared/res/efl_webview_app.png
+Label: Chromium-efl efl_webview_app
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 1
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+Appid: org.tizen.chromium-efl.mini_browser
+Package: org.tizen.chromium-efl
+Exec: /usr/apps/org.tizen.chromium-efl/bin/mini_browser
+Icon: /usr/apps/org.tizen.chromium-efl/shared/res/mini-browser.png
+Label: Chromium-efl mini_browser
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 1
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+Appid: org.tizen.chromium-efl.ubrowser
+Package: org.tizen.chromium-efl
+Exec: /usr/apps/org.tizen.chromium-efl/bin/ubrowser
+Icon: /usr/apps/org.tizen.chromium-efl/shared/res/ubrowser.png
+Label: Chromium-efl ubrowser
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 1
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.crash-syspopup]	version [0.1.7]	preload [1]	installed_time [1464086692]
+**List of Ui-Apps**
+Appid: org.tizen.crash-syspopup
+Package: org.tizen.crash-syspopup
+Exec: /usr/apps/org.tizen.crash-syspopup/bin/crash-popup
+Icon: 
+Label: Crash popup
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.dpm-syspopup]	version [1.0.0]	preload [1]	installed_time [1464086691]
+**List of Ui-Apps**
+Appid: org.tizen.dpm-syspopup
+Package: org.tizen.dpm-syspopup
+Exec: /usr/apps/org.tizen.dpm-syspopup/bin/org.tizen.dpm-syspopup
+Icon: 
+Label: dpm-syspopup
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.elm-demo-tizen-wearable]	version [0.1]	preload [1]	installed_time [1464086688]
+**List of Ui-Apps**
+Appid: org.tizen.elm-demo-tizen-wearable
+Package: org.tizen.elm-demo-tizen-wearable
+Exec: /usr/apps/org.tizen.elm-demo-tizen-wearable/bin/elm-demo-tizen-wearable
+Icon: 
+Label: wearable-demo
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 0 
+Taskmanage: 1
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.heremaps-uc]	version [1.0.0]	preload [1]	installed_time [1464086694]
+**List of Ui-Apps**
+Appid: org.tizen.heremaps-uc
+Package: org.tizen.heremaps-uc
+Exec: /usr/apps/org.tizen.heremaps-uc/bin/heremaps-uc
+Icon: 
+Label: HereMaps UC
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.idle-clock-digital]	version [0.1.49]	preload [1]	installed_time [1464086692]
+**List of Ui-Apps**
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.inputmethod-setting]	version [0.5.3]	preload [1]	installed_time [1464086689]
+**List of Ui-Apps**
+Appid: org.tizen.inputmethod-setting-list
+Package: org.tizen.inputmethod-setting
+Exec: /usr/apps/org.tizen.inputmethod-setting/bin/inputmethod-setting-list
+Icon: /usr/apps/org.tizen.inputmethod-setting/shared/res/org.tizen.inputmethod-setting-list.png
+Label: IME List
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 1
+screenreader: 2
+user_data : test data
+
+Appid: org.tizen.inputmethod-setting-selector
+Package: org.tizen.inputmethod-setting
+Exec: /usr/apps/org.tizen.inputmethod-setting/bin/inputmethod-setting-selector
+Icon: /usr/apps/org.tizen.inputmethod-setting/shared/res/org.tizen.inputmethod-setting-selector.png
+Label: IME Selector
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 1
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.ode]	version [1.0.0]	preload [1]	installed_time [1464086690]
+**List of Ui-Apps**
+Appid: org.tizen.ode
+Package: org.tizen.ode
+Exec: /usr/apps/org.tizen.ode/bin/org.tizen.ode
+Icon: /usr/apps/org.tizen.ode/shared/res/org.tizen.ode
+Label: ODE
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 1
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.powerkey-syspopup]	version [0.2.0]	preload [1]	installed_time [1464086690]
+**List of Ui-Apps**
+Appid: org.tizen.powerkey-syspopup
+Package: org.tizen.powerkey-syspopup
+Exec: /usr/apps/org.tizen.powerkey-syspopup/bin/powerkey-popup
+Icon: 
+Label: Power key system popup
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.screen-reader]	version [0.1.0]	preload [1]	installed_time [1464086689]
+**List of Ui-Apps**
+Appid: org.tizen.screen-reader
+Package: org.tizen.screen-reader
+Exec: /usr/apps/org.tizen.screen-reader/bin/screen-reader
+Icon: /usr/apps/org.tizen.screen-reader/shared/res/org.tizen.screen-reader.png
+Label: screen-reader
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.syspopup-app]	version [0.1.0-0]	preload [1]	installed_time [1464086693]
+**List of Ui-Apps**
+Appid: org.tizen.syspopup-app
+Package: org.tizen.syspopup-app
+Exec: /usr/bin/syspopup-app
+Icon: 
+Label: syspopup-app
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.system-syspopup]	version [0.1.7]	preload [1]	installed_time [1464086693]
+**List of Ui-Apps**
+Appid: org.tizen.system-syspopup
+Package: org.tizen.system-syspopup
+Exec: /usr/apps/org.tizen.system-syspopup/bin/system-syspopup
+Icon: 
+Label: System popup
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.w-home]	version [0.1.0]	preload [1]	installed_time [1464189445]
+**List of Ui-Apps**
+Appid: org.tizen.w-home
+Package: org.tizen.w-home
+Exec: /usr/apps/org.tizen.w-home/bin/w-home
+Icon: /usr/apps/org.tizen.w-home/shared/res/org.tizen.w-home.png
+Label: W-Home
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.w-wifi]	version [${PKG_VERSION}]	preload [1]	installed_time [1464086695]
+**List of Ui-Apps**
+Appid: org.tizen.w-wifi
+Package: org.tizen.w-wifi
+Exec: /usr/apps/org.tizen.w-wifi/bin/wifi
+Icon: 
+Label: Wi-Fi
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 1
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.watch-setting]	version [0.0.1]	preload [1]	installed_time [1464086695]
+**List of Ui-Apps**
+Appid: org.tizen.watch-setting
+Package: org.tizen.watch-setting
+Exec: /usr/apps/org.tizen.watch-setting/bin/watch-setting
+Icon: /usr/apps/org.tizen.watch-setting/shared/res/org.tizen.watch-setting.png
+Label: Settings
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 0 
+Taskmanage: 1
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.widget_viewer_sdk]	version [1.0.0]	preload [1]	installed_time [1464086691]
+**List of Ui-Apps**
+Appid: org.tizen.widget_viewer_sdk
+Package: org.tizen.widget_viewer_sdk
+Exec: /usr/apps/org.tizen.widget_viewer_sdk/bin/widget_viewer_sdk
+Icon: /usr/apps/org.tizen.widget_viewer_sdk/shared/res/org.tizen.widget_viewer_sdk
+Label: Widget Viewer for SDK
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [org.tizen.windicator]	version [0.0.1]	preload [1]	installed_time [1464338392]
+**List of Ui-Apps**
+Appid: org.tizen.windicator
+Package: org.tizen.windicator
+Exec: /usr/apps/org.tizen.windicator/bin/windicator
+Icon: /usr/apps/org.tizen.windicator/shared/res/org.tizen.windicator.png
+Label: W-Indicator
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 0 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [table]	version [1.0.7]	preload [1]	installed_time [1464086693]
+**List of Ui-Apps**
+Appid: org.tizen.ise-engine-tables.cangjie3
+Package: table
+Exec: /usr/lib/scim-1.0/scim-launcher
+Icon: 
+Label: CanJie 3 keyboard
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+Appid: org.tizen.ise-engine-tables.zhuyin-big
+Package: table
+Exec: /usr/lib/scim-1.0/scim-launcher
+Icon: 
+Label: ZhuYin Big keyboard
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+---------------------------------------
+pkg_type [rpm]	pkgid [unikey]	version [0.3.1]	preload [1]	installed_time [1464086691]
+**List of Ui-Apps**
+Appid: org.tizen.ise-engine-unikey
+Package: unikey
+Exec: /usr/lib/scim-1.0/scim-launcher
+Icon: 
+Label: Vietnamese keyboard
+Apptype: capp
+component: uiapp
+Multiple: 0
+Nodisplay: 1 
+Taskmanage: 0
+hw-acceleration: 2
+screenreader: 2
+user_data : test data
+
+**List of Svc-Apps**
+---------------------------------------
+spend time for pkginfo is [203]ms

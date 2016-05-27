@@ -1,0 +1,681 @@
+/*
+ * Copyright (c) 2015 Samsung Electronics Co., Ltd All Rights Reserved
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+
+#define DESCRIPTION_BRIGHTNESS_ICON(num) \
+	description { \
+		state : "level_"num 0.0;\
+		inherit : "default" 0.0; \
+		image.normal: "Brightness/88x88/b_setting_brightness_"num".png"; \
+	} \
+
+#define DESCRIPTION_BRIGHTNESS_TEXT(num) \
+	description { \
+		state : "level_"num 0.0;\
+		inherit : "default" 0.0; \
+		text {\
+		     text : num;\
+		}\
+	} \
+
+#define PROGRAM_BRIGHTNESS_ICON(num)\
+	program { \
+		name : "brightness.icon."num; \
+		signal : "brightness.icon."num; \
+		source : "img.brightness.icon"; \
+		action : STATE_SET "level_"num 0.0; \
+		target : "img.brightness.icon"; \
+		target : "img.brightness.text"; \
+	} \
+
+#define DESCRIPTION_BRIGHTNESS_LARGE_ICON(num) \
+	description { \
+		state : "level_"num 0.0;\
+		inherit : "default" 0.0; \
+		image.normal: "Brightness/150x150/b_setting_brightness_"num".png"; \
+	} \
+
+#define DESCRIPTION_BRIGHTNESS_TEXT_FOR_LARGE_ICON(num) \
+	description { \
+		state : "level_"num 0.0;\
+		inherit : "default" 0.0; \
+		text {\
+		     text : num;\
+		}\
+	} \
+
+styles {
+      /* It also be used for volume */
+      style { name: "large_brightness_title_style";
+         base: "font=Tizen:style=Regular font_size="28" align=center color=""#FFFFFF"" color_class=T014 text_class=AT0112";
+         tag:  "br" "\n";
+         tag:  "hilight" "+ font_weight=Bold";
+         tag:  "b" "+ font_weight=Bold";
+         tag:  "tab" "\t";
+      }
+}
+
+styles {
+	style {
+		name: "style_txt_brightness";
+		base: "font=Tizen:style=Regular font_size=24 align=center color=#ffffffff color_class=AT016 wrap=mixed text_class=AT016";
+		tag: "br" "\n";
+		tag: "hilight" "+ color=#ffff";
+		tag: "b" "+ color=#ffff";
+		tag: "tab" "\t";
+	}
+}
+
+group {
+	name : "windicator/brightness/small_layout";
+	images {
+		image : "Controls/b_moment_more_opt_ic_bg.png" COMP;
+		image : "Controls/brightness.png" COMP;
+	}
+	parts {
+		part {
+			name : "bg";
+			type : SPACER;
+			scale :1;
+			description {
+				state : "default";
+				min : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				max : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+			}
+		}
+		part {	/* index 1 */
+			name : "img.brightness.bg";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				max : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				fixed : 1 1;
+				align : 0.0 0.0;
+				image.normal: "Controls/b_moment_more_opt_ic_bg.png";
+				color_class : "AO0122";
+				rel1 { relative : 0.0 0.0; to : "bg"; }
+				rel2 { relative : 0.0 0.0; to : "bg"; }
+			}
+			description {
+				state : "selected" 0.0;
+				inherit : "default" 0.0;
+				color_class : "AO0122P";
+			}
+		}
+		part {	/* index 1 */
+			name : "img.brightness.icon";
+			type : IMAGE;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				max : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				fixed : 1 1;
+				align : 0.0 0.0;
+				image.normal: "Controls/brightness.png";
+				color_class : "AO012";
+				rel1 { relative : 0.0 0.0; to : "bg"; }
+				rel2 { relative : 0.0 0.0; to : "bg"; }
+			}
+			description {
+				state : "selected" 0.0;
+				inherit : "default" 0.0;
+				color_class : "AO012P";
+			}
+		}
+		part {
+			name : "txt.brightness";
+			type : TEXTBLOCK;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				max : 32 25;
+				min : 32 25;
+			//	fixed : 1 1;
+				align : 0.5 0.0;
+				color: 0 0 0 255;
+				rel1 { relative : 0.5 0.0; to : "img.brightness.icon"; offset : 0 38;}
+				rel2 { relative : 0.5 0.0; to : "img.brightness.icon";}
+				text {
+					align : 0.5 0.5;
+					min : 0 1;
+					style : "style_txt_brightness";
+					text : "0";
+				}
+			}
+			description {
+				state : "hide";
+				inherit: "default" 0.0;
+				visible :0;
+			}
+		}
+	}
+	programs {
+		program {
+			name: "brightness.pressed";
+			signal: "brightness.pressed";
+			source: "img.brightness.bg";
+			action: STATE_SET "selected" 0.0;
+			target: "img.brightness.icon";
+			target: "img.brightness.bg";
+		}
+		program {
+			name: "brightness.released";
+			signal: "brightness.released";
+			source: "img.brightness.bg";
+			action: STATE_SET "default" 0.0;
+			target: "img.brightness.icon";
+			target: "img.brightness.bg";
+		}
+	}
+}
+
+#if 0
+group {
+	name : "windicator/brightness/small_layout";
+	images {
+		image : "mb_center_bg.png" COMP;
+		image : "moment_bar_focus_bt_touch_2.png" COMP;
+		image : "Brightness/88x88/b_setting_brightness_1.png" COMP;
+		image : "Brightness/88x88/b_setting_brightness_2.png" COMP;
+		image : "Brightness/88x88/b_setting_brightness_3.png" COMP;
+		image : "Brightness/88x88/b_setting_brightness_4.png" COMP;
+		image : "Brightness/88x88/b_setting_brightness_5.png" COMP;
+		image : "Brightness/88x88/b_setting_brightness_6.png" COMP;
+		image : "Brightness/88x88/b_setting_brightness_7.png" COMP;
+		image : "Brightness/88x88/b_setting_brightness_8.png" COMP;
+		image : "Brightness/88x88/b_setting_brightness_9.png" COMP;
+		image : "Brightness/88x88/b_setting_brightness_10.png" COMP;
+	}
+	parts {
+		part {
+			name : "bg";
+			type : SPACER;
+			scale :1;
+			description {
+				state : "default";
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+			}
+		}
+		part {
+			name : "padding.top";
+			type : SPACER;
+			scale : 1;
+			description {
+				state : "default";
+				min : 360 92;
+				max : 360 92;
+				fixed: 1 1;
+				align : 0.0 0.0;
+			//	color :200 0 0 200;
+				rel1 { relative : 0.0 0.0; to : "bg";}
+				rel2 { relative : 0.0 0.0; to : "bg";}
+			}
+		}
+		part {
+			name : "img.brightness.text";
+			type : TEXT;
+			clip_to : "clipper_brightness";
+			scale : 1;
+			repeat_events : 1;
+			description{
+				state : "default" 0.0;
+				min : BRIGHTNESS_TEXT_WIDTH BRIGHTNESS_TEXT_HEIGHT;
+				visible : 1;
+				fixed : 1 1;
+				align : 0.5 0.0;
+				color_class : "AT0112";
+				rel1 { relative : 0.5 1.0; to : "padding.top"; }
+				rel2 { relative : 0.5 1.0; to : "padding.top"; }
+				text {
+					min : 1 1;
+					align: 0.5 0.5;
+					text_class : "AT0112";
+					text : "00";
+				}
+			}
+			DESCRIPTION_BRIGHTNESS_TEXT(0)
+			DESCRIPTION_BRIGHTNESS_TEXT(1)
+			DESCRIPTION_BRIGHTNESS_TEXT(2)
+			DESCRIPTION_BRIGHTNESS_TEXT(3)
+			DESCRIPTION_BRIGHTNESS_TEXT(4)
+			DESCRIPTION_BRIGHTNESS_TEXT(5)
+			DESCRIPTION_BRIGHTNESS_TEXT(6)
+			DESCRIPTION_BRIGHTNESS_TEXT(7)
+			DESCRIPTION_BRIGHTNESS_TEXT(8)
+			DESCRIPTION_BRIGHTNESS_TEXT(9)
+			DESCRIPTION_BRIGHTNESS_TEXT(10)
+		}
+		part {
+			name : "padding.center.1";
+			type : SPACER;
+			scale : 1;
+			description {
+				state : "default";
+				min : 360 6;
+				max : 360 6;
+				fixed: 1 1;
+			//	color :0 0 200 200;
+				align : 0.5 0.0;
+				rel1 { relative : 0.5 1.0; to : "img.brightness.text";}
+				rel2 { relative : 0.5 1.0; to : "img.brightness.text";}
+			}
+		}
+		part {
+			name : "img.brightness.bg";
+			type : IMAGE;
+			clip_to : "clipper_brightness";
+			scale : 1;
+			repeat_events : 1;
+			description {
+				state : "default" 0.0;
+				min : BRIGHTNESS_BG_WIDTH BRIGHTNESS_BG_HEIGHT;
+				max : BRIGHTNESS_BG_WIDTH BRIGHTNESS_BG_HEIGHT;
+				fixed : 1 1;
+				image.normal: "mb_center_bg.png";
+				color_class : "AO024";
+				align : 0.5 0.0;
+				rel1 { relative : 0.5 1.0; to : "padding.center.1";}
+				rel2 { relative : 0.5 1.0; to : "padding.center.1";}
+			}
+		}
+		part {
+			name : "sw.brightness.btn";
+			type : SWALLOW;
+			scale : 1;
+			repeat_events : 1;
+			description {
+				state : "default" 0.0;
+				min : 80 80;
+				max : 80 80;
+				fixed : 1 1;
+				align : 0.5 0.5;
+				rel1.to: "img.brightness.bg";
+				rel2.to: "img.brightness.bg";
+			}
+		}
+		part {
+			name : "img.brightness.icon";
+			type : IMAGE;
+			clip_to : "clipper_brightness";
+			scale : 1;
+			repeat_events : 1;
+			description {
+				state : "default" 0.0;
+				min : BRIGHTNESS_ICON_WIDTH BRIGHTNESS_ICON_HEIGHT;
+				max : BRIGHTNESS_ICON_WIDTH BRIGHTNESS_ICON_HEIGHT;
+				fixed : 1 1;
+				image.normal: "Brightness/88x88/b_setting_brightness_1.png";
+				color_class : "AO025";
+				align : 0.5 0.0;
+				rel1 { relative : 0.5 1.0; to : "padding.center.1";}
+				rel2 { relative : 0.5 1.0; to : "padding.center.1";}
+			}
+			DESCRIPTION_BRIGHTNESS_ICON(1)
+			DESCRIPTION_BRIGHTNESS_ICON(2)
+			DESCRIPTION_BRIGHTNESS_ICON(3)
+			DESCRIPTION_BRIGHTNESS_ICON(4)
+			DESCRIPTION_BRIGHTNESS_ICON(5)
+			DESCRIPTION_BRIGHTNESS_ICON(6)
+			DESCRIPTION_BRIGHTNESS_ICON(7)
+			DESCRIPTION_BRIGHTNESS_ICON(8)
+			DESCRIPTION_BRIGHTNESS_ICON(9)
+			DESCRIPTION_BRIGHTNESS_ICON(10)
+		}
+		part {
+			name : "padding.center.2";
+			type : SPACER;
+			scale : 1;
+			description {
+				state : "default";
+				min : 360 PADDING_CENTER_2;
+				max : 360 PADDING_CENTER_2;
+				fixed: 1 1;
+			//	color :0 0 200 200;
+				align : 0.5 0.0;
+				rel1 { relative : 0.5 1.0; to : "img.brightness.icon";}
+				rel2 { relative : 0.5 1.0; to : "img.brightness.icon";}
+			}
+		}
+		part {
+			name : "txt.brightness";
+			type : TEXT;
+			clip_to : "clipper_brightness";
+			scale : 1;
+			description{
+				state : "default" 0.0;
+				min : BRIGHTNESS_TEXT_WIDTH BRIGHTNESS_TEXT_HEIGHT;
+				fixed : 1 1;
+				align : 0.5 0.0;
+				color_class : "AT0113";
+				rel1{ relative: 0.5 1.0; to : "padding.center.2";}
+				rel2{ relative: 0.5 1.0;to : "padding.center.2";}
+				text {
+					min : 1 1;
+					align: 0.5 0.5;
+					text : "brightness";
+					ellipsis : 0;
+					text_class : "AT0113";
+				}
+			}
+		}
+		part {
+			name: "clipper_brightness";
+			type: RECT;
+			scale: 1;
+			mouse_events: 0;
+			description {
+				state: "default" 0.0;
+				color: 255 255 255 0;
+				rel1.to: "bg";
+				rel2.to: "bg";
+			}
+			description {
+				state: "fade_in" 0.0;
+				inherit: "default";
+				color: 255 255 255 255;
+			}
+		}
+		part {
+			name : "brightness.touch.area";
+		//	type : RECT;
+			type : IMAGE;
+			precise_is_inside: 1;
+			repeat_events: 1;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+		//		min : 232 232;
+		//		max : 232 232;
+		//		fixed : 1 1;
+				color : 100 100 0 0;
+		//		align : 0.5 0.5;
+				image.normal: "moment_bar_focus_bt_touch_1.png";
+//				color_class : "AO0217";
+				rel1.to: "bg";
+				rel2.to: "bg";
+			}
+		}
+	}
+	programs {
+		PROGRAM_BRIGHTNESS_ICON(1)
+		PROGRAM_BRIGHTNESS_ICON(2)
+		PROGRAM_BRIGHTNESS_ICON(3)
+		PROGRAM_BRIGHTNESS_ICON(4)
+		PROGRAM_BRIGHTNESS_ICON(5)
+		PROGRAM_BRIGHTNESS_ICON(6)
+		PROGRAM_BRIGHTNESS_ICON(7)
+		PROGRAM_BRIGHTNESS_ICON(8)
+		PROGRAM_BRIGHTNESS_ICON(9)
+		PROGRAM_BRIGHTNESS_ICON(10)
+	}
+	// Hide
+	program {
+		name: "brightness_hide";
+		signal: "brightness_hide";
+		source: "clipper_brightness";
+		action: STATE_SET "default" 0.0;
+		target: "clipper_brightness";
+		after: "brightness_fade_out_end";
+	}
+	// Fade Out effect
+	program {
+		name: "brightness_fade_out";
+		signal: "brightness_fade_out";
+		source: "clipper_brightness";
+		action: STATE_SET "default" 0.0;
+		target: "clipper_brightness";
+		transition: ACCEL_FAC 0.1 0.33;
+		after : "brightness_fade_out_end";
+	}
+	program {
+		name : "brightness_fade_out_end";
+		action : SIGNAL_EMIT "brightness_fade_out_end" "signal";
+	}
+
+	// Fade In effect
+	program {
+		name: "brightness_fade_in";	// Do nothing for 0.1 second.
+		signal: "brightness_fade_in";
+		source: "clipper_brightness";
+		action: STATE_SET "default" 0.0;
+		target: "clipper_brightness";
+		transition: ACCEL_FAC 0.1 0.33;
+		after: "brightness_fade_in_start";
+	}
+	program {
+		name: "brightness_fade_in_start";
+		signal: "brightness_fade_in";
+		source: "clipper_brightness";
+		action: STATE_SET "fade_in" 0.0;
+		target: "clipper_brightness";
+		transition: ACCEL_FAC 0.1 0.33;
+	}
+}
+
+group {
+	name : "windicator/brightness/large_layout";
+	images {
+		image : "b_brightness_slider_bg.png" COMP;
+		image : "view_over_back_bg.png" COMP;
+		image : "Brightness/150x150/b_setting_brightness_1.png" COMP;
+		image : "Brightness/150x150/b_setting_brightness_2.png" COMP;
+		image : "Brightness/150x150/b_setting_brightness_3.png" COMP;
+		image : "Brightness/150x150/b_setting_brightness_4.png" COMP;
+		image : "Brightness/150x150/b_setting_brightness_5.png" COMP;
+		image : "Brightness/150x150/b_setting_brightness_6.png" COMP;
+		image : "Brightness/150x150/b_setting_brightness_7.png" COMP;
+		image : "Brightness/150x150/b_setting_brightness_8.png" COMP;
+		image : "Brightness/150x150/b_setting_brightness_9.png" COMP;
+		image : "Brightness/150x150/b_setting_brightness_10.png" COMP;
+	}
+	parts {
+		part {
+			name : "bg";
+			type : RECT;
+			clip_to: "clipper_large_brightness_icon";
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				color_class : "AO029L4";
+			}
+		}
+		part {
+			name : "over.back.bg";
+			type : IMAGE;
+			clip_to: "clipper_large_brightness_icon";
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH WIN_HEIGHT;
+				max : WIN_WIDTH WIN_HEIGHT;
+				fixed :1 1;
+				rel1 { relative : 0.5 0.5; to : "bg"; }
+				rel2 { relative : 0.5 0.5; to : "bg"; }
+				image.normal: "view_over_back_bg.png";
+				color_class : "AO029L3";
+			}
+		}
+		part {
+			name : "padding.top";
+			type : SPACER;
+			scale :1;
+			description {
+				state : "default" 0.0;
+				min : WIN_WIDTH 50;
+				max : WIN_WIDTH 50;
+			//	visible : 1;
+				fixed : 1 1;
+			//	color : 200 0 0 200;
+				align : 0.0 0.0;
+				rel1 { relative : 0.0 0.0; to : "bg"; }
+				rel2 { relative : 0.0 0.0; to : "bg"; }
+			}
+		}
+		part {
+			name : "img.brightness.text";
+			type : TEXTBLOCK;
+			clip_to: "clipper_large_brightness_icon";
+			scale : 1;
+			description{
+				state : "default" 0.0;
+				min : BRIGHTNESS_TEXT_WIDTH BRIGHTNESS_TEXT_HEIGHT;
+				max : BRIGHTNESS_TEXT_WIDTH BRIGHTNESS_TEXT_HEIGHT;
+				visible : 1;
+				fixed : 1 1;
+				align : 0.5 0.0;
+				rel1 { relative : 0.0 1.0; to : "padding.top"; }
+				rel2 { relative : 1.0 1.0; to : "padding.top"; }
+				text {
+					style : "large_brightness_title_style";
+					min : 1 1;
+					align: 0.5 0.5;
+					text : "0";
+				}
+			}
+			DESCRIPTION_BRIGHTNESS_TEXT_FOR_LARGE_ICON(1)
+			DESCRIPTION_BRIGHTNESS_TEXT_FOR_LARGE_ICON(2)
+			DESCRIPTION_BRIGHTNESS_TEXT_FOR_LARGE_ICON(3)
+			DESCRIPTION_BRIGHTNESS_TEXT_FOR_LARGE_ICON(4)
+			DESCRIPTION_BRIGHTNESS_TEXT_FOR_LARGE_ICON(5)
+			DESCRIPTION_BRIGHTNESS_TEXT_FOR_LARGE_ICON(6)
+			DESCRIPTION_BRIGHTNESS_TEXT_FOR_LARGE_ICON(7)
+			DESCRIPTION_BRIGHTNESS_TEXT_FOR_LARGE_ICON(8)
+			DESCRIPTION_BRIGHTNESS_TEXT_FOR_LARGE_ICON(9)
+			DESCRIPTION_BRIGHTNESS_TEXT_FOR_LARGE_ICON(10)
+		}
+		part {
+			name : "img.brightness.bg";
+			type : IMAGE;
+			clip_to: "clipper_large_brightness_icon";
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : 150 150;
+				max : 150 150;
+				fixed : 1 1;
+				align : 0.5 0.5;
+				rel1 { relative : 0.5 0.5; to : "bg"; }
+				rel2 { relative : 0.5 0.5; to : "bg"; }
+				image.normal: "b_brightness_slider_bg.png";
+				color_class : "B0554";
+			}
+		}
+		part {
+			name : "img.brightness.icon";
+			type : IMAGE;
+			clip_to: "clipper_large_brightness_icon";
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : BRIGHTNESS_LARGE_ICON_WIDTH BRIGHTNESS_LARGE_ICON_HEIGHT;
+				max : BRIGHTNESS_LARGE_ICON_WIDTH BRIGHTNESS_LARGE_ICON_HEIGHT;
+				fixed : 1 1;
+				rel1 { relative : 0.5 0.5; to : "img.brightness.bg"; }
+				rel2 { relative : 0.5 0.5; to : "img.brightness.bg"; }
+				image.normal: "Brightness/150x150/b_setting_brightness_1.png";
+				color_class : "B0556";
+			}
+			DESCRIPTION_BRIGHTNESS_LARGE_ICON(1)
+			DESCRIPTION_BRIGHTNESS_LARGE_ICON(2)
+			DESCRIPTION_BRIGHTNESS_LARGE_ICON(3)
+			DESCRIPTION_BRIGHTNESS_LARGE_ICON(4)
+			DESCRIPTION_BRIGHTNESS_LARGE_ICON(5)
+			DESCRIPTION_BRIGHTNESS_LARGE_ICON(6)
+			DESCRIPTION_BRIGHTNESS_LARGE_ICON(7)
+			DESCRIPTION_BRIGHTNESS_LARGE_ICON(8)
+			DESCRIPTION_BRIGHTNESS_LARGE_ICON(9)
+			DESCRIPTION_BRIGHTNESS_LARGE_ICON(10)
+		}
+		part {
+			name : "txt.brightness";
+			type : TEXTBLOCK;
+			clip_to: "clipper_large_brightness_icon";
+			scale : 1;
+			mouse_events: 1;
+			description{
+				state : "default" 0.0;
+				fixed : 1 1;
+				align : 0.5 0.0;
+				rel1{ relative: 0.0 1.0; to : "img.brightness.icon"; offset : 0 10;}
+				rel2{ relative: 1.0 1.0; to : "img.brightness.icon";}
+				text {
+					style : "large_brightness_title_style";
+					min : 1 1;
+					align: 0.5 0.5;
+					text : "Brightness";
+				}
+			}
+		}
+		part {
+			name: "clipper_large_brightness_icon";
+			type: RECT;
+			scale: 1;
+			mouse_events: 0;
+			description {
+				state: "default" 0.0;
+				color: 255 255 255 0;
+				rel1.to: "bg";
+				rel2.to: "bg";
+			}
+			description {
+				state: "fade_in" 0.0;
+				inherit: "default";
+				color: 255 255 255 255;
+			}
+		}
+	}
+	programs {
+		PROGRAM_BRIGHTNESS_ICON(0)
+		PROGRAM_BRIGHTNESS_ICON(1)
+		PROGRAM_BRIGHTNESS_ICON(2)
+		PROGRAM_BRIGHTNESS_ICON(3)
+		PROGRAM_BRIGHTNESS_ICON(4)
+		PROGRAM_BRIGHTNESS_ICON(5)
+		PROGRAM_BRIGHTNESS_ICON(6)
+		PROGRAM_BRIGHTNESS_ICON(7)
+		PROGRAM_BRIGHTNESS_ICON(8)
+		PROGRAM_BRIGHTNESS_ICON(9)
+		PROGRAM_BRIGHTNESS_ICON(10)
+		program {
+			name: "large_brightness_icon_fade_in";
+			signal: "large_brightness_icon_fade_in";
+			source: "clipper_large_brightness_icon";
+			action: STATE_SET "fade_in" 0.0;
+			target: "clipper_large_brightness_icon";
+			transition: LINEAR 0.3;
+		}
+		program {
+			name: "large_brightness_icon_fade_out";
+			signal: "large_brightness_icon_fade_out";
+			source: "clipper_large_brightness_icon";
+			action: STATE_SET "default" 0.0;
+			target: "clipper_large_brightness_icon";
+			transition: LINEAR 0.3;
+			after: "large_brightness_fade_out_end";
+		}
+		program {
+			name : "large_brightness_fade_out_end";
+			action : SIGNAL_EMIT "large_brightness_fade_out_end" "signal";
+		}
+	}
+}
+#endif
