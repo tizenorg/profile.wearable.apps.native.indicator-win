@@ -4,7 +4,7 @@ Version:    0.0.1
 Release:    0
 Summary: Tizen W indicator application
 Source: %{name}-%{version}.tar.gz
-License: Apache-2.0
+License: Flora
 Group: Applications/System
 
 BuildRequires: cmake
