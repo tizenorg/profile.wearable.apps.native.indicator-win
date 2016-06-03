@@ -24,6 +24,17 @@
 
 #define BRIGHTNESS_LEVEL_MAX 10
 
+void on_clicked_small_brightness_icon(void *data, Evas_Object *obj, const char *emission, const char *source)
+{
+        _D("on_clicked_small_brightness_icon");
+        struct appdata *ad = (struct appdata *)data;
+        ret_if(ad == NULL);
+
+        //launch setting
+        ad->launch_setting_trigger = 1;
+        //windicator_util_launch_app(ad);
+}
+
 void on_pressed_small_brightness_icon(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
         _D("");

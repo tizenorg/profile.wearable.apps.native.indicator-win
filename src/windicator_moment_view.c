@@ -90,11 +90,19 @@ Evas_Object *windicator_dynamic_layout_for_moment_view_create(Evas_Object *paren
         Evas_Object *layout = elm_layout_add(parent);
         retv_if(layout == NULL, NULL);
 
+#ifdef _TIZEN_3G_DISABLE
+        if(elm_layout_file_set(layout, EDJ_FILE, "windicator/dynamic/layout/bt") != EINA_TRUE) {
+                _E("Failed to create dynamic layout");
+                evas_object_del(layout);
+                return NULL;
+        }
+#else
         if(elm_layout_file_set(layout, EDJ_FILE, "windicator/dynamic/layout/3g") != EINA_TRUE) {
                 _E("Failed to create dynamic layout");
                 evas_object_del(layout);
                 return NULL;
         }
+#endif
         /* initialize battery icon */
         ad->moment_view_battery_icon = windicator_battery_icon_create(layout, ad);
         if(ad->moment_view_battery_icon == NULL) {
@@ -129,14 +137,14 @@ Evas_Object *windicator_moment_view_layout_create(void *data)
         if(ad->moment_view_dynamic_layout == NULL) {
                 _E("Failed to create dynamic layout");
         }
-
+#ifndef _TIZEN_3G_DISABLE
         /* create rssi icon */
         ad->moment_view_rssi_icon = windicator_rssi_icon_create(ad->moment_view_dynamic_layout, ad);
         if(ad->moment_view_rssi_icon == NULL) {
                 _E("Failed to create RSSI icon for moment view");
                 return NULL;
         }
-
+#endif
         /* create connection icon */
         ad->moment_view_connection_icon = windicator_connection_icon_create(ad->moment_view_dynamic_layout, ad);
         if(ad->moment_view_connection_icon == NULL) {

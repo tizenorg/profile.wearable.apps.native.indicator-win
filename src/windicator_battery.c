@@ -41,6 +41,9 @@ Evas_Object *windicator_battery_icon_create(Evas_Object *parent, void *data)
         evas_object_size_hint_align_set(icon, EVAS_HINT_FILL, EVAS_HINT_FILL);
 
         elm_object_part_content_set(parent, "sw.icon.battery", icon);
+
+        elm_object_part_text_set(parent, "txt.battery", "50");
+
         evas_object_show(icon);
         _I("moment dynamic view battery initialize END");
 

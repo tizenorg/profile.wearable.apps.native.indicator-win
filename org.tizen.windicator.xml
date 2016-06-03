@@ -8,4 +8,10 @@
 		<label>W-Indicator</label>
 		<background-category value="system"/>
 	</ui-application>
+     <privileges>
+            <privilege>http://tizen.org/privilege/systemsettings.admin</privilege>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <privilege>http://tizen.org/privilege/telephony.admin</privilege>
+    </privileges>
+
 </manifest>

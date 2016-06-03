@@ -11,7 +11,7 @@
 #endif
 
 #if !defined(RESDIR)
-#  define RESDIR "/usr/apps/org.tizen.windicator/data"
+#  define RESDIR "/usr/apps/org.tizen.windicator/res"
 #endif
 
 #if !defined(LOCALEDIR)
@@ -25,10 +25,13 @@
 #define EDJ_FILE EDJDIR"/"PACKAGE".edj"
 
 #ifndef _TIZEN_3G_ENABLE
-#define _TIZEN_3G_ENABLE
+#define _TIZEN_3G_DISABLE
 #endif
 
-#define ICON_PATH "/usr/apps/org.tizen.windicator/data/edje/images"
+#define DYNAMIC_ICON_WIDTH 24
+#define DYNAMIC_ICON_HEIGHT 26
+
+#define ICON_PATH "/usr/apps/org.tizen.windicator/res/image/windicator/"
 
 #ifdef _TIZEN_3G_DISABLE
 #define ROTARY_INDEX_MAX 5

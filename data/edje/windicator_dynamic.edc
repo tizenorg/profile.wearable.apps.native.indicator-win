@@ -512,7 +512,7 @@ group {
 					min : 1 1;
 					align : 0.5 0.0;
 					text_class : "AT015";
-					text : "0%";
+					text : "50%";
 				}
 			}
 		}

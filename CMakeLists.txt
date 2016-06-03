@@ -7,6 +7,7 @@ SET(SRCS
         src/windicator_moment_bar.c
         src/windicator_moment_view.c
         src/windicator_brightness.c
+	src/windicator_connection.c
         src/windicator_volume.c
         src/windicator_dynamic.c
         src/windicator_call_fwd_btn.c

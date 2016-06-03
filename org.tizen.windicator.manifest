@@ -1,13 +1,6 @@
 <manifest>
-	<define>
-		<domain name="org.tizen.windicator"/>
-	</define>
-	<assign>
-		<filesystem path="/usr/share/icons/default/small/org.tizen.windicator.png" label="_"/>
-		<filesystem path="/usr/apps/org.tizen.windicator/res/locale/*" label="_" />
-		<filesystem path="/usr/share/locale/*" label="_" />
-	</assign>
-	<request>
-		<domain name="org.tizen.windicator"/>
-	</request>
+    <request>
+        <domain name="_"/>
+    </request>
 </manifest>
+

@@ -97,19 +97,24 @@
 collections {
     base_scale: 1.3;
 #include "color_classes.edc"
+#if _TIZEN_3G_ENABLE
+#include "windicator_moment_bar_for_3g.edc"
+#else
+#include "windicator_moment_bar.edc"
+#endif
 #include "windicator_moment_view.edc"
 #include "windicator_dynamic.edc"
+#include "windicator_battery_layout.edc"
 #include "windicator_battery_icon.edc"
+#include "windicator_brightness.edc"
+#include "windicator_volume.edc"
 #include "windicator_connect_icons.edc"
 #include "windicator_rssi_icons.edc"
-#include "windicator_moment_bar_for_3g.edc"
-//#include "windicator_moment_bar.edc"
 #include "windicator_scs.edc"
 #include "windicator_dnd_layout.edc"
 #include "windicator_flight_mode_layout.edc"
 #include "windicator_music_layout.edc"
-#include "windicator_brightness.edc"
-#include "windicator_volume.edc"
 #include "windicator_callfwd_layout.edc"
 #include "windicator_bluetooth_icon.edc"
+#include "windicator_dynamic_icon.edc"
 }

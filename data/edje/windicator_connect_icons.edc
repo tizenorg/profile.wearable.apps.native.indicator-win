@@ -173,9 +173,9 @@ group {
 				min: DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
 				max: DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
 				fixed: 1 1;
-				//visible: 0;
-				visible: 1;
-				//image.normal : "Connection/edge_connected.png";
+				visible: 0;
+				//visible: 1;
+				image.normal : "Connection/edge_connected.png";
 				image.normal : "Connection/no_sim.png";
 				color_class : "AO016";
 			}

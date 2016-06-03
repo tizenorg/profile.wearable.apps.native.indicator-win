@@ -59,6 +59,12 @@ export CXXFLAGS+=" -DTIZEN_ENGINEER_MODE"
 export FFLAGS+=" -DTIZEN_ENGINEER_MODE"
 %endif
 
+%if 0%{?sec_product_feature_telephony_disable}
+export CFLAGS+=" -D_TIZEN_3G_ENABLE"
+export CXXFLAGS+=" -D_TIZEN_3G_ENABLE"
+export FFLAGS+=" -D_TIZEN_3G_ENABLE"
+%endif
+
 CFLAGS+=" -fPIC -fpie -O2 "
 LDFLAGS+="-Wl,--rpath=%{PREFIX}/lib -Wl,--as-needed -Wl,--hash-style=both"; export LDFLAGS
 cmake . -DCMAKE_INSTALL_PREFIX=%{PREFIX} -DARCH=%{ARCH}

@@ -24,6 +24,17 @@
 #include "windicator_moment_bar.h"
 #include "windicator_volume.h"
 
+void _music_btn_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source)
+{
+        _D("_music_btn_clicked_cb");
+        struct appdata *ad = (struct appdata *)data;
+        ret_if(ad == NULL);
+
+        //launch music app
+        ad->launch_music_trigger = 1;
+        //windicator_util_launch_app(ad);
+}
+
 void on_pressed_music_icon(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
         _D("");

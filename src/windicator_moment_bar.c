@@ -31,6 +31,7 @@
 #include "windicator_dynamic.h"
 #include "windicator_battery.h"
 #include "windicator_scs.h"
+#include "windicator_connection.h"
 
 #define KEY_BACK "XF86Back"
 
@@ -45,23 +46,30 @@ Evas_Object *windicator_moment_bar_first_page_layout_create(void *data)
 
         retv_if(layout == NULL, NULL);
         _I("main %x first %x",ad->moment_bar_main_layout,layout );
-
+#ifdef _TIZEN_3G_DISABLE
+        if(elm_layout_file_set(layout, EDJ_FILE, "windicator/moment_bar/first_page/bt") != EINA_TRUE) {
+                _E("Failed to create moment bar first page layout");
+                evas_object_del(layout);
+                return NULL;
+        }
+#else
         if(elm_layout_file_set(layout, EDJ_FILE, "windicator/moment_bar/first_page/3g") != EINA_TRUE) {
         	_E("Failed to create moment bar first page layout");
                 evas_object_del(layout);
                 return NULL;
         }
+
         //elm_object_signal_callback_add(layout, "mouse,clicked,1", "img.volume.touch.area", on_clicked_small_volume_icon, ad);
         //elm_object_signal_callback_add(layout, "mouse,clicked,1", "img.callfwd.touch.area", _call_fwd_btn_clicked_cb, ad);
-
+#endif
         /* 2015-09-01 */
-        //elm_object_signal_callback_add(layout, "mouse,clicked,1", "img.brightness.touch.area", on_clicked_small_brightness_icon, ad);
-        //elm_object_signal_callback_add(layout, "mouse,clicked,1", "img.dnd.touch.area", _dnd_btn_clicked_cb, ad);
+        elm_object_signal_callback_add(layout, "mouse,clicked,1", "img.brightness.touch.area", on_clicked_small_brightness_icon, ad);
+        elm_object_signal_callback_add(layout, "mouse,clicked,1", "img.dnd.touch.area", _dnd_btn_clicked_cb, ad);
 
         /* 2016-02-01 */
-        //elm_object_signal_callback_add(layout, "mouse,clicked,1", "img.flight.touch.area", _flight_mode_clicked_cb, ad);
+        elm_object_signal_callback_add(layout, "mouse,clicked,1", "img.flight.touch.area", _flight_mode_clicked_cb, ad);
 
-        //elm_object_signal_callback_add(layout, "mouse,clicked,1", "img.music.touch.area", _music_btn_clicked_cb, ad);
+        elm_object_signal_callback_add(layout, "mouse,clicked,1", "img.music.touch.area", _music_btn_clicked_cb, ad);
 
 
 //      ecore_event_handler_add(ECORE_EVENT_MOUSE_BUTTON_DOWN, windicator_moment_bar_rotary_icon_clicked_cb, ad);
@@ -103,6 +111,7 @@ Evas_Object *windicator_moment_bar_first_page_layout_create(void *data)
         		_E("Failed to create brightness layout");
         }
 
+#ifndef _TIZEN_3G_DISABLE
         ad->volume_small_icon = windicator_volume_small_icon_create(layout,ad);
         if(ad->volume_small_icon == NULL) {
         		_E("Failed to create volume layout");
@@ -111,6 +120,7 @@ Evas_Object *windicator_moment_bar_first_page_layout_create(void *data)
         if(ad->callfwd_btn_layout == NULL) {
         		_E("Failed to create callfwd layout");
         }
+#endif
 
         evas_object_show(layout);
         _I("moment bar first layout create END");
@@ -126,11 +136,13 @@ windicator_error_e windicator_moment_bar_update_main_view(void *data)
         windicator_music_btn_update(ad);
         windicator_dnd_btn_update(ad);
         windicator_flight_mode_update(ad);
+#ifndef _TIZEN_3G_DISABLE
         windicator_volume_update(ad);
         windicator_call_fwd_btn_update(ad);
-        /*if(WINDICATOR_ERROR_OK != windicator_scs_update(ad)) {
+#endif
+        if(WINDICATOR_ERROR_OK != windicator_scs_update(ad)) {
         		_E("Failed to update scs status");
-        }*/
+        }
         _I("moment bar update main view end");
         return WINDICATOR_ERROR_OK;
 }
@@ -151,6 +163,7 @@ static Eina_Bool _key_release_event_cb(void *data, int type, void *event)
                              _D("Moment bar status -> idle. (Hide Moment bar)");
                              ad->is_getting_back = 1; // ad->is_getting_back will be set 0 in moment_bar_show
                              //windicator_hide_moment_bar_directly(ad);
+                             //elm_exit() is bad to use it here. Replace it asap once alternative way is found.
                              elm_exit();
                      }
                      else
@@ -202,6 +215,30 @@ windicator_error_e windicator_moment_bar_show(void *data)
         return WINDICATOR_ERROR_OK;
 }
 
+windicator_error_e windicator_show_moment_bar_directly(void* data)
+{
+
+
+        _D("windicator_show_moment_bar_directly");
+        struct appdata *ad = (struct appdata *)data;
+
+        retv_if(ad == NULL, WINDICATOR_ERROR_INVALID_PARAMETER);
+
+        //Show the indicator window
+        return WINDICATOR_ERROR_OK;
+}
+
+windicator_error_e windicator_hide_moment_bar_directly(void* data)
+{
+        _D("windicator_hide_moment_bar_directly");
+        struct appdata *ad = (struct appdata *)data;
+
+        retv_if(ad == NULL, WINDICATOR_ERROR_INVALID_PARAMETER);
+
+        //Hide the indicator window
+        return WINDICATOR_ERROR_OK;
+}
+
 windicator_error_e windicator_moment_bar_init(void *data)
 {
         struct appdata *ad = (struct appdata *)data;
@@ -237,11 +274,11 @@ windicator_error_e windicator_moment_bar_init(void *data)
 
         windicator_moment_bar_update_main_view(ad);
 
-        /*if(WINDICATOR_ERROR_OK != windicator_dynamic_update(ad)) {
+        if(WINDICATOR_ERROR_OK != windicator_dynamic_update(ad)) {
                 _E("Failed to update dynamic layout");
-        }*/
+        }
 
-        //windi_connection_update(ad->moment_bar_rssi_icon,ad->moment_bar_connection_icon);
+        windi_connection_update(ad->moment_bar_rssi_icon, ad->moment_bar_connection_icon);
 
         elm_object_content_set(ad->moment_bar_conformant, ad->moment_bar_first_page_layout);
         elm_win_conformant_set(ad->moment_bar_win, EINA_TRUE);

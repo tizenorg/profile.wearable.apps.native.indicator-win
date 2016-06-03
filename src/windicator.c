@@ -34,6 +34,11 @@
 
 struct appdata *g_ad = NULL;
 
+struct appdata *windicator_appdata_get(void)
+{
+        return g_ad;
+}
+
 static void _init_variables(void *data)
 {
         struct appdata *ad = (struct appdata *)data;
@@ -149,6 +154,7 @@ void windicator_lo_update(void* data)
 
 static bool app_create(void *data)
 {
+	_D("app_create");
     struct appdata *ad = (struct appdata *)data;
     retv_if(ad == NULL, false);
 
@@ -159,7 +165,18 @@ static bool app_create(void *data)
 #endif
 
     elm_app_base_scale_set(1.3);
+	create_moments_bar_win(ad);
+	return true;
+}
 
+/**
+ * @brief This callback function is called when another application.
+ * sends the launch request to the application
+ */
+
+void create_moments_bar_win(void *user_data)
+{
+	struct appdata *ad = (struct appdata *)user_data;
     elm_config_preferred_engine_set("opengl_x11");
     _init_variables(ad);
 
@@ -178,18 +195,18 @@ static bool app_create(void *data)
     }
     //evas_object_show(ad->moment_view_win);
     //evas_object_show(ad->moment_bar_win);
-    /* Disable vsync */
+
     ecore_animator_source_set(ECORE_ANIMATOR_SOURCE_TIMER);
-	return true;
 }
 
-/**
- * @brief This callback function is called when another application.
- * sends the launch request to the application
- */
 static void app_control(app_control_h app_control, void *user_data)
 {
 	/* Handle the launch request. */
+	_D("app_control");
+	struct appdata *ad = (struct appdata *)user_data;
+	Evas_Object *win = ad->moment_bar_win;
+	if(win)
+		elm_win_activate(win);
 }
 
 /**
@@ -200,6 +217,7 @@ static void app_control(app_control_h app_control, void *user_data)
 static void app_pause(void *user_data)
 {
 	/* Take necessary actions when application becomes invisible. */
+	_D("app_pause");
 }
 
 /**
@@ -209,6 +227,7 @@ static void app_pause(void *user_data)
 static void app_resume(void *user_data)
 {
 	/* Take necessary actions when application becomes visible. */
+	_D("app_resume");
 }
 
 /**
@@ -219,7 +238,7 @@ static void app_terminate(void *user_data)
 	/*
 	 * Release all resources.
 	 */
-    _D("");
+    _D("app_terminate");
 
     struct appdata *ad = (struct appdata *)user_data;
     ret_if(ad == NULL);
