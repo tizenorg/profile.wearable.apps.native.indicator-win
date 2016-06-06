@@ -1,0 +1,8 @@
+org.tizen.windicator system::vconf_system rwxat- ------
+org.tizen.windicator org.tizen.w-home rwx
+
+system org.tizen.windicator rw---- ------
+org.tizen.windicator system::vconf rwxat- ------
+
+org.tizen.w-home org.tizen.windicator rwx
+
