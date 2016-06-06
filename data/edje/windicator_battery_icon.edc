@@ -15,13 +15,7 @@
  * limitations under the License.
  */
 
-#if (NETWORK_ATT == 1)
-#define BATTERY_DIR_PREFIX "Battery/ATT"
-#elif (NETWORK_VERIZON == 1) || (NETWORK_SPRINT == 1) || (NETWORK_TMB == 1)
-#define BATTERY_DIR_PREFIX "Battery/VRW_SPR_TMO"
-#else
 #define BATTERY_DIR_PREFIX "battery"
-#endif
 
 #define DESCRIPTION_BATTERY(num)\
 	description {\
@@ -114,32 +108,7 @@ group {
 				inherit: "default" 0.0;
 				visible: 0;
 			}
-			/* Verizon, ATT */
-			description {
-				state : "Red4";
-				inherit: "default" 0.0;
-				color_class : "AO018L2";
-				image.normal : BATTERY_DIR_PREFIX"/battery_00.png";
-			}
-			description {
-				state : "Red10";
-				inherit: "default" 0.0;
-				color_class : "AO018L2";
-				image.normal : BATTERY_DIR_PREFIX"/battery_10.png";
-			}
-			description {
-				state : "Yellow15";
-				inherit: "default" 0.0;
-				color_class : "AO018L3";
-				image.normal : BATTERY_DIR_PREFIX"/battery_15.png";
-			}
-			description {
-				state : "Yellow20";
-				inherit: "default" 0.0;
-				color_class : "AO018L3";
-				image.normal : BATTERY_DIR_PREFIX"/battery_20.png";
-			}
-			DESCRIPTION_BATTERY(00);
+
 			DESCRIPTION_BATTERY(05);
 			DESCRIPTION_BATTERY(10);
 			DESCRIPTION_BATTERY(15);
@@ -161,7 +130,6 @@ group {
 			DESCRIPTION_BATTERY(95);
 			DESCRIPTION_BATTERY(100);
 
-			DESCRIPTION_CHARGING_BATTERY(00);
 			DESCRIPTION_CHARGING_BATTERY(05);
 			DESCRIPTION_CHARGING_BATTERY(10);
 			DESCRIPTION_CHARGING_BATTERY(15);
@@ -193,6 +161,7 @@ group {
 				max: BATTERY_ICON_WIDTH BATTERY_ICON_HEIGHT;
 				fixed: 1 1;
 				visible: 0;
+				//visible: 1;
 				color_class: "AO019L1";
 				image.normal : BATTERY_DIR_PREFIX"/battery_charge.png";
 			}
@@ -200,6 +169,27 @@ group {
 				state : "show";
 				inherit: "default" 0.0;
 				visible: 1;
+			}
+		}
+		part {
+			name : "txt.battery";
+			type : TEXTBLOCK;
+			scale : 1;
+			description{
+				state : "default" 0.0;
+				visible : 1;
+				min : 300 22;
+				max : 300 22;
+				fixed : 1 1;
+				align : 0.5 0.0;
+				rel1 { relative : 0.5 1.0; to : "img.battery.charge"; }
+				rel2 { relative : 0.5 1.0; to : "img.battery.charge"; }
+				text {
+					style : "style_txt_battery";
+					align : 0.5 0.5;
+					min : 1 1;
+					text : "50%";
+				}
 			}
 		}
 	}
@@ -241,7 +231,7 @@ group {
 			action : STATE_SET "Yellow20" 0.0;
 			target : "img.battery";
 		}
-		PROGRAM_BATTERY(00);
+
 		PROGRAM_BATTERY(05);
 		PROGRAM_BATTERY(10);
 		PROGRAM_BATTERY(15);
@@ -263,7 +253,6 @@ group {
 		PROGRAM_BATTERY(95);
 		PROGRAM_BATTERY(100);
 
-		PROGRAM_CHARGING_BATTERY(00);
 		PROGRAM_CHARGING_BATTERY(05);
 		PROGRAM_CHARGING_BATTERY(10);
 		PROGRAM_CHARGING_BATTERY(15);

@@ -22,7 +22,7 @@
 #include "windicator_dynamic.h"
 #include "windicator_battery.h"
 
-Evas_Object *windicator_moment_view_battery_number_create(void *data)
+/*Evas_Object *windicator_moment_view_battery_number_create(void *data)
 {
         struct appdata *ad =(struct appdata *)data;
         retv_if(ad == NULL, NULL);
@@ -46,7 +46,7 @@ Evas_Object *windicator_moment_view_battery_number_create(void *data)
         evas_object_show(layout);
 
         return layout;
-}
+}*/
 
 Evas_Object *windicator_moment_view_battery_layout_create(void *data)
 {
@@ -74,7 +74,7 @@ Evas_Object *windicator_moment_view_battery_layout_create(void *data)
 
         evas_object_show(layout);
 
-        windicator_moment_view_battery_number_create(data);
+ //       windicator_moment_view_battery_number_create(data);
 
         _I("moment battery initialize END %x",ad->moment_view_battery_layout);
         return layout;
