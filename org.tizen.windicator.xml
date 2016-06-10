@@ -3,7 +3,7 @@
 	<label>windicator</label>
 	<author email="gowtham.ab@samsung.com" href="www.samsung.com">Gowtham Anandha Babu</author>
 	<description>W Indicator</description>
-	<ui-application appid="org.tizen.windicator" exec="/usr/apps/org.tizen.windicator/bin/windicator" nodisplay="false" multiple="false" type="capp" taskmanage="false">
+	<ui-application appid="org.tizen.windicator" exec="/usr/apps/org.tizen.windicator/bin/windicator" nodisplay="true" multiple="false" type="capp" taskmanage="false">
 		<icon>org.tizen.windicator.png</icon>
 		<label>W-Indicator</label>
 		<background-category value="system"/>

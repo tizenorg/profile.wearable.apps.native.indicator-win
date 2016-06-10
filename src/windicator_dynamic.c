@@ -237,7 +237,7 @@ void dynamic_event_icon_refresh_position_for_3g(Evas_Object *layout, int isForMo
 
         Evas_Object *icon = NULL;
         char swallow_name[256] = { 0, };
-        int i = 0, numOfIcon = 0;
+        int i = 0;
 
         /* Unset "All" non-fixed icons. (sw.icon_0, sw.icon_1 are Fixed icon. So don't need to check) */
         for(i = 0; i <= 7; i++)
@@ -261,7 +261,6 @@ void dynamic_event_icon_refresh_position_for_3g(Evas_Object *layout, int isForMo
     	if(isForMomentView == 0)  // For MomentBar.
     	{
     		/* Set icons (icon's pointer was allocated by "_dynamic_event_icon_create()". */
-    		int count = 0;
     		int b_jump_connection = 0;
     		i = 0;
 
@@ -371,7 +370,6 @@ void dynamic_event_icon_refresh_position_for_3g(Evas_Object *layout, int isForMo
     	{
     		// Set icons (icon's pointer was allocated by "_dynamic_event_icon_create()".
 
-    		int count = 0;
     		int b_jump_connection = 0;
     		i = 0;
 

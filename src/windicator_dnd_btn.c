@@ -46,6 +46,8 @@ static Evas_Object* __dnd_create_win(const char *name)
         Evas_Object *pObj = NULL;
 
         pObj = elm_win_add(NULL, name, ELM_WIN_BASIC);
+        elm_win_alpha_set(pObj, EINA_TRUE);
+
         if (!pObj)
                 return NULL;
 
@@ -71,8 +73,22 @@ static void _popup_hide_cb(void *data, Evas_Object *obj, void *event_info)
         elm_popup_dismiss(obj);
 }
 
-static void
-_popup_hide_finished_cb(void *data, Evas_Object *obj, void *event_info)
+static void _popup_response_cb(void *data, Evas_Object *obj, void *event_info)
+{
+        if(!data) return;
+        int btn_val = 0;
+        btn_val = (int)evas_object_data_get(obj,"btn_val");
+        _D("btn_val = %d",btn_val);
+        if(btn_val==1)//OK
+        {
+                vconf_set_bool(VCONFKEY_SETAPPL_BLOCKMODE_WEARABLE_BOOL, EINA_TRUE);
+                s_info.dnd_btn_status = DND_BTN_ENABLED;
+        }
+
+        elm_popup_dismiss(data);
+}
+
+static void _popup_hide_finished_cb(void *data, Evas_Object *obj, void *event_info)
 {
 		_D("_popup_hide_finished_cb");
         struct appdata *ad = (struct appdata *)data;
@@ -83,21 +99,6 @@ _popup_hide_finished_cb(void *data, Evas_Object *obj, void *event_info)
 
         evas_object_del(ad->dnd_win);
         ad->dnd_win = NULL;
-}
-
-static void _popup_response_cb(void *data, Evas_Object *obj, void *event_info)
-{
-        if(!data) return;
-        int btn_val = 0;
-        btn_val = (int)evas_object_data_get(obj,"btn_val");
-        _D("btn_val = %d",btn_val);
-        if(btn_val==1)//OK
-        {
-                //vconf_set_bool(VCONFKEY_SETAPPL_BLOCKMODE_WEARABLE_BOOL, EINA_TRUE);
-                s_info.dnd_btn_status = DND_BTN_ENABLED;
-        }
-
-        elm_popup_dismiss(data);
 }
 
 static void _dnd_popup_launch(void* data)
@@ -126,12 +127,12 @@ static void _dnd_popup_launch(void* data)
 
         layout = elm_layout_add(popup);
         elm_layout_theme_set(layout, "layout", "popup", "content/circle/buttons2");
-        elm_object_part_text_set(layout, "elm.text.title", "IDS_ST_MBODY_DO_NOT_DISTURB_ABB2");
+        elm_object_part_text_set(layout, "elm.text.title", "DO NOT DISTURB");
         //need to translate
 #ifdef _TIZEN_3G_DISABLE
-        elm_object_part_text_set(layout, "elm.text", "WDS_ST_TPOP_VIBRATION_WILL_BE_TURNED_OFF_AND_SCREEN_WILL_REMAIN_TURNED_OFF_FOR_INCOMING_CALLS_AND_ALERTS_BUT_NOT_ALARMS");
+        elm_object_part_text_set(layout, "elm.text", "VIBRATION WILL BE TURNED OFF AND SCREEN WILL REMAIN TURNED OFF FOR INCOMING CALLS AND ALERTS BUT NOT ALARMS");
 #else
-        elm_object_part_text_set(layout, "elm.text", "WDS_ST_TPOP_SOUNDS_WILL_BE_MUTED_AND_SCREEN_WILL_REMAIN_TURNED_OFF_FOR_INCOMING_CALLS_AND_ALERTS_BUT_NOT_ALARMS");
+        elm_object_part_text_set(layout, "elm.text", "SOUNDS WILL BE MUTED AND SCREEN WILL REMAIN TURNED OFF FOR INCOMING CALLS AND ALERTS BUT NOT ALARMS");
 #endif
         elm_object_content_set(popup, layout);
 
@@ -167,17 +168,18 @@ static void _dnd_popup_launch(void* data)
 
 void _dnd_btn_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
+		int ret = 0;
         _I("(%d)", s_info.dnd_btn_status);
 
         struct appdata *ad = (struct appdata *)data;
         ret_if(ad == NULL);
 
         if(s_info.dnd_btn_status == DND_BTN_ENABLED) {
-        	/*vconf_set_bool(VCONFKEY_SETAPPL_BLOCKMODE_WEARABLE_BOOL, EINA_FALSE);
+        	vconf_set_bool(VCONFKEY_SETAPPL_BLOCKMODE_WEARABLE_BOOL, EINA_FALSE);
 			 if(ret < 0)
 			 {
 					 _E("Failed to set VCONFKEY_SETAPPL_BLOCKMODE_WEARABLE_BOOL : %d", ret);
-			 }*/
+			 }
 
             s_info.dnd_btn_status = DND_BTN_DISABLED;
 
@@ -251,11 +253,11 @@ windicator_error_e windicator_dnd_btn_update(void *data)
         retv_if(ad == NULL, WINDICATOR_ERROR_INVALID_PARAMETER);
 
         int dnd_state = 0;
-        /*int ret = vconf_get_bool(VCONFKEY_SETAPPL_BLOCKMODE_WEARABLE_BOOL, &dnd_state);
+        int ret = vconf_get_bool(VCONFKEY_SETAPPL_BLOCKMODE_WEARABLE_BOOL, &dnd_state);
         if(ret < 0) {
                 _E("Failed to get vconfkey(%s) : %d", VCONFKEY_SETAPPL_BLOCKMODE_WEARABLE_BOOL, ret);
                 return WINDICATOR_ERROR_FAIL;
-        }*/
+        }
 
         _I("update dnd button");
         if(dnd_state) {

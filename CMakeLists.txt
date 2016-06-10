@@ -57,7 +57,7 @@ pkg_check_modules(pkgs REQUIRED elementary ecore-imf appcore-common appcore-efl
                                 efl-assist ecore ecore-input ecore-evas capi-appfw-application
                                 feedback appsvc deviced capi-system-device capi-system-info
 				capi-media-sound-manager efl-extension capi-system-system-settings
-				capi-ui-efl-util
+				capi-ui-efl-util aul pkgmgr pkgmgr-info
 )
 
 #??

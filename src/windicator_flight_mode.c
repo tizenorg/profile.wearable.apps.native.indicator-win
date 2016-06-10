@@ -130,11 +130,11 @@ static void _flight_mode_popup_launch(void* data)
 
         layout = elm_layout_add(popup);
         elm_layout_theme_set(layout, "layout", "popup", "content/circle/buttons2");
-        elm_object_part_text_set(layout, "elm.text.title", "WDS_ST_HEADER_FLIGHT_MODE_ABB");
+        elm_object_part_text_set(layout, "elm.text.title", "FLIGHT MODE");
 
         //need to translate
 		_W("[Flight Mode] popup");
-		elm_object_part_text_set(layout, "elm.text", "WDS_ST_TPOP_FLIGHT_MODE_DISABLES_CALLS_MESSAGING_AND_ALL_CONNECTIONS_TO_USE_WI_FI_AND_BLUETOOTH_GO_TO_SETTINGS");
+		elm_object_part_text_set(layout, "elm.text", "FLIGHT MODE DISABLES CALLS MESSAGING AND ALL CONNECTIONS TO USE WIFI AND BLUETOOTH GO TO SETTINGS");
 
         elm_object_content_set(popup, layout);
 

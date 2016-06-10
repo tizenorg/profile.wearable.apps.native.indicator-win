@@ -24,4 +24,7 @@ Evas_Object *windicator_util_bg_create(Evas_Object *parent);
 Evas_Object *windicator_util_conformant_create(Evas_Object *parent);
 windicator_error_e windicator_util_win_notification_property_set(Evas_Object *win);
 
+void windicator_util_launch_app(void *data);
+
+
 #endif /*  __WINDICATOR_UTIL_H_ */

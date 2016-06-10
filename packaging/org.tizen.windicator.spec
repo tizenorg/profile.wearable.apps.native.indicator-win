@@ -28,6 +28,9 @@ BuildRequires: pkgconfig(edbus)
 BuildRequires: pkgconfig(efl-extension)
 BuildRequires: pkgconfig(capi-system-system-settings)
 BuildRequires: pkgconfig(capi-ui-efl-util)
+BuildRequires: pkgconfig(pkgmgr)
+BuildRequires: pkgconfig(pkgmgr-info)
+BuildRequires: pkgconfig(aul)
 BuildRequires: efl-assist
 BuildRequires: efl-assist-devel
 BuildRequires: gettext-tools

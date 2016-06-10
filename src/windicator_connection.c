@@ -248,7 +248,7 @@ static void _connection_icon_set(connection_type_e type, void *data)
         _W("type : %d / signal : %s", type, type_name[type]);
 
         if(type == TYPE_NONE) {
-                if(ad->connection_hide = 1)
+                if(ad->connection_hide == 1)
                 {
                         ad->connection_hide = 1;
                         _E("Set Connection (TYPE_NONE), hide sw.icon_1 (type : %d) / (hide : %d)", type, ad->connection_hide);

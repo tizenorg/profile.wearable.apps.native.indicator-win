@@ -1,5 +1,11 @@
+#include <pkgmgr-info.h>
+#include <aul.h>
+#include <app_control.h>
+
 #include "windicator.h"
 #include "log.h"
+
+#define CLOCK_SETTING_BRIGHTNESS_PKG_NAME  "org.tizen.watch-setting"
 
 Evas_Object *windicator_util_bg_create(Evas_Object *parent)
 {
@@ -114,12 +120,7 @@ Evas_Object* windicator_util_win_create(const char *name, Eina_Bool is_alpha, wi
             //Ecore_X_Window root_win;
             Evas_Object *win = NULL;
 
-            int w = 0, h = 0;
-
             retv_if(!name, NULL);
-
-            win = elm_win_add(NULL, "dummy_window", ELM_WIN_BASIC);
-            elm_win_screen_size_get(win, NULL, NULL, &w, &h);
 
             win = elm_win_add(NULL, name, ELM_WIN_BASIC);
             retv_if(!win, NULL);
@@ -140,7 +141,6 @@ Evas_Object* windicator_util_win_create(const char *name, Eina_Bool is_alpha, wi
             }
 
             evas_object_color_set(win, 0, 0, 0, 0);
-            evas_object_resize(win, w, h);
 
             //xwin = elm_win_xwindow_get(win);
 
@@ -160,4 +160,32 @@ Evas_Object* windicator_util_win_create(const char *name, Eina_Bool is_alpha, wi
 
             return win;
         }
+}
+
+void windicator_util_launch_app(void *data)
+{
+        _I("");
+        struct appdata *ad = data;
+        int ret = -1;
+
+        if(ad->launch_setting_trigger != 0)
+        {
+                app_control_h ac = NULL;
+
+                _E("launch setting %d",ad->launch_setting_trigger);
+                if ((ret = app_control_create(&ac)) != APP_CONTROL_ERROR_NONE) {
+                        _E("Failed to create app control:%d", ret);
+                }
+                //launch setting
+                if(ad->launch_setting_trigger==1)//brightness
+                {
+                        app_control_set_package(ac, CLOCK_SETTING_BRIGHTNESS_PKG_NAME);
+                        app_control_add_extra_data(ac, "launch-type", "brightness");
+                }
+
+                app_control_send_launch_request(ac, NULL, NULL);
+                app_control_destroy(ac);
+                ad->launch_setting_trigger = 0;
+        }
+
 }

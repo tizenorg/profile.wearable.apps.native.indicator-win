@@ -16,6 +16,8 @@
  */
 
 #include <efl_extension.h>
+#include <device.h>
+#include <vconf.h>
 
 #include "windicator.h"
 #include "log.h"
@@ -23,6 +25,8 @@
 #include "windicator_util.h"
 
 #define BRIGHTNESS_LEVEL_MAX 10
+
+static int bOutdoorMode = 0;
 
 void on_clicked_small_brightness_icon(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
@@ -32,7 +36,7 @@ void on_clicked_small_brightness_icon(void *data, Evas_Object *obj, const char *
 
         //launch setting
         ad->launch_setting_trigger = 1;
-        //windicator_util_launch_app(ad);
+        windicator_util_launch_app(ad);
 }
 
 void on_pressed_small_brightness_icon(void *data, Evas_Object *obj, const char *emission, const char *source)
@@ -134,21 +138,34 @@ void windicator_brightness_icon_set_by_level(Evas_Object *layout, void *data)
         struct appdata *ad = (struct appdata *)data;
         ret_if(ad == NULL);
 
-        char value[4] = {10,10, 10, 10};
-        char *icu_level = windicator_util_str_from_icu_get(ad->brightness_index);
-        if(icu_level == NULL)
+        char value[1024];
+
+        _D("Brightness index, set (%s)", value);
+
+		snprintf(value,sizeof(value),"%02d",ad->brightness_index);
+		elm_object_part_text_set(layout,"txt.brightness",value);
+}
+
+static int _current_device_brightness_level_get(void)
+{
+        int level = 0;
+
+        if(bOutdoorMode == 1)
         {
-                snprintf(value,sizeof(value),"%d",ad->brightness_index);
-                _E("Failed to get icu str for brightness index, so set (%s)", value);
-                elm_object_part_text_set(layout,"txt.brightness",value);
+                _D("Outdoor mode, so get VCONFKEY_SETAPPL_LCD_BRIGHTNESS");
+                if(vconf_get_int(VCONFKEY_SETAPPL_LCD_BRIGHTNESS, &level) < 0) {
+                        _SECURE_E("Failed to get vconfkey : %s", VCONFKEY_SETAPPL_LCD_BRIGHTNESS);
+                        device_get_brightness(0, &level);
+                }
         }
         else
         {
-        		_I("Succeed to get icu str for brightness index, so set (%s)", icu_level);
-                elm_object_part_text_set(layout,"txt.brightness",icu_level);
-                free(icu_level);
-                icu_level = NULL;
+                _D("NOT Outdoor mode, so use device_get_brightness()");
+                device_get_brightness(0, &level);
         }
+
+        _I("Brightness level : %d", level);
+        return level;
 }
 
 windicator_error_e windicator_brightness_update(void *data)
@@ -159,6 +176,11 @@ windicator_error_e windicator_brightness_update(void *data)
         int level = 50;
 
         _I("current device brightness level : %d / isOutdoorMode", level);
+
+        bOutdoorMode = 1;//display_get_hbm();
+
+        level = _current_device_brightness_level_get();
+        _D("current device brightness level : %d / isOutdoorMode : %d", level, bOutdoorMode);
 
         /* update icon & slider */
         ad->brightness_index = _brightness_level_to_index(level, BRIGHTNESS_LEVEL_MAX);
