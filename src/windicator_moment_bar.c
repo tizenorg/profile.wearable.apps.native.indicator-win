@@ -42,7 +42,8 @@ Evas_Object *windicator_moment_bar_first_page_layout_create(void *data)
         _I("moment bar first layout create");
 
         /* create the first page layout */
-        Evas_Object *layout = elm_layout_add(ad->moment_bar_conformant);
+        Evas_Object *layout = elm_layout_add(ad->nf);
+	Elm_Object_Item *nf_it = NULL;
 
         retv_if(layout == NULL, NULL);
         _I("main %x first %x",ad->moment_bar_main_layout,layout );
@@ -122,7 +123,9 @@ Evas_Object *windicator_moment_bar_first_page_layout_create(void *data)
         }
 #endif
 
-        evas_object_show(layout);
+	nf_it = elm_naviframe_item_push(ad->nf, NULL, NULL, NULL, layout, NULL);
+	elm_naviframe_item_title_enabled_set(nf_it, EINA_FALSE, EINA_FALSE);
+
         _I("moment bar first layout create END");
         return layout;
 }
@@ -250,6 +253,8 @@ windicator_error_e windicator_moment_bar_init(void *data)
         ad->moment_bar_win = windicator_util_win_create("__MOMENT_BAR__", EINA_TRUE, TYPE_MOMENT_BAR);
         retv_if(ad->moment_bar_win == NULL, WINDICATOR_ERROR_FAIL);
 
+	elm_win_screen_size_get(ad->moment_bar_win, NULL, NULL, &ad->win_w, &ad->win_h);
+
         ad->moment_bar_evas = evas_object_evas_get(ad->moment_bar_win);
         ad->moment_bar_ee = ecore_evas_ecore_evas_get(ad->moment_bar_evas);
 
@@ -261,16 +266,23 @@ windicator_error_e windicator_moment_bar_init(void *data)
         ad->moment_bar_conformant = windicator_util_conformant_create(ad->moment_bar_win);
         retv_if(ad->moment_bar_conformant == NULL, WINDICATOR_ERROR_FAIL);
 
+	evas_object_resize(ad->moment_bar_win, &ad->win_w, &ad->win_h);
+
         // Eext Circle Surface Creation
         ad->moment_bar_circle_surface = eext_circle_surface_conformant_add(ad->moment_bar_conformant);
         retv_if(ad->moment_bar_circle_surface == NULL, WINDICATOR_ERROR_FAIL);
 
+	ad->moment_bar_first_page_layout = windicator_util_layout_create(ad->moment_bar_win);
+        retv_if(ad->moment_bar_first_page_layout == NULL, WINDICATOR_ERROR_FAIL);
+
         // Indicator
-        elm_win_indicator_mode_set(ad->moment_bar_win, ELM_WIN_INDICATOR_SHOW);
+        elm_win_indicator_mode_set(ad->moment_bar_win, ELM_WIN_INDICATOR_HIDE);
+
+	//Naviframe
+	ad->nf = windicator_util_naviframe_create(ad->moment_bar_first_page_layout);
 
         /* create moment bar's layout to main layout's scroller */
-        ad->moment_bar_first_page_layout = windicator_moment_bar_first_page_layout_create(ad);
-        retv_if(ad->moment_bar_first_page_layout == NULL, WINDICATOR_ERROR_FAIL);
+        windicator_moment_bar_first_page_layout_create(ad);
 
         windicator_moment_bar_update_main_view(ad);
 
@@ -279,9 +291,6 @@ windicator_error_e windicator_moment_bar_init(void *data)
         }
 
         windi_connection_update(ad->moment_bar_rssi_icon, ad->moment_bar_connection_icon);
-
-        elm_object_content_set(ad->moment_bar_conformant, ad->moment_bar_first_page_layout);
-        elm_win_conformant_set(ad->moment_bar_win, EINA_TRUE);
 
         windicator_moment_bar_show(data);
 

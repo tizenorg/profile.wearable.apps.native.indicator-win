@@ -63,6 +63,7 @@ static void _init_variables(void *data)
         ad->moment_bar_conformant = NULL;
         ad->moment_bar_circle_surface = NULL;
         ad->moment_bar_first_page_layout = NULL;
+	ad->nf = NULL;
         ad->moment_bar_second_page_layout = NULL;
         ad->moment_bar_main_layout = NULL;
         ad->moment_bar_scroller = NULL;
@@ -155,16 +156,16 @@ void windicator_lo_update(void* data)
 static bool app_create(void *data)
 {
 	_D("app_create");
-    struct appdata *ad = (struct appdata *)data;
-    retv_if(ad == NULL, false);
+	struct appdata *ad = (struct appdata *)data;
+	retv_if(ad == NULL, false);
 
 #ifdef _TIZEN_3G_ENABLE
-        _D("_TIZEN_3G_ENABLE");
+	_D("_TIZEN_3G_ENABLE");
 #else
-        _D("_TIZEN_BT");
+	_D("_TIZEN_BT");
 #endif
 
-    elm_app_base_scale_set(1.3);
+	elm_app_base_scale_set(1.3);
 	create_moments_bar_win(ad);
 	return true;
 }
@@ -180,10 +181,6 @@ void create_moments_bar_win(void *user_data)
     elm_config_preferred_engine_set("opengl_x11");
     _init_variables(ad);
 
-    Evas_Object *win = elm_win_add(NULL, "dummy_window", ELM_WIN_BASIC);
-    elm_win_screen_size_get(win, NULL, NULL, &ad->win_w, &ad->win_h);
-    _D("win_w(%d) win_h(%d)", ad->win_w, ad->win_h);
-
     /* initialize Moment Bar */
     if(WINDICATOR_ERROR_OK != windicator_moment_bar_init(ad)) {
             _E("Failed to initialize moment bar");
@@ -195,8 +192,6 @@ void create_moments_bar_win(void *user_data)
     }
     //evas_object_show(ad->moment_view_win);
     //evas_object_show(ad->moment_bar_win);
-
-    ecore_animator_source_set(ECORE_ANIMATOR_SOURCE_TIMER);
 }
 
 static void app_control(app_control_h app_control, void *user_data)

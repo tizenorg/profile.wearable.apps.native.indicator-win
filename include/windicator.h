@@ -91,8 +91,9 @@ struct appdata
     Evas_Object *moment_bar_win;
     Evas_Object *moment_bar_bg;
     Evas_Object *moment_bar_conformant;
-    Evas_Object *moment_bar_circle_surface;
+    Eext_Circle_Surface *moment_bar_circle_surface;
     Evas_Object *moment_bar_first_page_layout;
+    Evas_Object *nf;
     Evas_Object *moment_bar_second_page_layout;
     Evas_Object *moment_bar_main_layout;
     Evas_Object *moment_bar_scroller;

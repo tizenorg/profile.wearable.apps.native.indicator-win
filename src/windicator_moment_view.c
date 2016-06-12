@@ -174,7 +174,6 @@ windicator_error_e windicator_moment_view_init(void *data)
         ad->moment_view_layout = windicator_moment_view_layout_create(ad);
         retv_if(ad->moment_view_layout == NULL, WINDICATOR_ERROR_FAIL);
 
-        //evas_object_resize(ad->moment_view_win, ad->win_w, ad->moment_view_h);
         evas_object_resize(ad->moment_view_win, ad->win_w, ad->moment_view_h);
         ad->moment_view_evas = evas_object_evas_get(ad->moment_view_win);
         ad->moment_view_ee = ecore_evas_ecore_evas_get(ad->moment_view_evas);
