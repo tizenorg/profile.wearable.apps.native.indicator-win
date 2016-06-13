@@ -51,7 +51,7 @@ windicator_error_e windicator_scs_update(void *data)
 			if(sap_connected) {
 				_W("connected via bluetooth");
 				elm_object_signal_emit(ad->scs_layout, "icon,scs,connected,bt", "icon.scs");
-				elm_object_domain_translatable_part_text_set(ad->scs_layout, "txt.scs", PROJECT, "WDS_QP_TMBODY_CONNECTED_VIA_BLUETOOTH_ABB");
+				elm_object_domain_translatable_part_text_set(ad->scs_layout, "txt.scs", PROJECT, "Connected via Bluetooth");
 				return WINDICATOR_ERROR_OK;
 			}
 		}
@@ -59,7 +59,7 @@ windicator_error_e windicator_scs_update(void *data)
 done:
 		_W("not connected icon");
 		elm_object_signal_emit(ad->scs_layout, "icon,scs,not,connected", "icon.scs");
-		elm_object_domain_translatable_part_text_set(ad->scs_layout, "txt.scs", PROJECT, "WDS_ST_BODY_STANDALONE_ABB");
+		elm_object_domain_translatable_part_text_set(ad->scs_layout, "txt.scs", PROJECT, "Standalone");
 		return WINDICATOR_ERROR_OK;
 }
 

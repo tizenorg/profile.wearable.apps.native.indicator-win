@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-#define BATTERY_DIR_PREFIX "battery"
+#define BATTERY_DIR_PREFIX "Battery"
 
 #define DESCRIPTION_BATTERY(num)\
 	description {\

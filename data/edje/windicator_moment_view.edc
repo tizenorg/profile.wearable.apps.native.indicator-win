@@ -96,7 +96,7 @@ group {
 group {
 	name : "windicator/moment_view/battery";
 	images {
-		image : "battery/battery_charge.png" COMP;
+		image : "Battery/battery_charge.png" COMP;
 	}
 	parts {
 		part {
@@ -138,7 +138,7 @@ group {
 				fixed : 1 1;
 				align : 0.5 0.0;
 				visible : 1;
-				image.normal: "battery/battery_charge.png";
+				image.normal: "Battery/battery_charge.png";
 				rel1 { relative : 0.5 126/360; to : "bg"; }
 				rel2 { relative : 0.5 126/360; to : "bg"; }
 			}

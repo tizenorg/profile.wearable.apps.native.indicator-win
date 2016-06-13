@@ -121,10 +121,6 @@ group {
 	images {
 		image: "Connection/edge_connected.png" COMP;
 		image: "Connection/gprs_connected.png" COMP;
-		image: "Connection/1x_connected.png" COMP;
-//#ifdef NETWORK_TMB
-		image: "Connection/2g_connected.png" COMP;
-//#endif
 		image: "Connection/hsdpa_connected.png" COMP;
 		image: "Connection/hspa_connected.png" COMP;
 		image: "Connection/lte_connected.png" COMP;
@@ -137,15 +133,8 @@ group {
 		image: "Indicator_business/Network_data_in_out/ATT/data_out_att_3.png" COMP;
 		image: "Indicator_business/Network_data_in_out/Network_booster/Data_type/ORG/stat_sys_data_3gplus.png" COMP;
 
-		/* Verizon */
-		image: "Connection/1X_connected_dim.png" COMP;
-		image: "Connection/3G_connected_dim.png" COMP;
-		image: "Connection/1X_connected_dim_3g_on.png" COMP;
-		image: "Connection/3G_connected_dim_3g_on.png" COMP;
-
 		image: "Connection/umts_connected.png" COMP;
-		image: "Connection/no_sim.png" COMP;
-		image: "Connection/no_sim_ctc.png" COMP;
+		image: "Indicator/indi_no_sim.png" COMP;
 //		image: "Connection/no_signal.png" COMP;
 
 		image: "Connection/wifi_connected_00.png" COMP;
@@ -176,7 +165,7 @@ group {
 				visible: 0;
 				//visible: 1;
 				image.normal : "Connection/edge_connected.png";
-				image.normal : "Connection/no_sim.png";
+				image.normal : "Indicator/indi_no_sim.png";
 				color_class : "AO016";
 			}
 			description {
@@ -186,10 +175,6 @@ group {
 			}
 			DESCRIPTION_CONNECTION("edge_connected");
 			DESCRIPTION_CONNECTION("gprs_connected");
-			DESCRIPTION_CONNECTION("1x_connected");
-//#ifdef NETWORK_TMB
-			DESCRIPTION_CONNECTION("2g_connected");
-//#endif
 			DESCRIPTION_CONNECTION("hsdpa_connected");
 			DESCRIPTION_CONNECTION("hspa_connected");
 			DESCRIPTION_CONNECTION("lte_connected");
@@ -205,13 +190,7 @@ group {
 			DESCRIPTION_CONNECTION("wifi_connected_03");
 			DESCRIPTION_CONNECTION("wifi_connected_04");
 
-			DESCRIPTION_CONNECTION("1X_connected_dim");
-			DESCRIPTION_CONNECTION("3G_connected_dim");
-			DESCRIPTION_CONNECTION("1X_connected_dim_3g_on");
-			DESCRIPTION_CONNECTION("3G_connected_dim_3g_on");
-
-			DESCRIPTION_CONNECTION("no_sim");
-			DESCRIPTION_CONNECTION("no_sim_ctc");
+//			DESCRIPTION_CONNECTION("indi_no_sim");
 //			DESCRIPTION_CONNECTION("no_signal");
 		}
 		part {
@@ -252,10 +231,6 @@ group {
 	programs {
 		PROGRAM_CONNECTION_TYPE("edge_connected");
 		PROGRAM_CONNECTION_TYPE("gprs_connected");
-		PROGRAM_CONNECTION_TYPE("1x_connected");
-//#ifdef NETWORK_TMB
-		PROGRAM_CONNECTION_TYPE("2g_connected");
-//#endif
 		PROGRAM_CONNECTION_TYPE("hsdpa_connected");
 		PROGRAM_CONNECTION_TYPE("hspa_connected");
 		PROGRAM_CONNECTION_TYPE("lte_connected");
@@ -269,14 +244,8 @@ group {
 		PROGRAM_CONNECTION_TYPE("wifi_connected_03");
 		PROGRAM_CONNECTION_TYPE("wifi_connected_04");
 
-		PROGRAM_CONNECTION_TYPE("1X_connected_dim");
-		PROGRAM_CONNECTION_TYPE("3G_connected_dim");
-		PROGRAM_CONNECTION_TYPE("1X_connected_dim_3g_on");
-		PROGRAM_CONNECTION_TYPE("3G_connected_dim_3g_on");
-
 		PROGRAM_CONNECTION_TYPE("flight_mode");
-		PROGRAM_CONNECTION_TYPE("no_sim");
-		PROGRAM_CONNECTION_TYPE("no_sim_ctc");
+//		PROGRAM_CONNECTION_TYPE("indi_no_sim");
 //		PROGRAM_CONNECTION_TYPE("no_signal");
 
 		PROGRAM_CONNECTION_INOUT("no_inout_connected");

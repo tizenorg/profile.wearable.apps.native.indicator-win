@@ -72,18 +72,18 @@ group {
 		image : "Controls/brightness.png" COMP;
 		image : "Controls/donotdisturb.png" COMP;
 		/* touch area */
-		image : "touch/moment_bar_touch5_1.png" COMP;
-		image : "touch/moment_bar_touch5_2.png" COMP;
-		image : "touch/moment_bar_touch5_3.png" COMP;
-		image : "touch/moment_bar_touch5_4.png" COMP;
-		image : "touch/moment_bar_touch5_5.png" COMP;
+		image : "Touch/moment_bar_touch5_1.png" COMP;
+		image : "Touch/moment_bar_touch5_2.png" COMP;
+		image : "Touch/moment_bar_touch5_3.png" COMP;
+		image : "Touch/moment_bar_touch5_4.png" COMP;
+		image : "Touch/moment_bar_touch5_5.png" COMP;
 
-		image : "touch/moment_bar_touch6_screen_1.png" COMP;
-		image : "touch/moment_bar_touch6_screen_2.png" COMP;
-		image : "touch/moment_bar_touch6_screen_3.png" COMP;
-		image : "touch/moment_bar_touch6_screen_4.png" COMP;
-		image : "touch/moment_bar_touch6_screen_5.png" COMP;
-		image : "touch/moment_bar_touch6_screen_6.png" COMP;
+		image : "Touch/moment_bar_touch6_screen_1.png" COMP;
+		image : "Touch/moment_bar_touch6_screen_2.png" COMP;
+		image : "Touch/moment_bar_touch6_screen_3.png" COMP;
+		image : "Touch/moment_bar_touch6_screen_4.png" COMP;
+		image : "Touch/moment_bar_touch6_screen_5.png" COMP;
+		image : "Touch/moment_bar_touch6_screen_6.png" COMP;
 	}
 	parts {
 		part {
@@ -203,14 +203,14 @@ group {
 			description {
 				state : "default" 0.0;
 				color : 200 0 0 0;
-				image.normal: "touch/moment_bar_touch6_screen_5.png";
+				image.normal: "Touch/moment_bar_touch6_screen_5.png";
 				rel1.to: "rect.bg";
 				rel2.to: "rect.bg";
 			}
 			description {
 				state : "LO" 0.0;
 				inherit : "default" 0.0;
-				image.normal: "touch/moment_bar_touch5_5.png";
+				image.normal: "Touch/moment_bar_touch5_5.png";
 			}
 		}
 // DO_NOT_DISTURB
@@ -243,14 +243,14 @@ group {
 			description {
 				state : "default" 0.0;
 				color : 0 200 0 0;
-				image.normal: "touch/moment_bar_touch6_screen_4.png";
+				image.normal: "Touch/moment_bar_touch6_screen_4.png";
 				rel1.to: "rect.bg";
 				rel2.to: "rect.bg";
 			}
 			description {
 				state : "LO" 0.0;
 				inherit : "default" 0.0;
-				image.normal: "touch/moment_bar_touch5_4.png";
+				image.normal: "Touch/moment_bar_touch5_4.png";
 			}
 		}
 // FLIGHT_MODE
@@ -284,14 +284,14 @@ group {
 			description {
 				state : "default" 0.0;
 				color : 100 0 10 0;
-				image.normal: "touch/moment_bar_touch6_screen_3.png";
+				image.normal: "Touch/moment_bar_touch6_screen_3.png";
 				rel1.to: "rect.bg";
 				rel2.to: "rect.bg";
 			}
 			description {
 				state : "LO" 0.0;
 				inherit : "default" 0.0;
-				image.normal: "touch/moment_bar_touch5_3.png";
+				image.normal: "Touch/moment_bar_touch5_3.png";
 			}
 		}
 // MUSIC
@@ -323,7 +323,7 @@ group {
 			description {
 				state : "default" 0.0;
 				color : 0 0 200 0;
-				image.normal: "touch/moment_bar_touch6_screen_2.png";
+				image.normal: "Touch/moment_bar_touch6_screen_2.png";
 				rel1.to: "rect.bg";
 				rel2.to: "rect.bg";
 			}

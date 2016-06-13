@@ -43,7 +43,7 @@ BuildRequires: edje-bin, embryo-bin
 %endif
 
 %description
-W Indicator application
+Notification panel for wearable devices
 
 %prep
 %setup -q
@@ -90,9 +90,7 @@ mkdir -p %{buildroot}%{_libdir}/systemd/system/tizen-system.target.wants
 
 %defattr(-,root,root,-)
 %attr(-,inhouse,inhouse)
-#%dir %{PREFIX}/data
 %{PREFIX}/bin/*
 %{PREFIX}/res/*
 /usr/share/packages/*
-#/usr/share/packages/%{name}.xml
 /usr/share/icons/org.tizen.windicator.png

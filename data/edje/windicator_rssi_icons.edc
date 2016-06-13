@@ -44,14 +44,6 @@
 		image.normal : RSSI_IMAGE_DIR"/roaming_strength_"num".png";\
 	}\
 
-#define DESCRIPTION_ROAMING_RSSI_CTC(num)\
-	description {\
-		state : "state_roaming_ctc_"num;\
-		inherit : "default" 0.0;\
-		image.normal : "CTC/Roaming_ctc/roaming_ctc_4_level_"num".png";\
-	}\
-
-
 #define PROGRAM_RSSI(num)\
 	program {\
 		name : "set_rssi_"num;\
@@ -142,8 +134,8 @@ group {
 		image : RSSI_IMAGE_DIR"/roaming_strength_02.png" COMP;
 		image : RSSI_IMAGE_DIR"/roaming_strength_03.png" COMP;
 		image : RSSI_IMAGE_DIR"/roaming_strength_04.png" COMP;
-		image : indicator/indi_flight_mode.png COMP;
-		image : indicator/indi_no_signal.png COMP;
+		image : Indicator/indi_flight_mode.png COMP;
+		image : Indicator/indi_no_signal.png COMP;
 		image : Indicator_business/stat_sys_data_unknown.png COMP;
 		
 	}
@@ -158,7 +150,7 @@ group {
 				min : DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
 				max : DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
 				fixed : 1 1;
-				image.normal : "indicator/indi_no_signal.png";
+				image.normal : "Indicator/indi_no_signal.png";
 				//image.normal : RSSI_IMAGE_DIR"/signal_strength_03.png";
 				color_class : "AO016";
 			}
@@ -209,7 +201,7 @@ group {
 			description {
 				state : "state_Flight_mode";
 				inherit : "default" 0.0;
-				image.normal : "indicator/indi_flight_mode.png";
+				image.normal : "Indicator/indi_flight_mode.png";
 			}
 			description {
 				state : "state_none";

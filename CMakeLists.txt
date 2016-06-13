@@ -128,8 +128,6 @@ INSTALL(FILES ${CMAKE_BINARY_DIR}/windicator.edj DESTINATION ${EDJDIR})
 # install application HOME directory
 INSTALL(DIRECTORY DESTINATION ${DATADIR})
 
-#ADD_SUBDIRECTORY(po)
-
 # install desktop files
 set(PREFIX ${CMAKE_INSTALL_PREFIX})
 install(FILES ${CMAKE_SOURCE_DIR}/org.tizen.windicator.xml DESTINATION /usr/share/packages)
@@ -142,6 +140,4 @@ INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/data/edje/images/ DESTINATION ${IMAGEDIR})
 
 #icon
 INSTALL(FILES data/icon/org.tizen.windicator.png DESTINATION /usr/share/icons)
-
-ADD_SUBDIRECTORY(po)
 
