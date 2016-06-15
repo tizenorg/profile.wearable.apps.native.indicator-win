@@ -159,6 +159,8 @@ static bool app_create(void *data)
 	struct appdata *ad = (struct appdata *)data;
 	retv_if(ad == NULL, false);
 
+	g_ad = ad;
+
 #ifdef _TIZEN_3G_ENABLE
 	_D("_TIZEN_3G_ENABLE");
 #else
@@ -246,6 +248,7 @@ static void app_terminate(void *user_data)
 int main(int argc, char *argv[])
 {
 	int ret;
+	struct appdata ad;
 	_I("Indicator Started");
 	ui_app_lifecycle_callback_s event_callback = {0, };
 
@@ -260,8 +263,8 @@ int main(int argc, char *argv[])
 	 * please check the application lifecycle guide
 	 */
 
-	memset(&g_ad, 0x0, sizeof(struct appdata *));
-	ret = ui_app_main(argc, argv, &event_callback, &g_ad);
+	memset(&ad, 0x0, sizeof(struct appdata));
+	ret = ui_app_main(argc, argv, &event_callback, &ad);
 	if (ret != APP_ERROR_NONE) {
 		_E("ui_app_main() is failed. err = %d", ret);
 	}
