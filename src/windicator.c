@@ -246,7 +246,6 @@ static void app_terminate(void *user_data)
 int main(int argc, char *argv[])
 {
 	int ret;
-	struct appdata ad;
 	_I("Indicator Started");
 	ui_app_lifecycle_callback_s event_callback = {0, };
 
@@ -261,9 +260,8 @@ int main(int argc, char *argv[])
 	 * please check the application lifecycle guide
 	 */
 
-	memset(&ad, 0x0, sizeof(struct appdata));
-	g_ad = &ad;
-	ret = ui_app_main(argc, argv, &event_callback, &ad);
+	memset(&g_ad, 0x0, sizeof(struct appdata *));
+	ret = ui_app_main(argc, argv, &event_callback, &g_ad);
 	if (ret != APP_ERROR_NONE) {
 		_E("ui_app_main() is failed. err = %d", ret);
 	}

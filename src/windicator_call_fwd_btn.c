@@ -15,11 +15,30 @@
  * limitations under the License.
  */
 
+#include <vconf.h>
+
 #include "windicator.h"
 #include "log.h"
 #include "windicator_call_fwd_btn.h"
 #include "windicator_util.h"
 #include "windicator_moment_bar.h"
+
+static int windicator_call_fwd_state_get(void)
+{
+        int ret = 0;
+        int status = 0;
+
+        ret = vconf_get_int(VCONFKEY_TELEPHONY_CALL_FORWARD_STATE, &status);
+        if(ret < 0) {
+                _E("vconf_get_int() failed(%d)", ret);
+                return 0;
+        }
+        if(status) {
+                return 1;
+        }
+
+        return 0;
+}
 
 void on_pressed_call_fwd_icon(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
@@ -61,7 +80,7 @@ Evas_Object *windicator_callfwd_btn_layout_create(Evas_Object *parent, void *dat
 
         elm_object_part_content_set(parent, "callfwd.swallow", layout);
         //Get call_fwd_button_show from a function which detects the sim is present or not
-        int call_fwd_button_show = 0;
+        int call_fwd_button_show = windicator_call_fwd_state_get();
         if(call_fwd_button_show)
         {
 			/* for press effect */
@@ -84,7 +103,7 @@ windicator_error_e windicator_call_fwd_btn_update(void *data)
                 return WINDICATOR_ERROR_FAIL;
         }
         //Get call_fwd_button_show from a function which detects the sim is present or not
-        int call_fwd_button_show = 0;
+        int call_fwd_button_show = windicator_call_fwd_state_get();
         if(call_fwd_button_show)
         	elm_object_signal_emit(ad->callfwd_btn_layout, "img.callfwd.enable", "img.callfwd.icon");
         else
