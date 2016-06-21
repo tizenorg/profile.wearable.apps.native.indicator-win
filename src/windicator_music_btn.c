@@ -31,8 +31,16 @@ void _music_btn_clicked_cb(void *data, Evas_Object *obj, const char *emission, c
         ret_if(ad == NULL);
 
         //launch music app
-        ad->launch_music_trigger = 1;
-        //windicator_util_launch_app(ad);
+	if(ad->music_status == MUSIC_BTN_ENABLED)
+	{
+		ad->launch_music_trigger = 1;
+		//windicator_util_launch_app(ad);
+	}
+	else
+	{
+		ad->launch_music_trigger = 0;
+		("Music app is NOT ongoing, so skip this click event");
+	}
 }
 
 void on_pressed_music_icon(void *data, Evas_Object *obj, const char *emission, const char *source)
@@ -117,13 +125,13 @@ windicator_error_e _music_icon_update(void *data)
                 return WINDICATOR_ERROR_FAIL;
         }
 
-        //if(ad->music_status == MUSIC_BTN_ENABLED) {
-        //		_D("Enabled Music image (BT model)");
+        if(ad->music_status == MUSIC_BTN_ENABLED) {
+		_D("Enabled Music image (BT model)");
                 elm_object_signal_emit(ad->music_btn_layout, "img.music.enable", "img.music.icon");
-        /*} else {
-        		_D("Disabled Music image (BT model)");
+        } else {
+		_D("Disabled Music image (BT model)");
                 elm_object_signal_emit(ad->music_btn_layout, "img.music.disable", "img.music.icon");
-        }*/
+        }
 
         return WINDICATOR_ERROR_OK;
 }

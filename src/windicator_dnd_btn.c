@@ -85,7 +85,14 @@ static void _popup_response_cb(void *data, Evas_Object *obj, void *event_info)
                 s_info.dnd_btn_status = DND_BTN_ENABLED;
         }
 
-        elm_popup_dismiss(data);
+	struct appdata *ad = (struct appdata *)windicator_appdata_get();
+	windicator_dnd_btn_update(ad);
+
+	if(!obj) return;
+	evas_object_del(obj);
+
+	evas_object_del(ad->dnd_win);
+	ad->dnd_win = NULL;
 }
 
 static void _popup_hide_finished_cb(void *data, Evas_Object *obj, void *event_info)

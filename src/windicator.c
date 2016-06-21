@@ -225,6 +225,12 @@ static void app_resume(void *user_data)
 {
 	/* Take necessary actions when application becomes visible. */
 	_D("app_resume");
+	struct appdata *ad = (struct appdata *)user_data;
+	if(ad->launch_setting_trigger == 1)
+	{
+		windicator_brightness_update(ad);
+		ad->launch_setting_trigger == 0;
+	}
 }
 
 /**

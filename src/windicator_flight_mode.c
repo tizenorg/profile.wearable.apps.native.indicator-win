@@ -90,7 +90,14 @@ static void _popup_response_cb(void *data, Evas_Object *obj, void *event_info)
             s_info.flight_mode_status = FLIGHT_MODE_ENABLED;
         }
 
-        elm_popup_dismiss(data);
+	struct appdata *ad = (struct appdata *)windicator_appdata_get();
+	windicator_flight_mode_update(ad);
+
+	if(!obj) return;
+	evas_object_del(obj);
+
+	evas_object_del(ad->flight_mode_win);
+	ad->flight_mode_win = NULL;
 }
 
 static void _popup_hide_finished_cb(void *data, Evas_Object *obj, void *event_info)

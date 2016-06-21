@@ -155,7 +155,7 @@ void windicator_util_launch_app(void *data)
 
                 app_control_send_launch_request(ac, NULL, NULL);
                 app_control_destroy(ac);
-                ad->launch_setting_trigger = 0;
+                //ad->launch_setting_trigger = 0;
         }
 
 }
