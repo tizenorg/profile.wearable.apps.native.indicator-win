@@ -134,12 +134,12 @@ static void _dnd_popup_launch(void* data)
 
         layout = elm_layout_add(popup);
         elm_layout_theme_set(layout, "layout", "popup", "content/circle/buttons2");
-        elm_object_part_text_set(layout, "elm.text.title", "DO NOT DISTURB");
+        elm_object_part_text_set(layout, "elm.text.title", "Do not disturb");
         //need to translate
 #ifdef _TIZEN_3G_DISABLE
-        elm_object_part_text_set(layout, "elm.text", "VIBRATION WILL BE TURNED OFF AND SCREEN WILL REMAIN TURNED OFF FOR INCOMING CALLS AND ALERTS BUT NOT ALARMS");
+        elm_object_part_text_set(layout, "elm.text", "Vibration will be turned off and screen will remain turned off for incoming calls and alerts, but not alarms.");
 #else
-        elm_object_part_text_set(layout, "elm.text", "SOUNDS WILL BE MUTED AND SCREEN WILL REMAIN TURNED OFF FOR INCOMING CALLS AND ALERTS BUT NOT ALARMS");
+        elm_object_part_text_set(layout, "elm.text", "Sounds will be muted and screen will remain turned off for incoming calls and alerts, but not alarms.");
 #endif
         elm_object_content_set(popup, layout);
 
