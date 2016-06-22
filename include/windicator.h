@@ -202,3 +202,4 @@ struct appdata
 };
 
 void windicator_lo_update(void* data);
+void windicator_util_display_lock(void);
