@@ -26,8 +26,6 @@
 
 #define BRIGHTNESS_LEVEL_MAX 10
 
-static int bOutdoorMode = 0;
-
 void on_clicked_small_brightness_icon(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
         _D("on_clicked_small_brightness_icon");
@@ -142,48 +140,43 @@ void windicator_brightness_icon_set_by_level(Evas_Object *layout, void *data)
 
         _D("Brightness index, set (%s)", value);
 
-		snprintf(value,sizeof(value),"%02d",ad->brightness_index);
+		snprintf(value,sizeof(value),"%d",ad->brightness_index);
 		elm_object_part_text_set(layout,"txt.brightness",value);
 }
 
+
+static int _change_bright_level_to_index(int level)
+{
+	int index = 0;
+	_D("level:%d",level);
+	if (level >= 0 && level <= 100) {
+		index = (level / 10);
+		_D("Setting - level %d -> index : %d", level, index);
+	}
+	return index;
+}
+
+
 static int _current_device_brightness_level_get(void)
 {
-        int level = 0;
+       int level = 0;
+       int index = 0;
 
-        if(bOutdoorMode == 1)
-        {
-                _D("Outdoor mode, so get VCONFKEY_SETAPPL_LCD_BRIGHTNESS");
-                if(vconf_get_int(VCONFKEY_SETAPPL_LCD_BRIGHTNESS, &level) < 0) {
-                        _SECURE_E("Failed to get vconfkey : %s", VCONFKEY_SETAPPL_LCD_BRIGHTNESS);
-                        device_get_brightness(0, &level);
-                }
-        }
-        else
-        {
-                _D("NOT Outdoor mode, so use device_get_brightness()");
-                device_get_brightness(0, &level);
-        }
-
-        _I("Brightness level : %d", level);
-        return level;
+        _D("Outdoor mode, so get VCONFKEY_SETAPPL_LCD_BRIGHTNESS");
+	if(vconf_get_int(VCONFKEY_SETAPPL_LCD_BRIGHTNESS, &level) < 0)
+		_SECURE_E("Failed to get vconfkey : %s", VCONFKEY_SETAPPL_LCD_BRIGHTNESS);
+	_D("brightness value read from vconf key: VCONFKEY_SETAPPL_LCD_BRIGHTNESS is %d",level);
+	index = _change_bright_level_to_index(level);
+	 _I("Brightness level index : %d", index);
+        return index;
 }
 
 windicator_error_e windicator_brightness_update(void *data)
 {
         struct appdata *ad = (struct appdata *)data;
         retv_if(ad == NULL, WINDICATOR_ERROR_INVALID_PARAMETER);
-
-        int level = 50;
-
-        _I("current device brightness level : %d / isOutdoorMode", level);
-
-        bOutdoorMode = 1;//display_get_hbm();
-
-        level = _current_device_brightness_level_get();
-        _D("current device brightness level : %d / isOutdoorMode : %d", level, bOutdoorMode);
-
         /* update icon & slider */
-        ad->brightness_index = _brightness_level_to_index(level, BRIGHTNESS_LEVEL_MAX);
+        ad->brightness_index = _current_device_brightness_level_get();
         windicator_brightness_icon_set_by_level(ad->brightness_small_layout, ad);
 //      windicator_brightness_slider_set_by_level(ad);
 
