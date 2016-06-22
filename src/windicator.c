@@ -169,7 +169,13 @@ static bool app_create(void *data)
 
 	elm_app_base_scale_set(1.3);
 	create_moments_bar_win(ad);
+
+	windicator_dynamic_vconfkey_register(ad);
 	windicator_util_event_register(ad);
+
+    /* Register scs's vconfkey events */
+    windicator_scs_vconfkey_register(ad);
+
 	return true;
 }
 
@@ -246,7 +252,10 @@ static void app_terminate(void *user_data)
 
     struct appdata *ad = (struct appdata *)user_data;
     ret_if(ad == NULL);
-
+	windicator_dynamic_vconfkey_unregister();
+	windicator_util_event_unregister();
+    /* Register scs's vconfkey events */
+    windicator_scs_vconfkey_unregister();
 }
 
 /**

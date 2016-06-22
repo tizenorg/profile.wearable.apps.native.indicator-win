@@ -41,7 +41,7 @@ windicator_error_e windicator_scs_update(void *data)
 
         if(isBTOn)
         {
-			if(vconf_get_bool(VCONFKEY_WMS_WMANAGER_CONNECTED, &sap_connected) < 0) {
+			if(vconf_get_int("memory/wms/wmanager_connected", &sap_connected) < 0) {
 					_E("Failed to get vconfkey : %s", VCONFKEY_WMS_WMANAGER_CONNECTED);
 					sap_connected = 0;
 					goto done;
@@ -99,4 +99,27 @@ void windicator_scs_layout_destroy(void *data)
                 evas_object_del(ad->scs_layout);
                 ad->scs_layout = NULL;
         }
+}
+
+static void _scs_event_changed_cb(keynode_t *node, void *data)
+{
+        _D("scs event changed : update");
+         windicator_scs_update(data);
+}
+
+void windicator_scs_vconfkey_register(void *data)
+{
+        struct appdata *ad = (struct appdata *)data;
+        ret_if(ad == NULL);
+
+        vconf_notify_key_changed(VCONFKEY_BT_STATUS, (vconf_callback_fn)_scs_event_changed_cb, ad);
+        vconf_notify_key_changed(VCONFKEY_WMS_WMANAGER_CONNECTED, (vconf_callback_fn)_scs_event_changed_cb, ad);
+        vconf_notify_key_changed(VCONFKEY_BT_DEVICE, (vconf_callback_fn)_scs_event_changed_cb, ad);
+}
+
+void windicator_scs_vconfkey_unregister(void)
+{
+		vconf_ignore_key_changed(VCONFKEY_BT_STATUS, (vconf_callback_fn)_scs_event_changed_cb);
+        vconf_ignore_key_changed(VCONFKEY_WMS_WMANAGER_CONNECTED, (vconf_callback_fn)_scs_event_changed_cb);
+        vconf_ignore_key_changed(VCONFKEY_BT_DEVICE, (vconf_callback_fn)_scs_event_changed_cb);
 }

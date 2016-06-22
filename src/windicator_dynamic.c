@@ -23,10 +23,10 @@
 #include "windicator_battery.h"
 #include "windicator_moment_view.h"
 
-#define IMG_HEADSET_PATH IMAGEDIR"/indicator/indi_headset_on.png"
-#define IMG_ALARM_PATH IMAGEDIR"/indicator/indi_alarm.png"
-#define IMG_HEADSET_MOMENT_VIEW_PATH IMAGEDIR"/indicator/indi_headset_on.png"
-#define IMG_CALL_FORWARDING_PATH IMAGEDIR"/indicator/indi_call_forwarding.png"
+#define IMG_HEADSET_PATH IMAGEDIR"/Indicator/indi_headset_on.png"
+#define IMG_ALARM_PATH IMAGEDIR"/Indicator/indi_alarm.png"
+#define IMG_HEADSET_MOMENT_VIEW_PATH IMAGEDIR"/Indicator/indi_headset_on.png"
+#define IMG_CALL_FORWARDING_PATH IMAGEDIR"/Indicator/indi_call_forwarding.png"
 #define ICON_EVENT_TYPE "_event_type_"
 
 enum {
@@ -616,6 +616,7 @@ static void _dynamic_bluetooth_state_changed_cb(void *node, void *data)
 
         int isBTOn = 0;
         int sap_connected = 0;
+        int bt_bonded = 0;
 
         if(vconf_get_int(VCONFKEY_BT_STATUS, &isBTOn) < 0) {
                 _E("Failed to get vconfkey : %s", VCONFKEY_BT_STATUS);
@@ -624,7 +625,7 @@ static void _dynamic_bluetooth_state_changed_cb(void *node, void *data)
 
         _W("isBTOn : %d", isBTOn);
 
-        if(vconf_get_bool(VCONFKEY_WMS_WMANAGER_CONNECTED, &sap_connected) < 0) {
+        if(vconf_get_int("memory/wms/wmanager_connected", &sap_connected) < 0) {
                 _SECURE_E("Failed to get vconfkey : %s", VCONFKEY_WMS_WMANAGER_CONNECTED);
                 sap_connected = 0;
         }
@@ -645,12 +646,15 @@ static void _dynamic_bluetooth_state_changed_cb(void *node, void *data)
                 if(moment_view_bt_icon == NULL) {
                         _E("Failed to get moment view bt icon");
                 }
+                if(vconf_get_int(VCONFKEY_BT_DEVICE, &bt_bonded) < 0) {
+                        _SECURE_E("Failed to get vconfkey : %s", VCONFKEY_BT_DEVICE);
+                        bt_bonded = 0;
+                }
+
                 if(sap_connected) {
-
-						_W("display unconnected BT icon");
-						elm_object_signal_emit(moment_bar_bt_icon, "showUnconnectedBTicon", "img.bluetooth");
-						elm_object_signal_emit(moment_view_bt_icon, "showUnconnectedBTicon", "img.bluetooth");
-
+						_W("display connected BT icon");
+						elm_object_signal_emit(moment_bar_bt_icon, "showConnectedBTicon", "img.bluetooth");
+						elm_object_signal_emit(moment_view_bt_icon, "showConnectedBTicon", "img.bluetooth");
                 } else {
                         _D("display unconnected BT icon");
                         elm_object_signal_emit(moment_bar_bt_icon, "showUnconnectedBTicon", "img.bluetooth");
@@ -740,4 +744,34 @@ void windicator_dynamic_layout_destroy(void *data)
                 windicator_connection_icon_destroy(ad);
                 ad->moment_bar_connection_icon = NULL;
         }
+}
+
+
+windicator_error_e windicator_dynamic_vconfkey_register(void *data)
+{
+        struct appdata *ad = (struct appdata *)data;
+        retv_if(ad == NULL, WINDICATOR_ERROR_INVALID_PARAMETER);
+
+        /* check BT for Bluetooth icon */
+        _dynamic_bluetooth_state_changed_cb(NULL, ad);
+        vconf_notify_key_changed(VCONFKEY_BT_STATUS, (vconf_callback_fn)_dynamic_bluetooth_state_changed_cb, ad);
+        vconf_notify_key_changed(VCONFKEY_WMS_WMANAGER_CONNECTED, (vconf_callback_fn)_dynamic_bluetooth_state_changed_cb, ad);
+
+        /* check BT for Headset icon */
+        _dynamic_headset_state_changed_cb(NULL, ad);
+        vconf_notify_key_changed(VCONFKEY_BT_STATUS, (vconf_callback_fn)_dynamic_headset_state_changed_cb, ad);
+        vconf_notify_key_changed(VCONFKEY_BT_DEVICE, (vconf_callback_fn)_dynamic_headset_state_changed_cb, ad);
+
+        return WINDICATOR_ERROR_OK;
+}
+
+void windicator_dynamic_vconfkey_unregister(void)
+{
+        /* ignore BT for Bluetooth icon */
+        vconf_ignore_key_changed(VCONFKEY_BT_STATUS, (vconf_callback_fn)_dynamic_bluetooth_state_changed_cb);
+        vconf_ignore_key_changed(VCONFKEY_WMS_WMANAGER_CONNECTED, (vconf_callback_fn)_dynamic_bluetooth_state_changed_cb);
+
+        /* ignore BT for Headset icon */
+        vconf_ignore_key_changed(VCONFKEY_BT_STATUS, (vconf_callback_fn)_dynamic_headset_state_changed_cb);
+        vconf_ignore_key_changed(VCONFKEY_BT_DEVICE, (vconf_callback_fn)_dynamic_headset_state_changed_cb);
 }

@@ -22,4 +22,7 @@ windicator_error_e windicator_scs_update(void *data);
 Evas_Object *windicator_scs_layout_create(Evas_Object *parent, void *data);
 void windicator_scs_layout_destroy(void *data);
 
+void windicator_scs_vconfkey_register(void *data);
+void windicator_scs_vconfkey_unregister(void);
+
 #endif /* __WINDICATOR_SCS_H__ */

@@ -209,6 +209,10 @@ windicator_error_e windicator_moment_bar_show(void *data)
 
         /* update LO layout */
         windicator_lo_update(ad);
+
+        /* check connection, rssi, packet status */
+        windi_connection_resume(ad->moment_bar_rssi_icon, ad->moment_bar_connection_icon);
+
         /* register back key event */
         if(WINDICATOR_ERROR_OK != windicator_util_back_key_grab(ad)) {
                 _E("Failed to register back key handler");
@@ -283,7 +287,7 @@ windicator_error_e windicator_moment_bar_init(void *data)
 	ad->nf = windicator_util_naviframe_create(ad->moment_bar_first_page_layout);
 
         /* create moment bar's layout to main layout's scroller */
-        windicator_moment_bar_first_page_layout_create(ad);
+		ad->moment_bar_first_page_layout = windicator_moment_bar_first_page_layout_create(ad);
 
         windicator_moment_bar_update_main_view(ad);
 
