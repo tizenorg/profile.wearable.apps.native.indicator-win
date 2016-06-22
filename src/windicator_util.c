@@ -166,10 +166,22 @@ void windicator_util_event_register(void *data)
 	 ret_if(ad == NULL);
 
 
+    /* register dynamic vconfkey event */
+    if(WINDICATOR_ERROR_OK != windicator_dynamic_vconfkey_register(ad)) {
+            _E("Failed to register dynamic vconfkey event");
+    }
+
+
 	if(WINDICATOR_ERROR_OK != windicator_battery_init(ad)) {
 		_E("Failed to register battery vconfkey event");
 	}
 
+}
+
+
+void windicator_util_event_unregister()
+{
+        windicator_dynamic_vconfkey_unregister();
 }
 
 void windicator_util_display_lock(void)

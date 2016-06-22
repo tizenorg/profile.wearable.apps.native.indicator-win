@@ -81,9 +81,11 @@ static const char *type_name[TYPE_CONN_MAX] = {
 static struct info {
         int conn_type;
     	int packet_type;
+        Evas_Object *connect_icon;
 } s_info = {
         .conn_type = TYPE_NONE,
     	.packet_type = PACKET_NONE,
+        .connect_icon = NULL,
 };
 
 #if 0
@@ -376,4 +378,74 @@ void windi_connection_update(Evas_Object *rssi_icon, Evas_Object *connect_icon)
         /* check rssi level */
         /* check connection status */
         _wifi_state_changed_cb(NULL, connect_icon);
+}
+
+static void _connection_type_changed_cb(keynode_t *node, void *data)
+{
+        Evas_Object *connect_icon = (Evas_Object *)data;
+        ret_if(connect_icon == NULL);
+
+        int ret = 0;
+        int status = 0;
+        int wifi_state = 0;
+
+        /* flight mode */
+        ret = vconf_get_bool(VCONFKEY_TELEPHONY_FLIGHT_MODE, &status);
+        if(ret == 0 && status == true) {
+                _W("Flight mode");
+                s_info.conn_type = TYPE_NONE;
+                _connection_icon_set(s_info.conn_type, connect_icon);
+                return;
+        }
+
+        /* Wifi connected */
+        if(vconf_get_int(VCONFKEY_WIFI_STATE, &wifi_state) < 0) {
+                _SECURE_E("Failed to get vconfkey : %s", VCONFKEY_WIFI_STATE);
+                s_info.conn_type = TYPE_NONE;
+        } else {
+                _W("wifi state : %d", wifi_state);
+                if(wifi_state == VCONFKEY_WIFI_CONNECTED) {
+                        s_info.conn_type = TYPE_WIFI_00;
+                } else {
+                        s_info.conn_type = TYPE_NONE;
+                }
+        }
+
+        _wifi_state_changed_cb(NULL, connect_icon);
+
+        /* Handle data restriction check */
+
+}
+
+void windi_connection_resume(Evas_Object *rssi_icon, Evas_Object *connect_icon)
+{
+        _D("");
+
+        ret_if(connect_icon == NULL);
+        s_info.connect_icon = connect_icon;
+
+        /* register vconfkey */
+        if(vconf_notify_key_changed(VCONFKEY_WIFI_TRANSFER_STATE, _wifi_state_changed_cb, connect_icon) < 0)
+        {
+                _E("Failed to register the VCONFKEY_WIFI_TRANSFER_STATE callback");
+        }
+        if(vconf_notify_key_changed(VCONFKEY_WIFI_STRENGTH, _wifi_state_changed_cb, connect_icon) < 0)
+        {
+                _E("Failed to register the VCONFKEY_WIFI_STRENGTH callback");
+        }
+        if(vconf_notify_key_changed(VCONFKEY_WIFI_STATE, _connection_type_changed_cb, connect_icon) < 0)
+        {
+                _E("Failed to register the VCONFKEY_WIFI_STATE callback");
+        }
+        _wifi_state_changed_cb(NULL, connect_icon);
+}
+
+void windi_connection_pause(void)
+{
+        _D("");
+
+        /* ignore vconfkey */
+        vconf_ignore_key_changed(VCONFKEY_WIFI_TRANSFER_STATE, _wifi_state_changed_cb);
+        vconf_ignore_key_changed(VCONFKEY_WIFI_STRENGTH, _wifi_state_changed_cb);
+        vconf_ignore_key_changed(VCONFKEY_WIFI_STATE, _connection_type_changed_cb);
 }

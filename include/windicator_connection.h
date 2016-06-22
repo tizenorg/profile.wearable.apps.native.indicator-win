@@ -19,6 +19,8 @@
 #define __WINDICATOR_CONNECTION_H__
 
 void windi_connection_update(Evas_Object *rssi_icon, Evas_Object *connect_icon);
+void windi_connection_resume(Evas_Object *rssi_icon, Evas_Object *connect_icon);
+void windi_connection_pause(void);
 
 #endif
 

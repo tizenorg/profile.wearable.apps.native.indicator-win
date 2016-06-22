@@ -28,5 +28,7 @@ windicator_error_e windicator_util_win_notification_property_set(Evas_Object *wi
 
 void windicator_util_launch_app(void *data);
 
+void windicator_util_event_register(void *data);
+void windicator_util_event_unregister();
 
 #endif /*  __WINDICATOR_UTIL_H_ */
