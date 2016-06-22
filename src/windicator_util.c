@@ -159,3 +159,21 @@ void windicator_util_launch_app(void *data)
         }
 
 }
+
+void windicator_util_event_register(void *data)
+{
+	 struct appdata *ad = (struct appdata *)data;
+	 ret_if(ad == NULL);
+
+
+	if(WINDICATOR_ERROR_OK != windicator_battery_init(ad)) {
+		_E("Failed to register battery vconfkey event");
+	}
+
+}
+
+void windicator_util_display_lock(void)
+{
+	 device_power_request_lock(POWER_LOCK_DISPLAY_DIM, 0);
+}
+

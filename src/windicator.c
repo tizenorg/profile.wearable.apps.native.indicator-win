@@ -169,6 +169,7 @@ static bool app_create(void *data)
 
 	elm_app_base_scale_set(1.3);
 	create_moments_bar_win(ad);
+	windicator_util_event_register(ad);
 	return true;
 }
 
@@ -229,7 +230,7 @@ static void app_resume(void *user_data)
 	if(ad->launch_setting_trigger == 1)
 	{
 		windicator_brightness_update(ad);
-		ad->launch_setting_trigger == 0;
+		ad->launch_setting_trigger = 0;
 	}
 }
 

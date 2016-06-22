@@ -139,6 +139,7 @@ windicator_error_e windicator_moment_bar_update_main_view(void *data)
         windicator_music_btn_update(ad);
         windicator_dnd_btn_update(ad);
         windicator_flight_mode_update(ad);
+        _battery_update(ad);
 #ifndef _TIZEN_3G_DISABLE
         windicator_volume_update(ad);
         windicator_call_fwd_btn_update(ad);

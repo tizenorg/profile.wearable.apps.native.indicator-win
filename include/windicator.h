@@ -27,7 +27,7 @@
 #ifndef _TIZEN_3G_ENABLE
 #define _TIZEN_3G_DISABLE
 #endif
-
+#define MAX_PATH_LENGTH 1024
 #define DYNAMIC_ICON_WIDTH 24
 #define DYNAMIC_ICON_HEIGHT 26
 

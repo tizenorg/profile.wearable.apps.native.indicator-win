@@ -25,5 +25,6 @@ Evas_Object *windicator_battery_icon_create(Evas_Object *parent, void *data);
 void windicator_battery_icon_destroy(void *data);
 
 windicator_error_e windicator_battery_icon_update(Evas_Object *layout, void *data);
+extern void _battery_update(void* data);
 
 #endif /*  __WINDICATOR_BATTERY_H__ */
