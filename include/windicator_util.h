@@ -31,4 +31,6 @@ void windicator_util_launch_app(void *data);
 void windicator_util_event_register(void *data);
 void windicator_util_event_unregister();
 
+extern void _get_resource(const char *file_in, char *file_path_out, int file_path_max);
+
 #endif /*  __WINDICATOR_UTIL_H_ */

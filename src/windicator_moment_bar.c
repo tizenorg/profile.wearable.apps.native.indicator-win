@@ -47,14 +47,19 @@ Evas_Object *windicator_moment_bar_first_page_layout_create(void *data)
 
         retv_if(layout == NULL, NULL);
         _I("main %x first %x",ad->moment_bar_main_layout,layout );
+
+        char full_path[PATH_MAX] = { 0, };
+        _get_resource(EDJ_FILE, full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
 #ifdef _TIZEN_3G_DISABLE
-        if(elm_layout_file_set(layout, EDJ_FILE, "windicator/moment_bar/first_page/bt") != EINA_TRUE) {
+        if(elm_layout_file_set(layout, full_path, "windicator/moment_bar/first_page/bt") != EINA_TRUE) {
                 _E("Failed to create moment bar first page layout");
                 evas_object_del(layout);
                 return NULL;
         }
 #else
-        if(elm_layout_file_set(layout, EDJ_FILE, "windicator/moment_bar/first_page/3g") != EINA_TRUE) {
+        if(elm_layout_file_set(layout, full_path, "windicator/moment_bar/first_page/3g") != EINA_TRUE) {
         	_E("Failed to create moment bar first page layout");
                 evas_object_del(layout);
                 return NULL;

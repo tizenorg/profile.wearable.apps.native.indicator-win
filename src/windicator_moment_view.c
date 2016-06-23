@@ -33,7 +33,11 @@
         Evas_Object *layout = elm_layout_add(ad->moment_view_battery_layout);
         retv_if(layout == NULL, NULL);
 
-        if(elm_layout_file_set(layout, EDJ_FILE, "windicator/moment_view/battery/number") != EINA_TRUE) {
+        char full_path[PATH_MAX] = { 0, };
+        _get_resource(EDJ_FILE, full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
+        if(elm_layout_file_set(layout, full_path, "windicator/moment_view/battery/number") != EINA_TRUE) {
         	_E("Failed to create moment view layout");
                 evas_object_del(layout);
                 return NULL;
@@ -59,7 +63,11 @@ Evas_Object *windicator_moment_view_battery_layout_create(void *data)
         Evas_Object *layout = elm_layout_add(ad->moment_view_win);
         retv_if(layout == NULL, NULL);
 
-        if(elm_layout_file_set(layout, EDJ_FILE, "windicator/moment_view/battery") != EINA_TRUE) {
+        char full_path[PATH_MAX] = { 0, };
+        _get_resource(EDJ_FILE, full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
+        if(elm_layout_file_set(layout, full_path, "windicator/moment_view/battery") != EINA_TRUE) {
         	_E("Failed to create moment view layout");
                 evas_object_del(layout);
                 return NULL;
@@ -90,14 +98,18 @@ Evas_Object *windicator_dynamic_layout_for_moment_view_create(Evas_Object *paren
         Evas_Object *layout = elm_layout_add(parent);
         retv_if(layout == NULL, NULL);
 
+        char full_path[PATH_MAX] = { 0, };
+        _get_resource(EDJ_FILE, full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
 #ifdef _TIZEN_3G_DISABLE
-        if(elm_layout_file_set(layout, EDJ_FILE, "windicator/dynamic/layout/bt") != EINA_TRUE) {
+        if(elm_layout_file_set(layout, full_path, "windicator/dynamic/layout/bt") != EINA_TRUE) {
                 _E("Failed to create dynamic layout");
                 evas_object_del(layout);
                 return NULL;
         }
 #else
-        if(elm_layout_file_set(layout, EDJ_FILE, "windicator/dynamic/layout/3g") != EINA_TRUE) {
+        if(elm_layout_file_set(layout, full_path, "windicator/dynamic/layout/3g") != EINA_TRUE) {
                 _E("Failed to create dynamic layout");
                 evas_object_del(layout);
                 return NULL;
@@ -124,7 +136,11 @@ Evas_Object *windicator_moment_view_layout_create(void *data)
         Evas_Object *layout = elm_layout_add(ad->moment_view_win);
         retv_if(layout == NULL, NULL);
 
-        if(elm_layout_file_set(layout, EDJ_FILE, "windicator/moment_view/full") != EINA_TRUE) {
+        char full_path[PATH_MAX] = { 0, };
+        _get_resource(EDJ_FILE, full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
+        if(elm_layout_file_set(layout, full_path, "windicator/moment_view/full") != EINA_TRUE) {
         		_E("Failed to create moment view layout");
                 evas_object_del(layout);
                 return NULL;

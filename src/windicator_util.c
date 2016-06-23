@@ -1,11 +1,21 @@
 #include <pkgmgr-info.h>
 #include <aul.h>
 #include <app_control.h>
+#include <app_common.h>
 
 #include "windicator.h"
 #include "log.h"
 
 #define CLOCK_SETTING_BRIGHTNESS_PKG_NAME  "org.tizen.watch-setting"
+
+void _get_resource(const char *file_in, char *file_path_out, int file_path_max)
+{
+        char *res_path = app_get_resource_path();
+        if (res_path) {
+                snprintf(file_path_out, file_path_max, "%s%s", res_path, file_in);
+                free(res_path);
+        }
+}
 
 Evas_Object *windicator_util_bg_create(Evas_Object *parent)
 {

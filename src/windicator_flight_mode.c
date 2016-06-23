@@ -153,7 +153,12 @@ static void _flight_mode_popup_launch(void* data)
         evas_object_smart_callback_add(btn, "clicked", _popup_response_cb, popup);
 
         icon = elm_image_add(btn);
-        elm_image_file_set(icon, ICON_PATH"/tw_ic_popup_btn_delete.png", NULL);
+
+        char full_path[PATH_MAX] = { 0, };
+        _get_resource(ICON_PATH"/tw_ic_popup_btn_delete.png", full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
+        elm_image_file_set(icon, full_path, NULL);
         evas_object_size_hint_weight_set(icon, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
         elm_object_part_content_set(btn, "elm.swallow.content", icon);
         evas_object_show(icon);
@@ -166,7 +171,11 @@ static void _flight_mode_popup_launch(void* data)
         evas_object_smart_callback_add(btn, "clicked", _popup_response_cb, popup);
 
         icon = elm_image_add(btn);
-        elm_image_file_set(icon, ICON_PATH"/tw_ic_popup_btn_check.png", NULL);
+
+        _get_resource(ICON_PATH"/tw_ic_popup_btn_check.png", full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
+        elm_image_file_set(icon, full_path, NULL);
         evas_object_size_hint_weight_set(icon, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
         elm_object_part_content_set(btn, "elm.swallow.content", icon);
         evas_object_show(icon);
@@ -227,7 +236,11 @@ Evas_Object *windicator_flight_mode_layout_create(Evas_Object *parent, void *dat
         Evas_Object *layout = elm_layout_add(parent);
         retv_if(layout == NULL, NULL);
 
-        if(elm_layout_file_set(layout, EDJ_FILE, "windicator/flight_mode") != EINA_TRUE) {
+        char full_path[PATH_MAX] = { 0, };
+        _get_resource(EDJ_FILE, full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
+        if(elm_layout_file_set(layout, full_path, "windicator/flight_mode") != EINA_TRUE) {
         		_E("Failed to set layout");
                 return NULL;
         }

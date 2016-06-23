@@ -195,7 +195,11 @@ Evas_Object *windicator_battery_icon_create(Evas_Object *parent, void *data)
         Evas_Object *icon = elm_layout_add(parent);
         retv_if(icon == NULL, NULL);
 
-        if(elm_layout_file_set(icon, EDJ_FILE, "windicator/battery_icon") != EINA_TRUE) {
+        char full_path[PATH_MAX] = { 0, };
+        _get_resource(EDJ_FILE, full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
+        if(elm_layout_file_set(icon, full_path, "windicator/battery_icon") != EINA_TRUE) {
                 _E("Failed to set battery icon");
                 evas_object_del(icon);
                 return NULL;

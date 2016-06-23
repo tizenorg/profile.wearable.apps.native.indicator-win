@@ -23,10 +23,7 @@
 #include "windicator_battery.h"
 #include "windicator_moment_view.h"
 
-#define IMG_HEADSET_PATH IMAGEDIR"/Indicator/indi_headset_on.png"
-#define IMG_ALARM_PATH IMAGEDIR"/Indicator/indi_alarm.png"
-#define IMG_HEADSET_MOMENT_VIEW_PATH IMAGEDIR"/Indicator/indi_headset_on.png"
-#define IMG_CALL_FORWARDING_PATH IMAGEDIR"/Indicator/indi_call_forwarding.png"
+#define IMG_HEADSET_PATH ICON_PATH"/Indicator/indi_headset_on.png"
 #define ICON_EVENT_TYPE "_event_type_"
 
 enum {
@@ -62,7 +59,11 @@ Evas_Object *windicator_rssi_icon_create(Evas_Object *parent, void *data)
         Evas_Object *icon = elm_layout_add(parent);
         retv_if(icon == NULL, NULL);
 
-        if(elm_layout_file_set(icon, EDJ_FILE, "windicator/rssi_icon") != EINA_TRUE) {
+        char full_path[PATH_MAX] = { 0, };
+        _get_resource(EDJ_FILE, full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
+        if(elm_layout_file_set(icon, full_path, "windicator/rssi_icon") != EINA_TRUE) {
         		_E("Failed to set rssi icon");
                 evas_object_del(icon);
                 return NULL;
@@ -88,7 +89,11 @@ Evas_Object *windicator_connection_icon_create(Evas_Object *parent, void *data)
         Evas_Object *icon = elm_layout_add(parent);
         retv_if(icon == NULL, NULL);
 
-        if(elm_layout_file_set(icon, EDJ_FILE, "windicator/connection_icon") != EINA_TRUE) {
+        char full_path[PATH_MAX] = { 0, };
+        _get_resource(EDJ_FILE, full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
+        if(elm_layout_file_set(icon, full_path, "windicator/connection_icon") != EINA_TRUE) {
         		_E("Failed to set connection icon");
                 evas_object_del(icon);
                 return NULL;
@@ -128,15 +133,20 @@ Evas_Object *windicator_dynamic_layout_create(Evas_Object *parent, void *data)
 
         Evas_Object *layout = elm_layout_add(parent);
         retv_if(layout == NULL, NULL);
+
+        char full_path[PATH_MAX] = { 0, };
+        _get_resource(EDJ_FILE, full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
 #ifdef _TIZEN_3G_DISABLE
-        if(elm_layout_file_set(layout, EDJ_FILE, "windicator/dynamic/layout/bt") != EINA_TRUE) {
+        if(elm_layout_file_set(layout, full_path, "windicator/dynamic/layout/bt") != EINA_TRUE) {
                 _E("Failed to create dynamic layout");
                 evas_object_del(layout);
                 return NULL;
         }
 #else
         _I("Set Default dynamic layout (icon position)");
-        if(elm_layout_file_set(layout, EDJ_FILE, "windicator/dynamic/layout/3g") != EINA_TRUE) {
+        if(elm_layout_file_set(layout, full_path, "windicator/dynamic/layout/3g") != EINA_TRUE) {
                 _E("Failed to create dynamic layout");
                 evas_object_del(layout);
                 return NULL;
@@ -164,6 +174,7 @@ Evas_Object *windicator_dynamic_layout_create(Evas_Object *parent, void *data)
 static Evas_Object *_dynamic_event_icon_create(Evas_Object *layout, int event_type, int isForMomentView)
 {
         Evas_Object *icon = NULL;
+	char full_path[PATH_MAX] = { 0, };
         _D("isForMomentView? (%d)", isForMomentView);
 
         switch(event_type) {
@@ -186,7 +197,10 @@ static Evas_Object *_dynamic_event_icon_create(Evas_Object *layout, int event_ty
                 if(isForMomentView == 0) bluetooth_icon = icon;
                 else view_bluetooth_icon = icon;
 
-                if(elm_layout_file_set(icon, EDJ_FILE, "windicator/dynamic/bluetooth_icon") != EINA_TRUE) {
+        	_get_resource(EDJ_FILE, full_path, sizeof(full_path));
+	        _D("full_path:%s",full_path);
+
+                if(elm_layout_file_set(icon, full_path, "windicator/dynamic/bluetooth_icon") != EINA_TRUE) {
                         _E("Failed to set layout file : event_type(%d)", event_type);
                         return NULL;
                 }
@@ -212,7 +226,10 @@ static Evas_Object *_dynamic_event_icon_create(Evas_Object *layout, int event_ty
                 if(isForMomentView == 0) headset_icon = icon;
                 else view_headset_icon = icon;
 
-                if(elm_image_file_set(icon, IMG_HEADSET_PATH, NULL) != EINA_TRUE) {
+                _get_resource(IMG_HEADSET_PATH, full_path, sizeof(full_path));
+                _D("full_path:%s",full_path);
+
+                if(elm_image_file_set(icon, full_path, NULL) != EINA_TRUE) {
                         _E("Failed to set image file : event_type(%d)", event_type);
                         return NULL;
                 }

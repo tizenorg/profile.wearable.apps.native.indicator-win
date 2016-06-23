@@ -73,7 +73,12 @@ Evas_Object *windicator_scs_layout_create(Evas_Object *parent, void *data)
         /* create layout */
         Evas_Object *layout = elm_layout_add(parent);
         retv_if(layout == NULL, NULL);
-        if(elm_layout_file_set(layout, EDJ_FILE, "windicator/scs") != EINA_TRUE) {
+
+        char full_path[PATH_MAX] = { 0, };
+        _get_resource(EDJ_FILE, full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
+        if(elm_layout_file_set(layout, full_path, "windicator/scs") != EINA_TRUE) {
                 _E("Failed to set scs layout");
                 evas_object_del(layout);
                 return NULL;

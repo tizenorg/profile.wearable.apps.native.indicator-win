@@ -77,7 +77,11 @@ Evas_Object *windicator_music_btn_layout_create(Evas_Object *parent, void *data)
         Evas_Object *layout = elm_layout_add(parent);
         retv_if(layout == NULL, NULL);
 
-        if(elm_layout_file_set(layout, EDJ_FILE, "windicator/music_btn") != EINA_TRUE) {
+        char full_path[PATH_MAX] = { 0, };
+        _get_resource(EDJ_FILE, full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
+        if(elm_layout_file_set(layout, full_path, "windicator/music_btn") != EINA_TRUE) {
         		_E("Failed to set layout");
                 return NULL;
         }
@@ -91,7 +95,11 @@ Evas_Object *windicator_music_btn_layout_create(Evas_Object *parent, void *data)
         ad->music_btn_layout = layout;
 
         Evas_Object* icon = elm_image_add(ad->music_btn_layout);
-        elm_image_file_set(icon, ICON_PATH"/Controls/music.png", NULL);
+
+        _get_resource(ICON_PATH"/Controls/music.png", full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
+        elm_image_file_set(icon, full_path, NULL);
         evas_object_size_hint_weight_set(icon, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
         elm_object_part_content_set(ad->music_btn_layout, "img.music.icon", icon);
         evas_object_show(icon);

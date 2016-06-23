@@ -71,7 +71,11 @@ Evas_Object *windicator_callfwd_btn_layout_create(Evas_Object *parent, void *dat
         Evas_Object *layout = elm_layout_add(parent);
         retv_if(layout == NULL, NULL);
 
-        if(elm_layout_file_set(layout, EDJ_FILE, "windicator/callfwd_btn") != EINA_TRUE) {
+        char full_path[PATH_MAX] = { 0, };
+        _get_resource(EDJ_FILE, full_path, sizeof(full_path));
+        _D("full_path:%s",full_path);
+
+        if(elm_layout_file_set(layout, full_path, "windicator/callfwd_btn") != EINA_TRUE) {
         		_E("Failed to set layout");
                 return NULL;
         }
