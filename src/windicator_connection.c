@@ -260,7 +260,7 @@ static void _connection_icon_set(connection_type_e type, void *data)
                         _W("Connection status changed");
                         ad->connection_hide = 1;
                         _E("Set Connection (TYPE_NONE), hide sw.icon_1 (type : %d) / (hide : %d)", type, ad->connection_hide);
-                        dynamic_event_icon_refresh_position_for_3g(ad->moment_bar_dynamic_layout, 0);
+			//dynamic_event_icon_refresh_position_for_3g(ad->moment_bar_dynamic_layout, 0);
                 }
         }
         else
@@ -275,9 +275,10 @@ static void _connection_icon_set(connection_type_e type, void *data)
                         _W("Connection status changed");
                         ad->connection_hide = 0;
                         _E("Set Connection / show sw.icon_1 (type : %d) / (hide : %d)", type, ad->connection_hide);
-                        dynamic_event_icon_refresh_position_for_3g(ad->moment_bar_dynamic_layout, 0);
+			//dynamic_event_icon_refresh_position_for_3g(ad->moment_bar_dynamic_layout, 0);
                 }
         }
+
         elm_object_signal_emit(connect_icon, type_name[type], "img.connection_type");
         _packet_type_changed_cb(NULL, connect_icon);
 }
