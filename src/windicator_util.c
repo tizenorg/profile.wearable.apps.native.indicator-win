@@ -159,7 +159,7 @@ void windicator_util_launch_app(void *data)
                 //launch setting
                 if(ad->launch_setting_trigger==1)//brightness
                 {
-                        app_control_set_package(ac, CLOCK_SETTING_BRIGHTNESS_PKG_NAME);
+                        app_control_set_app_id(ac, CLOCK_SETTING_BRIGHTNESS_PKG_NAME);
                         app_control_add_extra_data(ac, "launch-type", "brightness");
                 }
 
@@ -192,6 +192,7 @@ void windicator_util_event_register(void *data)
 void windicator_util_event_unregister()
 {
         windicator_dynamic_vconfkey_unregister();
+        windicator_battery_fini();
 }
 
 void windicator_util_display_lock(void)

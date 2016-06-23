@@ -39,7 +39,7 @@ void _music_btn_clicked_cb(void *data, Evas_Object *obj, const char *emission, c
 	else
 	{
 		ad->launch_music_trigger = 0;
-		("Music app is NOT ongoing, so skip this click event");
+		_D("Music app is NOT ongoing, so skip this click event");
 	}
 }
 

@@ -29,7 +29,6 @@ windicator_error_e windicator_scs_update(void *data)
         retv_if(ad == NULL, WINDICATOR_ERROR_INVALID_PARAMETER);
 
         int sap_connected = 0;
-        int headset_connected = 0;
         int isBTOn = 0;
 
         if (vconf_get_int(VCONFKEY_BT_STATUS, &isBTOn) != 0) {

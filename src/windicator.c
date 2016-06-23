@@ -28,6 +28,7 @@
 #include "windicator_dynamic.h"
 #include "windicator_scs.h"
 #include "windicator_battery.h"
+#include "windicator_brightness.h"
 #include "windicator_call_fwd_btn.h"
 
 #define MOMENT_VIEW_HEIGHT 105;
@@ -153,6 +154,25 @@ void windicator_lo_update(void* data)
         elm_object_signal_emit(ad->moment_bar_first_page_layout, "set_default_layout", "sw.all");
 }
 
+void create_moments_bar_win(void *user_data)
+{
+	struct appdata *ad = (struct appdata *)user_data;
+    elm_config_preferred_engine_set("opengl_x11");
+    _init_variables(ad);
+
+    /* initialize Moment Bar */
+    if(WINDICATOR_ERROR_OK != windicator_moment_bar_init(ad)) {
+            _E("Failed to initialize moment bar");
+    }
+
+    /* initialize Moment View */
+    if(WINDICATOR_ERROR_OK != windicator_moment_view_init(ad)) {
+            _E("Failed to intialize moment view");
+    }
+    //evas_object_show(ad->moment_view_win);
+    //evas_object_show(ad->moment_bar_win);
+}
+
 static bool app_create(void *data)
 {
 	_D("app_create");
@@ -184,24 +204,6 @@ static bool app_create(void *data)
  * sends the launch request to the application
  */
 
-void create_moments_bar_win(void *user_data)
-{
-	struct appdata *ad = (struct appdata *)user_data;
-    elm_config_preferred_engine_set("opengl_x11");
-    _init_variables(ad);
-
-    /* initialize Moment Bar */
-    if(WINDICATOR_ERROR_OK != windicator_moment_bar_init(ad)) {
-            _E("Failed to initialize moment bar");
-    }
-
-    /* initialize Moment View */
-    if(WINDICATOR_ERROR_OK != windicator_moment_view_init(ad)) {
-            _E("Failed to intialize moment view");
-    }
-    //evas_object_show(ad->moment_view_win);
-    //evas_object_show(ad->moment_bar_win);
-}
 
 static void app_control(app_control_h app_control, void *user_data)
 {

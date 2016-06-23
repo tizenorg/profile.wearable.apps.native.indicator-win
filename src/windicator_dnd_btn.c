@@ -227,7 +227,6 @@ void on_released_dnd_icon(void *data, Evas_Object *obj, const char *emission, co
 Evas_Object *windicator_dnd_btn_layout_create(Evas_Object *parent, void *data)
 {
         retv_if(parent== NULL, NULL);
-        bool exist = false;
 
         struct appdata *ad = (struct appdata *)data;
         retv_if(ad == NULL, NULL);

@@ -276,7 +276,7 @@ windicator_error_e windicator_moment_bar_init(void *data)
         ad->moment_bar_conformant = windicator_util_conformant_create(ad->moment_bar_win);
         retv_if(ad->moment_bar_conformant == NULL, WINDICATOR_ERROR_FAIL);
 
-	evas_object_resize(ad->moment_bar_win, &ad->win_w, &ad->win_h);
+	evas_object_resize(ad->moment_bar_win, ad->win_w, ad->win_h);
 
         // Eext Circle Surface Creation
         ad->moment_bar_circle_surface = eext_circle_surface_conformant_add(ad->moment_bar_conformant);

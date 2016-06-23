@@ -32,5 +32,6 @@ void windicator_set_dynamic_icon_layout(void* data, int isBTConnected);
 void dynamic_event_icon_refresh_position_for_3g(Evas_Object *layout, int isForMomentView);
 
 windicator_error_e windicator_dynamic_vconfkey_register(void *data);
+extern void windicator_dynamic_vconfkey_unregister(void);
 
 #endif /* __WINDICATOR_DYNAMIC_H__ */

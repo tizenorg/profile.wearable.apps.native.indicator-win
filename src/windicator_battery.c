@@ -106,7 +106,8 @@ static void _battery_status_changed_cb(keynode_t *node, void *data)
 
 void _battery_update(void* data)
 {
-
+	//by default getting the battery at the start
+	 vconf_set_bool(VCONFKEY_SETAPPL_BATTERY_PERCENTAGE_BOOL, EINA_TRUE);
 	_W("");
 
 	struct appdata *ad = data;
@@ -378,4 +379,14 @@ windicator_error_e windicator_battery_init(void *data)
 	 vconf_notify_key_changed(VCONFKEY_SYSMAN_BATTERY_STATUS_LOW, _battery_status_changed_cb, ad);
 
 	return WINDICATOR_ERROR_OK;
+}
+void windicator_battery_fini(void)
+{
+	/* battery charge connected/disconnected */
+	vconf_ignore_key_changed(VCONFKEY_SYSMAN_CHARGER_STATUS, _battery_charging_changed_cb);
+	vconf_ignore_key_changed(VCONFKEY_SYSMAN_BATTERY_CHARGE_NOW, _battery_charging_changed_cb);
+
+	/*  battery fully charged */
+	vconf_ignore_key_changed(VCONFKEY_SYSMAN_BATTERY_STATUS_LOW, _battery_status_changed_cb);
+
 }

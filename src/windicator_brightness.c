@@ -84,7 +84,7 @@ Evas_Object *windicator_brightness_small_layout_create(Evas_Object *parent, void
         evas_object_show(layout);
         return layout;
 }
-
+/*
 static int _brightness_level_to_index(int level, int max)
 {
         int index = 1;
@@ -118,7 +118,7 @@ static int _brightness_level_to_index(int level, int max)
 
         return index;
 }
-
+*/
 char *windicator_util_str_from_icu_get(int level)
 {
          char *ret_str = NULL;
