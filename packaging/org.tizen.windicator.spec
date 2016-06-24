@@ -4,7 +4,7 @@ Version:    0.0.1
 Release:    0
 Summary: Tizen W indicator application
 Source: %{name}-%{version}.tar.gz
-License: Flora
+License: Flora-1.1
 Group: Applications/System
 
 BuildRequires: cmake
@@ -36,12 +36,6 @@ BuildRequires: efl-assist-devel
 BuildRequires: gettext-tools
 BuildRequires: edje-bin, embryo-bin
 
-%ifarch %{arm}
-%define ARCH arm
-%else
-%define ARCH emulator
-%endif
-
 %description
 Notification panel for wearable devices
 
@@ -62,15 +56,9 @@ export CXXFLAGS+=" -DTIZEN_ENGINEER_MODE"
 export FFLAGS+=" -DTIZEN_ENGINEER_MODE"
 %endif
 
-%if 0%{?sec_product_feature_telephony_disable}
-export CFLAGS+=" -D_TIZEN_3G_ENABLE"
-export CXXFLAGS+=" -D_TIZEN_3G_ENABLE"
-export FFLAGS+=" -D_TIZEN_3G_ENABLE"
-%endif
-
 CFLAGS+=" -fPIC -fpie -O2 "
 LDFLAGS+="-Wl,--rpath=%{PREFIX}/lib -Wl,--as-needed -Wl,--hash-style=both"; export LDFLAGS
-cmake . -DCMAKE_INSTALL_PREFIX=%{PREFIX} -DARCH=%{ARCH}
+cmake . -DCMAKE_INSTALL_PREFIX=%{PREFIX}
 make %{?jobs:-j%jobs}
 
 %install
@@ -80,10 +68,6 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/opt/usr/apps/org.tizen.windicator
 
 mkdir -p %{buildroot}%{_libdir}/systemd/system/tizen-system.target.wants
-
-%post
-/sbin/ldconfig
-/usr/bin/signing-client/hash-signer-client.sh -a -d -p platform /usr/apps/org.tizen.windicator
 
 %files
 %manifest %{name}.manifest
