@@ -390,3 +390,52 @@ void windicator_battery_fini(void)
 	vconf_ignore_key_changed(VCONFKEY_SYSMAN_BATTERY_STATUS_LOW, _battery_status_changed_cb);
 
 }
+
+static void _battery_icon_changed_cb(keynode_t *node, void *data)
+{
+        struct appdata *ad = (struct appdata *)data;
+        ret_if(ad == NULL);
+        _battery_update(ad);
+}
+
+static void _battery_capacity_cb(int percent, void *data)
+{
+        struct appdata *ad = (struct appdata *)data;
+        ret_if(ad == NULL);
+        _W("percentage %d",percent);
+        _battery_update(ad);
+}
+
+windicator_error_e windicator_battery_vconfkey_register(void *data)
+{
+        struct appdata *ad = (struct appdata *)data;
+        retv_if(ad == NULL, WINDICATOR_ERROR_INVALID_PARAMETER);
+
+        _W("Set battery cb");
+        _battery_icon_changed_cb(NULL, ad);
+        device_battery_set_cb(_battery_capacity_cb,data);
+        vconf_notify_key_changed(VCONFKEY_LANGSET, _battery_icon_changed_cb, ad);
+
+        return WINDICATOR_ERROR_OK;
+}
+
+void windicator_battery_vconfkey_unregister(void)
+{
+        _W("Unset battery cb");
+        device_battery_unset_cb();
+        vconf_ignore_key_changed(VCONFKEY_LANGSET, _battery_icon_changed_cb);
+}
+
+void windicator_battery_hide(void* data)
+{
+        struct appdata *ad = (struct appdata *)data;
+        ret_if(ad == NULL);
+
+        _W("Hide Battery icon");
+        elm_object_signal_emit(ad->moment_bar_dynamic_layout, "hideBattery", "sw.icon.battery");
+        elm_object_signal_emit(ad->moment_view_dynamic_layout, "hideBattery", "sw.icon.battery");
+
+        _W("Hide Battery text");
+        elm_object_part_text_set(ad->moment_bar_dynamic_layout, "txt.battery", "");
+        elm_object_part_text_set(ad->moment_view_dynamic_layout, "txt.battery", "");
+}

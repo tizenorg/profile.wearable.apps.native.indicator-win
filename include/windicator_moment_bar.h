@@ -31,6 +31,7 @@ windicator_error_e windicator_moment_bar_update_main_view(void *data);
 windicator_error_e windicator_show_moment_bar_directly(void* data);
 windicator_error_e windicator_hide_moment_bar_directly(void* data);
 //void windicator_handle_clicked_animation(void* data,int index);
-//void change_theme_callback(void *data);
+
+windicator_error_e windicator_moment_bar_hide(void *data);
 
 #endif /* __WINDICATOR_MOMENT_BAR_H__ */

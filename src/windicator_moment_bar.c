@@ -218,6 +218,19 @@ windicator_error_e windicator_moment_bar_show(void *data)
         /* check connection, rssi, packet status */
         windi_connection_resume(ad->moment_bar_rssi_icon, ad->moment_bar_connection_icon);
 
+        /* register battery vconf */
+        if(WINDICATOR_ERROR_OK != windicator_battery_vconfkey_register(ad)) {
+                _E("Failed to register battery vconfkey");
+        }
+
+        /*
+         * Update focused rotary menu layouts
+         */
+        if(WINDICATOR_ERROR_OK != windicator_moment_bar_update_main_view(ad))
+        {
+                _E("Failed to update focused main view");
+        }
+
         /* register back key event */
         if(WINDICATOR_ERROR_OK != windicator_util_back_key_grab(ad)) {
                 _E("Failed to register back key handler");
@@ -249,6 +262,21 @@ windicator_error_e windicator_hide_moment_bar_directly(void* data)
         retv_if(ad == NULL, WINDICATOR_ERROR_INVALID_PARAMETER);
 
         //Hide the indicator window
+        return WINDICATOR_ERROR_OK;
+}
+
+windicator_error_e windicator_moment_bar_hide(void *data)
+{
+        struct appdata *ad = (struct appdata *)data;
+        retv_if(ad == NULL, WINDICATOR_ERROR_INVALID_PARAMETER);
+
+        _E("Hide Moment Bar : dynamic_layout(%p)", ad->moment_bar_dynamic_layout);
+        windicator_battery_vconfkey_unregister();
+        windicator_battery_hide(ad);
+
+        /* disable rssi icon checking */
+        windi_connection_pause();
+
         return WINDICATOR_ERROR_OK;
 }
 
