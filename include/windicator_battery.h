@@ -28,5 +28,5 @@ windicator_error_e windicator_battery_icon_update(Evas_Object *layout, void *dat
 extern void _battery_update(void* data);
 extern char *windicator_util_str_from_icu_get(int level);
 extern windicator_error_e windicator_battery_init(void *data);
-extern void windicator_battery_fini(void);
+extern void windicator_battery_finish(void);
 #endif /*  __WINDICATOR_BATTERY_H__ */

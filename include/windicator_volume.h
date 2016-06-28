@@ -21,9 +21,17 @@
 Evas_Object *windicator_volume_small_icon_create(Evas_Object *parent, void *data);
 void windicator_volume_small_icon_destroy(void *data);
 
-void windicator_volume_icon_set_by_level(Evas_Object *icon, void *data);
+void windicator_volume_icon_set_by_level(void *data);
 windicator_error_e windicator_volume_update(void *data);
 
 void on_clicked_small_volume_icon(void *data, Evas_Object *obj, const char *emission, const char *source);
+
+typedef enum
+{
+        SETTING_SOUND_MODE_SND  = 0,    // Sound on, Vibrate off
+        SETTING_SOUND_MODE_VIB,                 // Sound off, Vibrate on
+        SETTING_SOUND_MODE_MUTE,                // Sound off, Vibrate off
+        SETTING_SOUND_MODE_UNKNOW
+} SettingSoundMode;
 
 #endif /*  __WINDICATOR_VOLUME_H__ */
