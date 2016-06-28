@@ -37,140 +37,140 @@ struct appdata *g_ad = NULL;
 
 struct appdata *windicator_appdata_get(void)
 {
-        return g_ad;
+	return g_ad;
 }
 
 static void _init_variables(void *data)
 {
-        struct appdata *ad = (struct appdata *)data;
-        ret_if(ad == NULL);
+	struct appdata *ad = (struct appdata *)data;
+	ret_if(ad == NULL);
 
-        /* Common */
-        ad->is_charged = 0;
-        ad->is_full = 0;
-        ad->pre_charge_state = 0;
-        ad->is_cooldown = 0;
-        ad->is_tutorial = 0;
-        ad->moment_bar_rotary_index = 0;
-        ad->is_getting_back = 0;
+	/* Common */
+	ad->is_charged = 0;
+	ad->is_full = 0;
+	ad->pre_charge_state = 0;
+	ad->is_cooldown = 0;
+	ad->is_tutorial = 0;
+	ad->moment_bar_rotary_index = 0;
+	ad->is_getting_back = 0;
 
-        /* RSSI, Connection */
-        ad->rssi_hide = 1;
-        ad->connection_hide = 1;
+	/* RSSI, Connection */
+	ad->rssi_hide = 1;
+	ad->connection_hide = 1;
 
-        /* Moment Bar */
-        ad->moment_bar_win = NULL;
-        ad->moment_bar_bg = NULL;
-        ad->moment_bar_conformant = NULL;
-        ad->moment_bar_circle_surface = NULL;
-        ad->moment_bar_first_page_layout = NULL;
+	/* Moment Bar */
+	ad->moment_bar_win = NULL;
+	ad->moment_bar_bg = NULL;
+	ad->moment_bar_conformant = NULL;
+	ad->moment_bar_circle_surface = NULL;
+	ad->moment_bar_first_page_layout = NULL;
 	ad->nf = NULL;
-        ad->moment_bar_second_page_layout = NULL;
-        ad->moment_bar_main_layout = NULL;
-        ad->moment_bar_scroller = NULL;
-        ad->moment_bar_box = NULL;
-        ad->moment_bar_index = NULL;
-        ad->moment_bar_timer = NULL;
-        ad->brightness_bar_timer = NULL;
-        ad->volume_bar_timer = NULL;
-        ad->common_timer = NULL;
-        ad->launch_current_view_timer = NULL;
-        ad->is_scrolled = EINA_FALSE;
-        ad->cur_page = -1;
-        ad->hdl_client_message = NULL;
-        ad->momentbar_showing = 0;
-        /* Moment Bar - Brightness */
-        ad->brightness_small_layout = NULL;
-        ad->brightness_large_layout = NULL;
-        ad->brightness_circle_slider = NULL;
-        ad->brightness_index = 0;
-        ad->brightness_status = 0;
+	ad->moment_bar_second_page_layout = NULL;
+	ad->moment_bar_main_layout = NULL;
+	ad->moment_bar_scroller = NULL;
+	ad->moment_bar_box = NULL;
+	ad->moment_bar_index = NULL;
+	ad->moment_bar_timer = NULL;
+	ad->brightness_bar_timer = NULL;
+	ad->volume_bar_timer = NULL;
+	ad->common_timer = NULL;
+	ad->launch_current_view_timer = NULL;
+	ad->is_scrolled = EINA_FALSE;
+	ad->cur_page = -1;
+	ad->hdl_client_message = NULL;
+	ad->momentbar_showing = 0;
+	/* Moment Bar - Brightness */
+	ad->brightness_small_layout = NULL;
+	ad->brightness_large_layout = NULL;
+	ad->brightness_circle_slider = NULL;
+	ad->brightness_index = 0;
+	ad->brightness_status = 0;
 
-        /* Moment Bar - Volume */
-        ad->volume_small_icon = NULL;
-        ad->volume_large_icon = NULL;
-        ad->volume_circle_slider = NULL;
-        ad->volume_index = 0;
-        ad->volume_status = 0;
+	/* Moment Bar - Volume */
+	ad->volume_small_icon = NULL;
+	ad->volume_large_icon = NULL;
+	ad->volume_circle_slider = NULL;
+	ad->volume_index = 0;
+	ad->volume_status = 0;
 
-        /* Moment Bar - Dynamic */
-        ad->moment_bar_dynamic_layout = NULL;
-        ad->moment_bar_connection_icon = NULL;
-        ad->moment_bar_rssi_icon = NULL;
+	/* Moment Bar - Dynamic */
+	ad->moment_bar_dynamic_layout = NULL;
+	ad->moment_bar_connection_icon = NULL;
+	ad->moment_bar_rssi_icon = NULL;
 
-        /* Moment Bar - Battery */
-        ad->moment_bar_battery_icon = NULL;
+	/* Moment Bar - Battery */
+	ad->moment_bar_battery_icon = NULL;
 
-        /* Moment Bar DND Button */
-        ad->dnd_btn_layout = NULL;
-        ad->dnd_btn_checkbox = NULL;
-        ad->dnd_win = NULL;
+	/* Moment Bar DND Button */
+	ad->dnd_btn_layout = NULL;
+	ad->dnd_btn_checkbox = NULL;
+	ad->dnd_win = NULL;
 
-        /* Moment Bar - Flight Mode button */
-        ad->flight_mode_layout = NULL;
-        ad->flight_mode_win = NULL;
+	/* Moment Bar - Flight Mode button */
+	ad->flight_mode_layout = NULL;
+	ad->flight_mode_win = NULL;
 
-        /* Moment Bar POWERSAVING Button */
-        ad->powersaving_layout = NULL;
-        ad->powersaving_popup = NULL;
-        ad->powersaving_win = NULL;
+	/* Moment Bar POWERSAVING Button */
+	ad->powersaving_layout = NULL;
+	ad->powersaving_popup = NULL;
+	ad->powersaving_win = NULL;
 
-        /* Moment Bar Music Button */
-        ad->music_btn_layout = NULL;
-        ad->music_status = 0;
-        ad->music_is_playing = 0;
-        ad->launch_music_trigger = 0;
-        ad->music_app_type = 0;
+	/* Moment Bar Music Button */
+	ad->music_btn_layout = NULL;
+	ad->music_status = 0;
+	ad->music_is_playing = 0;
+	ad->launch_music_trigger = 0;
+	ad->music_app_type = 0;
 
-        /* Moment Bar - Call forward button */
-        ad->callfwd_btn_layout = NULL;
-        ad->launch_call_fwd_trigger = 0;
+	/* Moment Bar - Call forward button */
+	ad->callfwd_btn_layout = NULL;
+	ad->launch_call_fwd_trigger = 0;
 
-        /* Moment Bar - SCS layout */
-        ad->scs_layout = NULL;
+	/* Moment Bar - SCS layout */
+	ad->scs_layout = NULL;
 
-        /* Moment View */
-        ad->moment_view_h = MOMENT_VIEW_HEIGHT;
-        ad->moment_view_win = NULL;
-        ad->moment_view_layout = NULL;
-        ad->moment_view_timer = NULL;
+	/* Moment View */
+	ad->moment_view_h = MOMENT_VIEW_HEIGHT;
+	ad->moment_view_win = NULL;
+	ad->moment_view_layout = NULL;
+	ad->moment_view_timer = NULL;
 
-        /* Moment View - Dynamic */
-        ad->moment_view_dynamic_layout = NULL;
-        ad->moment_view_dynamic_box = NULL;
-        ad->moment_view_connection_icon = NULL;
-        ad->moment_view_rssi_icon = NULL;
+	/* Moment View - Dynamic */
+	ad->moment_view_dynamic_layout = NULL;
+	ad->moment_view_dynamic_box = NULL;
+	ad->moment_view_connection_icon = NULL;
+	ad->moment_view_rssi_icon = NULL;
 
-        /* Moment View - Battery */
-        ad->moment_view_battery_icon = NULL;
+	/* Moment View - Battery */
+	ad->moment_view_battery_icon = NULL;
 }
 
 void windicator_lo_update(void* data)
 {
-        struct appdata *ad = (struct appdata *)data;
-        ret_if(ad == NULL);
+	struct appdata *ad = (struct appdata *)data;
+	ret_if(ad == NULL);
 
-        //ad->layout_status = 0;
-        elm_object_signal_emit(ad->moment_bar_first_page_layout, "set_default_layout", "sw.all");
+	//ad->layout_status = 0;
+	elm_object_signal_emit(ad->moment_bar_first_page_layout, "set_default_layout", "sw.all");
 }
 
 void create_moments_bar_win(void *user_data)
 {
 	struct appdata *ad = (struct appdata *)user_data;
-    elm_config_preferred_engine_set("opengl_x11");
-    _init_variables(ad);
+	elm_config_preferred_engine_set("opengl_x11");
+	_init_variables(ad);
 
-    /* initialize Moment Bar */
-    if(WINDICATOR_ERROR_OK != windicator_moment_bar_init(ad)) {
-            _E("Failed to initialize moment bar");
-    }
+	/* initialize Moment Bar */
+	if (WINDICATOR_ERROR_OK != windicator_moment_bar_init(ad)) {
+		_E("Failed to initialize moment bar");
+	}
 
-    /* initialize Moment View */
-    if(WINDICATOR_ERROR_OK != windicator_moment_view_init(ad)) {
-            _E("Failed to intialize moment view");
-    }
-    //evas_object_show(ad->moment_view_win);
-    //evas_object_show(ad->moment_bar_win);
+	/* initialize Moment View */
+	if (WINDICATOR_ERROR_OK != windicator_moment_view_init(ad)) {
+		_E("Failed to intialize moment view");
+	}
+	//evas_object_show(ad->moment_view_win);
+	//evas_object_show(ad->moment_bar_win);
 }
 
 static bool app_create(void *data)
@@ -190,11 +190,10 @@ static bool app_create(void *data)
 	elm_app_base_scale_set(1.3);
 	create_moments_bar_win(ad);
 
-	windicator_dynamic_vconfkey_register(ad);
 	windicator_util_event_register(ad);
 
-    /* Register scs's vconfkey events */
-    windicator_scs_vconfkey_register(ad);
+	/* Register scs's vconfkey events */
+	windicator_scs_vconfkey_register(ad);
 
 	return true;
 }
@@ -211,7 +210,7 @@ static void app_control(app_control_h app_control, void *user_data)
 	_D("app_control");
 	struct appdata *ad = (struct appdata *)user_data;
 	Evas_Object *win = ad->moment_bar_win;
-	if(win)
+	if (win)
 		elm_win_activate(win);
 }
 
@@ -235,9 +234,12 @@ static void app_resume(void *user_data)
 	/* Take necessary actions when application becomes visible. */
 	_D("app_resume");
 	struct appdata *ad = (struct appdata *)user_data;
-	if(ad->launch_setting_trigger == 1)
-	{
+	if (ad->launch_setting_trigger == 1) {
 		windicator_brightness_update(ad);
+		ad->launch_setting_trigger = 0;
+	}
+	if (ad->launch_setting_trigger == 3) {
+		windicator_volume_update(ad);
 		ad->launch_setting_trigger = 0;
 	}
 }
@@ -250,14 +252,15 @@ static void app_terminate(void *user_data)
 	/*
 	 * Release all resources.
 	 */
-    _D("app_terminate");
+	_D("app_terminate");
 
-    struct appdata *ad = (struct appdata *)user_data;
-    ret_if(ad == NULL);
-	windicator_dynamic_vconfkey_unregister();
+	struct appdata *ad = (struct appdata *)user_data;
+	ret_if(ad == NULL);
+
 	windicator_util_event_unregister();
-    /* Register scs's vconfkey events */
-    windicator_scs_vconfkey_unregister();
+
+	/* Unregister scs's vconfkey events */
+	windicator_scs_vconfkey_unregister();
 }
 
 /**
