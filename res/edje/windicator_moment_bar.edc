@@ -185,7 +185,7 @@ group {
 				align : 0.0 0.0;
 //				image.normal: "Controls/b_moment_more_opt_ic_bg.png";
 				color_class : "AO0122";
-				rel1 { relative : 0.0 0.0; to : "rect.bg"; offset : 251 246;}
+				rel1 { relative : 0.0 0.0; to : "rect.bg"; offset : 223 268;}
 				rel2 { relative : 0.0 0.0; to : "rect.bg"; }
 			}
 			description {
@@ -203,14 +203,14 @@ group {
 			description {
 				state : "default" 0.0;
 				color : 200 0 0 0;
-				image.normal: "Touch/moment_bar_touch6_screen_5.png";
+				image.normal: "Touch/moment_bar_touch5_4.png";
 				rel1.to: "rect.bg";
 				rel2.to: "rect.bg";
 			}
 			description {
 				state : "LO" 0.0;
 				inherit : "default" 0.0;
-				image.normal: "Touch/moment_bar_touch5_5.png";
+				image.normal: "Touch/moment_bar_touch5_4.png";
 			}
 		}
 // DO_NOT_DISTURB
@@ -225,7 +225,7 @@ group {
 				fixed : 1 1;
 				align : 0.0 0.0;
 				color_class : "AO0122";
-				rel1 { relative : 0.0 0.0; to : "rect.bg"; offset : 186 284;}
+				rel1 { relative : 0.0 0.0; to : "rect.bg"; offset : 148 289;}
 				rel2 { relative : 0.0 0.0; to : "rect.bg"; }
 			}
 			description {
@@ -243,14 +243,14 @@ group {
 			description {
 				state : "default" 0.0;
 				color : 0 200 0 0;
-				image.normal: "Touch/moment_bar_touch6_screen_4.png";
+				image.normal: "Touch/moment_bar_touch5_3.png";
 				rel1.to: "rect.bg";
 				rel2.to: "rect.bg";
 			}
 			description {
 				state : "LO" 0.0;
 				inherit : "default" 0.0;
-				image.normal: "Touch/moment_bar_touch5_4.png";
+				image.normal: "Touch/moment_bar_touch5_3.png";
 			}
 		}
 // FLIGHT_MODE
@@ -331,6 +331,46 @@ group {
 				state : "LO" 0.0;
 				inherit : "default" 0.0;
 				visible : 0;
+			}
+		}
+// VOLUME
+		part {
+			name : "volume.swallow";
+			type : SWALLOW;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				min : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				max : DEFAULT_ICON_WIDTH DEFAULT_ICON_HEIGHT;
+				fixed : 1 1;
+				align : 0.0 0.0;
+				color_class : "AO0122";
+				rel1 { relative : 0.0 0.0; to : "rect.bg"; offset : 73 268;}
+				rel2 { relative : 0.0 0.0; to : "rect.bg"; }
+			}
+			description {
+				state : "LO" 0.0;
+				inherit : "default" 0.0;
+				rel1 { relative : 0.0 0.0; to : "rect.bg"; offset : 73 268;}
+			}
+		}
+		part {
+			name : "img.volume.touch.area";
+			type : IMAGE;
+			repeat_events: 1;
+			precise_is_inside: 1;
+			scale : 1;
+			description {
+				state : "default" 0.0;
+				color : 0 200 0 0;
+				image.normal: "Touch/moment_bar_touch5_2.png";
+				rel1.to: "rect.bg";
+				rel2.to: "rect.bg";
+			}
+			description {
+				state : "LO" 0.0;
+				inherit : "default" 0.0;
+				image.normal: "Touch/moment_bar_touch5_2.png";
 			}
 		}
 		part {
