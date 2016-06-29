@@ -549,7 +549,7 @@ group {
 				fixed : 1 1;
 				align : 0.0 0.0;
 				visible : 1;
-				rel1 { relative : 0.0 0.0; to : "bg"; offset : 139 7;}
+				rel1 { relative : 0.0 0.0; to : "bg"; offset : 229 19;}
 				rel2 { relative : 0.0 0.0; to : "bg"; }
 			}
 			description {
@@ -569,13 +569,13 @@ group {
 				max : DYNAMIC_ICON_WIDTH DYNAMIC_ICON_HEIGHT;
 				fixed : 1 1;
 				align : 0.0 0.0;
-				rel1 { relative : 0.0 0.0; to : "bg"; offset : 199 7;}
+				rel1 { relative : 0.0 0.0; to : "bg"; offset : 139 7;}
 				rel2 { relative : 0.0 0.0; to : "bg"; }
 			}
 			description {
 				state : "move_1" 0.0;
 				inherit : "default" 0.0;
-				rel1 { relative : 0.0 0.0; to : "bg"; offset : 139 7;}
+				rel1 { relative : 0.0 0.0; to : "bg"; offset : 199 7;}
 			}
 			description {
 				state : "move_2" 0.0;

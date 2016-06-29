@@ -131,7 +131,7 @@ group {
 		}
 		part {
 			name : "txt.volume";
-			type : TEXT;
+			type : TEXTBLOCK;
 			scale : 1;
 			description {
 				state : "default" 0.0;
@@ -140,7 +140,7 @@ group {
 			//	fixed : 1 1;
 				align : 0.5 0.0;
 				color: 0 0 0 255;
-				rel1 { relative : 0.5 0.0; to : "img.volume.icon"; offset : 0 38;}
+				rel1 { relative : 0.5 0.0; to : "img.volume.icon"; offset : 0 33;}
 				rel2 { relative : 0.5 0.0; to : "img.volume.icon";}
 				text {
 					align : 0.5 0.5;
@@ -174,7 +174,7 @@ group {
 			source: "img.volume.icon";
 			action: STATE_SET "default" 0.0;
 			target: "img.volume.icon";
-//			target: "txt.volume";
+			target: "txt.volume";
 		}
 		program {
 			name: "volume.icon.mute";
@@ -182,7 +182,7 @@ group {
 			source: "img.volume.icon";
 			action: STATE_SET "mute" 0.0;
 			target: "img.volume.icon";
-//			target: "txt.volume";
+			target: "txt.volume";
 		}
 		program {
 			name: "volume.icon.media";
@@ -190,7 +190,7 @@ group {
 			source: "img.volume.icon";
 			action: STATE_SET "media" 0.0;
 			target: "img.volume.icon";
-//			target: "txt.volume";
+			target: "txt.volume";
 		}
 		program {
 			name: "volume.icon.vibrate";
@@ -198,7 +198,7 @@ group {
 			source: "img.volume.icon";
 			action: STATE_SET "vibrate" 0.0;
 			target: "img.volume.icon";
-//			target: "txt.volume";
+			target: "txt.volume";
 		}
 
 		/* Press effect */
