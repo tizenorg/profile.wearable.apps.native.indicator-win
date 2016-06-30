@@ -58,8 +58,8 @@ group {
 	images {
 		image : "Controls/b_moment_more_opt_ic_bg.png" COMP;
 		image : "Controls/ringtone.png" COMP;
-		image : "Controls/speaker.png" COMP;
-		image : "Controls/speaker_off.png" COMP;
+		image : "Controls/multimedia.png" COMP;
+		image : "Controls/multimedia_off.png" COMP;
 		image : "Controls/vibrate.png" COMP;
 	}
 	parts {
@@ -108,7 +108,7 @@ group {
 				fixed : 1 1;
 				align : 0.0 0.0;
 				/* [P151109-00606] */
-				image.normal: "Controls/speaker.png";
+				image.normal: "Controls/multimedia.png";
 				color_class : "AO012";
 				rel1 { relative : 0.0 0.0; to : "bg"; }
 				rel2 { relative : 0.0 0.0; to : "bg"; }
@@ -116,12 +116,12 @@ group {
 			description {
 				state: "mute" 0.0;
 				inherit: "default";
-				image.normal: "Controls/speaker_off.png";
+				image.normal: "Controls/multimedia_off.png";
 			}
 			description {
 				state: "media" 0.0;
 				inherit: "default";
-				image.normal: "Controls/speaker.png";
+				image.normal: "Controls/multimedia.png";
 			}
 			description {
 				state: "vibrate" 0.0;
@@ -137,7 +137,7 @@ group {
 				state : "default" 0.0;
 				max : 32 25;
 				min : 32 25;
-			//	fixed : 1 1;
+				fixed : 1 1;
 				align : 0.5 0.0;
 				color: 0 0 0 255;
 				rel1 { relative : 0.5 0.0; to : "img.volume.icon"; offset : 0 33;}
@@ -152,17 +152,17 @@ group {
 			description {
 				state: "mute" 0.0;
 				inherit: "default";
-				visible:0;
+				visible: 0;
 			}
 			description {
 				state: "media" 0.0;
 				inherit: "default";
-				visible:1;
+				visible: 1;
 			}
 			description {
 				state: "vibrate" 0.0;
 				inherit: "default";
-				visible:0;
+				visible: 0;
 			}
 		}
 	}
@@ -174,7 +174,7 @@ group {
 			source: "img.volume.icon";
 			action: STATE_SET "default" 0.0;
 			target: "img.volume.icon";
-			target: "txt.volume";
+			//target: "txt.volume";
 		}
 		program {
 			name: "volume.icon.mute";
@@ -182,7 +182,7 @@ group {
 			source: "img.volume.icon";
 			action: STATE_SET "mute" 0.0;
 			target: "img.volume.icon";
-			target: "txt.volume";
+			//target: "txt.volume";
 		}
 		program {
 			name: "volume.icon.media";
@@ -190,7 +190,7 @@ group {
 			source: "img.volume.icon";
 			action: STATE_SET "media" 0.0;
 			target: "img.volume.icon";
-			target: "txt.volume";
+			//target: "txt.volume";
 		}
 		program {
 			name: "volume.icon.vibrate";
@@ -198,7 +198,7 @@ group {
 			source: "img.volume.icon";
 			action: STATE_SET "vibrate" 0.0;
 			target: "img.volume.icon";
-			target: "txt.volume";
+			//target: "txt.volume";
 		}
 
 		/* Press effect */

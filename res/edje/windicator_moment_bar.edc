@@ -362,7 +362,7 @@ group {
 			scale : 1;
 			description {
 				state : "default" 0.0;
-				color : 0 200 0 0;
+				color : 200 0 0 0;
 				image.normal: "Touch/moment_bar_touch5_2.png";
 				rel1.to: "rect.bg";
 				rel2.to: "rect.bg";
