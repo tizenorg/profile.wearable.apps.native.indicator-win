@@ -66,7 +66,7 @@ group {
 			clip_to : "clipper_scs";
 			scale : 1;
 			description {
-				state : "default";
+				state : "default" 0.0;
 				min : 36 44;
 				max : 36 44;
 				fixed: 1 1;
@@ -100,6 +100,7 @@ group {
 				state : "default" 0.0;
 				min : 260 37;
 				max : 260 74;
+				fixed : 1 1;
 				color_class : "AT011";
 				align : 0.5 0.0;
 				rel1 { relative: 0.5 1.0; to_x: "bg"; to_y: "icon.scs"; }
@@ -109,7 +110,16 @@ group {
 					min : 0 1;
 					style : "style_txt_scs";
 					text : "Standalone";
-					text_class : "AT011";
+				}
+			}
+			description {
+				state: "bt_ic" 0.0;
+				inherit: "default";
+				text {
+					align : 0.5 0.5;
+					min : 0 1;
+					style : "style_txt_scs";
+					text : "Connected via Bluetooth";
 				}
 			}
 		}
@@ -183,6 +193,7 @@ group {
 			source : "icon.scs";
 			action : STATE_SET "default" 0.0;
 			target : "icon.scs";
+			target : "txt.scs";
 		}
 		program {
 			name : "icon,scs,connected,remotely";
@@ -197,6 +208,7 @@ group {
 			source : "icon.scs";
 			action : STATE_SET "bt_ic" 0.0;
 			target : "icon.scs";
+			target : "txt.scs";
 		}
 		program {
 			name : "txt.sim_state.hide";
