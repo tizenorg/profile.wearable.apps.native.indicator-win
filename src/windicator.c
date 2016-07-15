@@ -50,6 +50,8 @@ static void _init_variables(void *data)
 	ad->is_full = 0;
 	ad->pre_charge_state = 0;
 	ad->is_cooldown = 0;
+	ad->back_key_handler = NULL;
+	ad->down_key_handler = NULL;
 	ad->is_tutorial = 0;
 	ad->moment_bar_rotary_index = 0;
 	ad->is_getting_back = 0;
@@ -194,7 +196,6 @@ static bool app_create(void *data)
 
 	/* Register scs's vconfkey events */
 	windicator_scs_vconfkey_register(ad);
-
 	return true;
 }
 
@@ -261,6 +262,7 @@ static void app_terminate(void *user_data)
 
 	/* Unregister scs's vconfkey events */
 	windicator_scs_vconfkey_unregister();
+	windicator_util_back_key_ungrab(ad);
 }
 
 /**

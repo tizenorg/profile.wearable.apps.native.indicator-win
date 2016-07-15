@@ -88,6 +88,7 @@ struct appdata
     Ecore_X_Window input_win;
     Ecore_Event_Handler *two_finger_handler;
     Ecore_Event_Handler *back_key_handler;
+    Ecore_Event_Handler *down_key_handler;
 
     /* Moment Bar */
     Evas *moment_bar_evas;

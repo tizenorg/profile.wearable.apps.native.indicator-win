@@ -34,6 +34,7 @@
 #include "windicator_connection.h"
 
 #define KEY_BACK "XF86Back"
+#define KEY_DOWN "XF86PowerOff"
 
 Evas_Object *windicator_moment_bar_first_page_layout_create(void *data)
 {
@@ -173,6 +174,8 @@ static Eina_Bool _key_release_event_cb(void *data, int type, void *event)
 	 Evas_Event_Key_Up *ev = event;
 	 retv_if(ev == NULL, EINA_FALSE);
 
+	_D("Key(%s) pressed", ev->keyname);
+
 	 if (!strcmp(ev->keyname, KEY_BACK)) {
 		if (ad->is_getting_back == 0) {
 		_D("Moment bar status -> idle. (Hide Moment bar)");
@@ -183,6 +186,10 @@ static Eina_Bool _key_release_event_cb(void *data, int type, void *event)
 		} else {
 		_D("Back key animation is operating, so skip back key event");
 		}
+	}
+	else if(!strcmp(ev->keyname, KEY_DOWN)) {
+		_D("Moment bar status -> Exit. (Exit Moment bar)");
+		elm_exit();
 	}
 	return EINA_FALSE;
 }
@@ -202,9 +209,33 @@ windicator_error_e windicator_util_back_key_grab(void *data)
 		}
 	}
 
+	if (ad->down_key_handler == NULL) {
+		ad->down_key_handler = ecore_event_handler_add(ECORE_EVENT_KEY_DOWN, _key_release_event_cb, ad);
+		if (ad->down_key_handler == NULL) {
+			_E("Failed to add down key handler");
+			return WINDICATOR_ERROR_FAIL;
+		}
+	}
+
 	return WINDICATOR_ERROR_OK;
 }
 
+void windicator_util_back_key_ungrab(void *data)
+{
+	_D("");
+	struct appdata *ad = (struct appdata *)data;
+	ret_if(ad == NULL);
+
+	if(ad->back_key_handler) {
+		ecore_event_handler_del(ad->back_key_handler);
+		ad->back_key_handler = NULL;
+	}
+
+	if(ad->down_key_handler) {
+		ecore_event_handler_del(ad->down_key_handler);
+		ad->down_key_handler = NULL;
+	}
+}
 windicator_error_e windicator_moment_bar_show(void *data)
 {
 	struct appdata *ad = (struct appdata *)data;
