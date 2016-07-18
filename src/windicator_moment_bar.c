@@ -187,7 +187,20 @@ static Eina_Bool _key_release_event_cb(void *data, int type, void *event)
 		_D("Back key animation is operating, so skip back key event");
 		}
 	}
-	else if(!strcmp(ev->keyname, KEY_DOWN)) {
+	return EINA_FALSE;
+}
+
+static Eina_Bool _down_release_event_cb(void *data, int type, void *event)
+{
+	 struct appdata *ad = (struct appdata *)data;
+	 retv_if(ad == NULL, EINA_FALSE);
+
+	 Evas_Event_Key_Up *ev = event;
+	 retv_if(ev == NULL, EINA_FALSE);
+
+	_D("Key(%s) pressed", ev->keyname);
+
+	if(!strcmp(ev->keyname, KEY_DOWN)) {
 		_D("Moment bar status -> Exit. (Exit Moment bar)");
 		elm_exit();
 	}
@@ -209,8 +222,18 @@ windicator_error_e windicator_util_back_key_grab(void *data)
 		}
 	}
 
+	return WINDICATOR_ERROR_OK;
+}
+
+windicator_error_e windicator_util_down_key_grab(void *data)
+{
+	_D("");
+
+	struct appdata *ad = (struct appdata *)data;
+	retv_if(ad == NULL, WINDICATOR_ERROR_INVALID_PARAMETER);
+
 	if (ad->down_key_handler == NULL) {
-		ad->down_key_handler = ecore_event_handler_add(ECORE_EVENT_KEY_DOWN, _key_release_event_cb, ad);
+		ad->down_key_handler = ecore_event_handler_add(ECORE_EVENT_KEY_DOWN, _down_release_event_cb, ad);
 		if (ad->down_key_handler == NULL) {
 			_E("Failed to add down key handler");
 			return WINDICATOR_ERROR_FAIL;
@@ -230,12 +253,20 @@ void windicator_util_back_key_ungrab(void *data)
 		ecore_event_handler_del(ad->back_key_handler);
 		ad->back_key_handler = NULL;
 	}
+}
+
+void windicator_util_down_key_ungrab(void *data)
+{
+	_D("");
+	struct appdata *ad = (struct appdata *)data;
+	ret_if(ad == NULL);
 
 	if(ad->down_key_handler) {
 		ecore_event_handler_del(ad->down_key_handler);
 		ad->down_key_handler = NULL;
 	}
 }
+
 windicator_error_e windicator_moment_bar_show(void *data)
 {
 	struct appdata *ad = (struct appdata *)data;
@@ -255,6 +286,11 @@ windicator_error_e windicator_moment_bar_show(void *data)
 		_E("Failed to register back key handler");
 	}
 
+	/* register down key event */
+	if (WINDICATOR_ERROR_OK != windicator_util_down_key_grab(ad)) {
+		_E("Failed to register back key handler");
+	}
+
 	evas_object_show(ad->moment_bar_win);
 
 	return WINDICATOR_ERROR_OK;
@@ -269,6 +305,8 @@ windicator_error_e windicator_show_moment_bar_directly(void* data)
 
 	retv_if(ad == NULL, WINDICATOR_ERROR_INVALID_PARAMETER);
 
+	windicator_util_back_key_grab(ad);
+
 	//Show the indicator window
 	return WINDICATOR_ERROR_OK;
 }
@@ -279,6 +317,8 @@ windicator_error_e windicator_hide_moment_bar_directly(void* data)
 	struct appdata *ad = (struct appdata *)data;
 
 	retv_if(ad == NULL, WINDICATOR_ERROR_INVALID_PARAMETER);
+
+	windicator_util_back_key_ungrab(ad);
 
 	//Hide the indicator window
 	return WINDICATOR_ERROR_OK;

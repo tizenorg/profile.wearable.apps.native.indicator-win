@@ -91,6 +91,7 @@ static void _popup_response_cb(void *data, Evas_Object *obj, void *event_info)
 
 	evas_object_del(ad->dnd_win);
 	ad->dnd_win = NULL;
+	windicator_show_moment_bar_directly(ad);
 }
 
 static void _popup_hide_finished_cb(void *data, Evas_Object *obj, void *event_info)
@@ -104,6 +105,7 @@ static void _popup_hide_finished_cb(void *data, Evas_Object *obj, void *event_in
 
 	evas_object_del(ad->dnd_win);
 	ad->dnd_win = NULL;
+	windicator_show_moment_bar_directly(ad);
 }
 
 static void _dnd_popup_launch(void* data)

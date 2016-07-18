@@ -263,6 +263,7 @@ static void app_terminate(void *user_data)
 	/* Unregister scs's vconfkey events */
 	windicator_scs_vconfkey_unregister();
 	windicator_util_back_key_ungrab(ad);
+	windicator_util_down_key_ungrab(ad);
 }
 
 /**
