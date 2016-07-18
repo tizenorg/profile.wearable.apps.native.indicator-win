@@ -107,6 +107,7 @@ static void _init_variables(void *data)
 	ad->dnd_btn_layout = NULL;
 	ad->dnd_btn_checkbox = NULL;
 	ad->dnd_win = NULL;
+	ad->popup = NULL;
 
 	/* Moment Bar - Flight Mode button */
 	ad->flight_mode_layout = NULL;
@@ -263,6 +264,10 @@ static void app_terminate(void *user_data)
 	/* Unregister scs's vconfkey events */
 	windicator_scs_vconfkey_unregister();
 	windicator_util_back_key_ungrab(ad);
+	windicator_util_down_key_ungrab(ad);
+
+	/* Destroy popup window */
+	windicator_dnd_popup_destroy(ad);
 }
 
 /**

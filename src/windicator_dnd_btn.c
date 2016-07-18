@@ -88,9 +88,11 @@ static void _popup_response_cb(void *data, Evas_Object *obj, void *event_info)
 	windicator_dnd_btn_update(ad);
 
 	evas_object_del(obj);
+	ad->popup = NULL;
 
 	evas_object_del(ad->dnd_win);
 	ad->dnd_win = NULL;
+	windicator_show_moment_bar_directly(ad);
 }
 
 static void _popup_hide_finished_cb(void *data, Evas_Object *obj, void *event_info)
@@ -102,8 +104,11 @@ static void _popup_hide_finished_cb(void *data, Evas_Object *obj, void *event_in
 	if (!obj) return;
 	evas_object_del(obj);
 
+	ad->popup = NULL;
+
 	evas_object_del(ad->dnd_win);
 	ad->dnd_win = NULL;
+	windicator_show_moment_bar_directly(ad);
 }
 
 static void _dnd_popup_launch(void* data)
@@ -129,6 +134,8 @@ static void _dnd_popup_launch(void* data)
 	evas_object_size_hint_weight_set(popup, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
 	eext_object_event_callback_add(popup, EEXT_CALLBACK_BACK, _popup_hide_cb, NULL);
 	evas_object_smart_callback_add(popup, "dismissed", _popup_hide_finished_cb, ad);
+
+	ad->popup = popup;
 
 	layout = elm_layout_add(popup);
 	elm_layout_theme_set(layout, "layout", "popup", "content/circle/buttons2");
@@ -290,3 +297,20 @@ windicator_error_e windicator_dnd_btn_update(void *data)
 	return WINDICATOR_ERROR_OK;
 }
 
+void windicator_dnd_popup_destroy(void *data)
+{
+	struct appdata *ad = (struct appdata *)data;
+	ret_if(ad == NULL);
+
+	if (ad->dnd_win != NULL) {
+		_D("Destroy DND win");
+		evas_object_del(ad->dnd_win);
+		ad->dnd_win = NULL;
+	}
+
+	if (ad->popup != NULL) {
+		_D("Destroy popup");
+		evas_object_del(ad->popup);
+		ad->popup = NULL;
+	}
+}

@@ -138,6 +138,7 @@ struct appdata
     Evas_Object *dnd_btn_layout;
     Evas_Object *dnd_btn_checkbox;
     Evas_Object *dnd_win;
+    Evas_Object *popup;
 
     /* Moment Bar - Flight Mode button */
     Evas_Object *flight_mode_layout;

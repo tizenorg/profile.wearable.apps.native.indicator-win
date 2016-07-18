@@ -25,4 +25,6 @@ windicator_error_e windicator_dnd_btn_update(void *data);
 
 void _dnd_btn_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
 
+void windicator_dnd_popup_destroy(void *data);
+
 #endif /* __WINDICATOR_DND_BTN_H__ */
