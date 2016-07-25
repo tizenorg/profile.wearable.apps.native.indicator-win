@@ -22,6 +22,7 @@
 #include "windicator_dynamic.h"
 #include "windicator_battery.h"
 #include "windicator_moment_view.h"
+#include "windicator_util.h"
 
 #define IMG_HEADSET_PATH ICON_PATH"/Indicator/indi_headset_on.png"
 #define ICON_EVENT_TYPE "_event_type_"

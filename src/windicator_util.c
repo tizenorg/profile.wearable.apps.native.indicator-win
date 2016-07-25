@@ -23,6 +23,8 @@
 
 #include "windicator.h"
 #include "log.h"
+#include "windicator_dynamic.h"
+#include "windicator_battery.h"
 
 #define CLOCK_SETTING_PKG_NAME  "org.tizen.watch-setting"
 

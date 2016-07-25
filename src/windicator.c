@@ -30,6 +30,8 @@
 #include "windicator_battery.h"
 #include "windicator_brightness.h"
 #include "windicator_call_fwd_btn.h"
+#include "windicator_volume.h"
+#include "windicator_dnd_btn.h"
 
 #define MOMENT_VIEW_HEIGHT 105;
 
