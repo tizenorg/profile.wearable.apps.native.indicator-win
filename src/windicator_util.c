@@ -178,6 +178,7 @@ void windicator_util_launch_app(void *data)
 			app_control_add_extra_data(ac, "launch-type", "brightness");
 		} else if (ad->launch_setting_trigger == 3) { /*volume media*/
 			app_control_set_app_id(ac, CLOCK_SETTING_PKG_NAME);
+			app_control_add_extra_data(ac, "launch-type", "volume");
 		}
 
 		app_control_send_launch_request(ac, NULL, NULL);
